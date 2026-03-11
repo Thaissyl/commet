@@ -1,12 +1,15 @@
-# Communication Diagram: UC-14 Review Rental Request — Main Sequence (Accept)
+# Communication Diagram: UC-14 Review Rental Request - Main Sequence (Accept)
 
 ## Object Layout
 
-```
-Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- RentalRequest
-                                  |                                     \-- RoomListing
-                                  |--- NotificationService
-                                  |--- EmailProxy --- Email Provider
+```text
+Owner --- RentalRequestReviewUI --- RequestReviewCoordinator --- RentalRequestLogic --- RentalRequest
+                                               |                                      |
+                                               |                                      --- RoomListing
+                                               |
+                                               --- NotificationService
+                                               |
+                                               --- EmailProxy --- Email Provider
 ```
 
 ## Participants
@@ -14,7 +17,7 @@ Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- Rental
 | Position | Object | Stereotype |
 |---|---|---|
 | 1 | Owner | Actor (primary) |
-| 2 | OwnerUI | `<<user interaction>>` |
+| 2 | RentalRequestReviewUI | `<<user interaction>>` |
 | 3 | RequestReviewCoordinator | `<<coordinator>>` |
 | 4 | RentalRequestLogic | `<<business logic>>` |
 | 5 | RentalRequest | `<<entity>>` |
@@ -25,39 +28,43 @@ Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- Rental
 
 ## Messages
 
-| # | From → To | Message |
+| # | From -> To | Message |
 |---|---|---|
-| 1 | Owner → OwnerUI | access rental request review (room selected) |
-| 1.1 | OwnerUI → RequestReviewCoordinator | request list (room id) |
-| 1.2 | RequestReviewCoordinator → RentalRequestLogic | get requests for room |
-| 1.3 | RentalRequestLogic → RentalRequest | provide rental requests |
-| 1.4 | RentalRequestLogic → RequestReviewCoordinator | requests with visible info |
-| 1.5 | RequestReviewCoordinator → OwnerUI | request list |
-| 1.6 | OwnerUI → Owner | display submitted requests |
-| 2 | Owner → OwnerUI | select request to handle |
-| 2.1 | OwnerUI → RequestReviewCoordinator | request selected (request id) |
-| 2.2 | RequestReviewCoordinator → RentalRequestLogic | get request details |
-| 2.3 | RentalRequestLogic → RentalRequest | provide request details |
-| 2.4 | RentalRequestLogic → RequestReviewCoordinator | request details + decision options |
-| 2.5 | RequestReviewCoordinator → OwnerUI | request details + actions (Accept / Reject / Keep Pending) |
-| 2.6 | OwnerUI → Owner | display request details and decision options |
-| 3 | Owner → OwnerUI | select decision (Accept) |
-| 3.1 | OwnerUI → RequestReviewCoordinator | decision = Accept (request id) |
-| 3.2 | RequestReviewCoordinator → RentalRequestLogic | accept rental request |
-| 3.3 | RentalRequestLogic → RentalRequest | mark request accepted |
-| 3.4 | RentalRequestLogic → RoomListing | lock room |
-| 3.5 | RentalRequestLogic → RequestReviewCoordinator | decision recorded (tenant info) |
-| 3.6 | RequestReviewCoordinator → NotificationService | compose tenant notification (decision result, tenant info) |
-| 3.7 | NotificationService → RequestReviewCoordinator | notification content |
-| 3.8 | RequestReviewCoordinator → EmailProxy | send notification (content, tenant email) |
-| 3.9 | EmailProxy → Email Provider | send notification |
-| 3.10 | Email Provider → EmailProxy | notification sent |
-| 3.11 | EmailProxy → RequestReviewCoordinator | email dispatched |
-| 3.12 | RequestReviewCoordinator → OwnerUI | decision recorded successfully |
-| 3.13 | OwnerUI → Owner | display decision recorded successfully |
+| 1 | Owner -> RentalRequestReviewUI | Rental Request Review Access |
+| 1.1 | RentalRequestReviewUI -> RequestReviewCoordinator | Rental Request List Request |
+| 1.2 | RequestReviewCoordinator -> RentalRequestLogic | Rental Request List Request |
+| 1.3 | RentalRequestLogic -> RentalRequest | Rental Request List Request |
+| 1.4 | RentalRequest -> RentalRequestLogic | Rental Request List |
+| 1.5 | RentalRequestLogic -> RequestReviewCoordinator | Rental Request List |
+| 1.6 | RequestReviewCoordinator -> RentalRequestReviewUI | Rental Request List |
+| 1.7 | RentalRequestReviewUI -> Owner | Rental Request List |
+| 2 | Owner -> RentalRequestReviewUI | Rental Request Selection |
+| 2.1 | RentalRequestReviewUI -> RequestReviewCoordinator | Rental Request Detail Request |
+| 2.2 | RequestReviewCoordinator -> RentalRequestLogic | Rental Request Detail Request |
+| 2.3 | RentalRequestLogic -> RentalRequest | Rental Request Detail Request |
+| 2.4 | RentalRequest -> RentalRequestLogic | Rental Request Detail |
+| 2.5 | RentalRequestLogic -> RequestReviewCoordinator | Rental Request Detail and Decision Options |
+| 2.6 | RequestReviewCoordinator -> RentalRequestReviewUI | Rental Request Detail and Decision Options |
+| 2.7 | RentalRequestReviewUI -> Owner | Rental Request Detail and Decision Options |
+| 3 | Owner -> RentalRequestReviewUI | Rental Request Decision |
+| 3.1 | RentalRequestReviewUI -> RequestReviewCoordinator | Rental Request Decision |
+| 3.2 | RequestReviewCoordinator -> RentalRequestLogic | Rental Request Decision |
+| 3.3 | RentalRequestLogic -> RentalRequest | Rental Request Record |
+| 3.4 | RentalRequestLogic -> RoomListing | Room Listing Status Record |
+| 3.5 | RentalRequestLogic -> RequestReviewCoordinator | Rental Request Decision Result |
+| 3.6 | RequestReviewCoordinator -> NotificationService | Tenant Notification Request |
+| 3.7 | NotificationService -> RequestReviewCoordinator | Tenant Notification |
+| 3.8 | RequestReviewCoordinator -> EmailProxy | Tenant Notification |
+| 3.9 | EmailProxy -> Email Provider | Tenant Notification |
+| 3.10 | Email Provider -> EmailProxy | Notification Delivery Result |
+| 3.11 | EmailProxy -> RequestReviewCoordinator | Notification Delivery Result |
+| 3.12 | RequestReviewCoordinator -> RentalRequestReviewUI | Rental Request Review Outcome |
+| 3.13 | RentalRequestReviewUI -> Owner | Rental Request Review Confirmation |
 
 ## Notes
-- Main sequence shows Accept decision path. Reject path follows same structure but omits room lock (step 3.4).
-- Room locking (step 3.4) is a mandatory business rule enforced by `RentalRequestLogic`, not a separate UC.
 
-Use `/drawio` to generate a visual .drawio file from this blueprint.
+- Main sequence shows the `Accept` decision path. The `Reject` path keeps the same structure but omits the room-locking effect on `RoomListing`.
+- `RentalRequestLogic` owns both the request-status update and the room-locking rule when the request is accepted.
+- Messages are kept at analysis level and avoid method-style naming.
+
+Use `/drawio` to generate a visual `.drawio` file from this blueprint.

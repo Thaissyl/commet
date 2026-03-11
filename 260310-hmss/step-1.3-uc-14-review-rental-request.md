@@ -1,7 +1,7 @@
 # Use Case: Review Rental Request
 
 ## Summary
-Owner reviews submitted rental requests for a room and decides to accept, reject, or keep each pending. Accepting locks the room from further requests and triggers an email notification to the tenant.
+Owner reviews submitted rental requests for a room and decides to accept, reject, or keep each pending. Accepting locks the room from further requests and triggers notification to the tenant.
 
 ## Dependency
 - None
@@ -21,8 +21,8 @@ Owner reviews submitted rental requests for a room and decides to accept, reject
 4. System displays the request details and available decision options (Accept / Reject / Keep Pending).
 5. Owner selects the desired decision.
 6. System records the decision for the selected request.
-7. System updates the request status and, if accepted, updates the room status to Locked / Not Requestable.
-8. System instructs Email Provider to notify the Tenant of the decision.
+7. System records the resulting request status and, if accepted, records the room as Locked / Not Requestable.
+8. System sends the decision notification to the tenant.
 9. System informs the Owner that the decision has been recorded successfully.
 
 ## Description of alternative sequences

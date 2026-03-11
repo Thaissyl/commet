@@ -1,12 +1,15 @@
-# Communication Diagram: UC-15 Reopen Room Listing — Main Sequence
+# Communication Diagram: UC-15 Reopen Room Listing - Main Sequence
 
 ## Object Layout
 
-```
-Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- RentalRequest
-                                  |                                     \-- RoomListing
-                                  |--- NotificationService
-                                  |--- EmailProxy --- Email Provider
+```text
+Owner --- ReopenArrangementUI --- RequestReviewCoordinator --- RentalRequestLogic --- RentalRequest
+                                            |                                      |
+                                            |                                      --- RoomListing
+                                            |
+                                            --- NotificationService
+                                            |
+                                            --- EmailProxy --- Email Provider
 ```
 
 ## Participants
@@ -14,7 +17,7 @@ Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- Rental
 | Position | Object | Stereotype |
 |---|---|---|
 | 1 | Owner | Actor (primary) |
-| 2 | OwnerUI | `<<user interaction>>` |
+| 2 | ReopenArrangementUI | `<<user interaction>>` |
 | 3 | RequestReviewCoordinator | `<<coordinator>>` |
 | 4 | RentalRequestLogic | `<<business logic>>` |
 | 5 | RentalRequest | `<<entity>>` |
@@ -25,35 +28,43 @@ Owner --- OwnerUI --- RequestReviewCoordinator --- RentalRequestLogic --- Rental
 
 ## Messages
 
-| # | From → To | Message |
+| # | From -> To | Message |
 |---|---|---|
-| 1 | Owner → OwnerUI | access accepted arrangement management |
-| 1.1 | OwnerUI → RequestReviewCoordinator | request accepted arrangements |
-| 1.2 | RequestReviewCoordinator → RentalRequestLogic | get accepted arrangements |
-| 1.3 | RentalRequestLogic → RentalRequest | provide accepted requests |
-| 1.4 | RentalRequestLogic → RequestReviewCoordinator | accepted arrangements + room info |
-| 1.5 | RequestReviewCoordinator → OwnerUI | accepted arrangements |
-| 1.6 | OwnerUI → Owner | display accepted arrangements |
-| 2 | Owner → OwnerUI | select arrangement to reopen |
-| 2.1 | OwnerUI → RequestReviewCoordinator | arrangement selected (request id) |
-| 2.2 | RequestReviewCoordinator → RentalRequestLogic | get arrangement details |
-| 2.3 | RentalRequestLogic → RentalRequest | provide arrangement details |
-| 2.4 | RentalRequestLogic → RequestReviewCoordinator | arrangement details + reopen consequence |
-| 2.5 | RequestReviewCoordinator → OwnerUI | arrangement details + reopen action |
-| 2.6 | OwnerUI → Owner | display arrangement details and business consequence |
-| 3 | Owner → OwnerUI | confirm reopen (offline arrangement failed) |
-| 3.1 | OwnerUI → RequestReviewCoordinator | confirm reopen |
-| 3.2 | RequestReviewCoordinator → RentalRequestLogic | reopen room |
-| 3.3 | RentalRequestLogic → RentalRequest | revoke rental request |
-| 3.4 | RentalRequestLogic → RoomListing | reopen room |
-| 3.5 | RentalRequestLogic → RequestReviewCoordinator | room reopened (tenant info) |
-| 3.6 | RequestReviewCoordinator → NotificationService | compose tenant notification (revocation event, tenant info) |
-| 3.7 | NotificationService → RequestReviewCoordinator | notification content |
-| 3.8 | RequestReviewCoordinator → EmailProxy | send notification (content, tenant email) |
-| 3.9 | EmailProxy → Email Provider | send notification |
-| 3.10 | Email Provider → EmailProxy | notification sent |
-| 3.11 | EmailProxy → RequestReviewCoordinator | email dispatched |
-| 3.12 | RequestReviewCoordinator → OwnerUI | room reopened successfully |
-| 3.13 | OwnerUI → Owner | display room listing reopened successfully |
+| 1 | Owner -> ReopenArrangementUI | Accepted Arrangement Management Access |
+| 1.1 | ReopenArrangementUI -> RequestReviewCoordinator | Accepted Arrangement List Request |
+| 1.2 | RequestReviewCoordinator -> RentalRequestLogic | Accepted Arrangement List Request |
+| 1.3 | RentalRequestLogic -> RentalRequest | Accepted Arrangement List Request |
+| 1.4 | RentalRequest -> RentalRequestLogic | Accepted Arrangement List |
+| 1.5 | RentalRequestLogic -> RequestReviewCoordinator | Accepted Arrangement List and Room Information |
+| 1.6 | RequestReviewCoordinator -> ReopenArrangementUI | Accepted Arrangement List |
+| 1.7 | ReopenArrangementUI -> Owner | Accepted Arrangement List |
+| 2 | Owner -> ReopenArrangementUI | Accepted Arrangement Selection |
+| 2.1 | ReopenArrangementUI -> RequestReviewCoordinator | Accepted Arrangement Detail Request |
+| 2.2 | RequestReviewCoordinator -> RentalRequestLogic | Accepted Arrangement Detail Request |
+| 2.3 | RentalRequestLogic -> RentalRequest | Accepted Arrangement Detail Request |
+| 2.4 | RentalRequest -> RentalRequestLogic | Accepted Arrangement Detail |
+| 2.5 | RentalRequestLogic -> RequestReviewCoordinator | Reopen Detail and Business Consequence |
+| 2.6 | RequestReviewCoordinator -> ReopenArrangementUI | Reopen Detail and Business Consequence |
+| 2.7 | ReopenArrangementUI -> Owner | Reopen Detail and Business Consequence |
+| 3 | Owner -> ReopenArrangementUI | Reopen Confirmation |
+| 3.1 | ReopenArrangementUI -> RequestReviewCoordinator | Reopen Request |
+| 3.2 | RequestReviewCoordinator -> RentalRequestLogic | Reopen Request |
+| 3.3 | RentalRequestLogic -> RentalRequest | Rental Request Record |
+| 3.4 | RentalRequestLogic -> RoomListing | Room Listing Status Record |
+| 3.5 | RentalRequestLogic -> RequestReviewCoordinator | Reopen Result |
+| 3.6 | RequestReviewCoordinator -> NotificationService | Tenant Notification Request |
+| 3.7 | NotificationService -> RequestReviewCoordinator | Tenant Notification |
+| 3.8 | RequestReviewCoordinator -> EmailProxy | Tenant Notification |
+| 3.9 | EmailProxy -> Email Provider | Tenant Notification |
+| 3.10 | Email Provider -> EmailProxy | Notification Delivery Result |
+| 3.11 | EmailProxy -> RequestReviewCoordinator | Notification Delivery Result |
+| 3.12 | RequestReviewCoordinator -> ReopenArrangementUI | Reopen Outcome |
+| 3.13 | ReopenArrangementUI -> Owner | Reopen Confirmation |
 
-Use `/drawio` to generate a visual .drawio file from this blueprint.
+## Notes
+
+- `RentalRequestLogic` owns both the request revocation and the room reopening rule.
+- The notification path is coordinated after the reopen result is recorded.
+- Messages are kept at analysis level and avoid method-style naming.
+
+Use `/drawio` to generate a visual `.drawio` file from this blueprint.

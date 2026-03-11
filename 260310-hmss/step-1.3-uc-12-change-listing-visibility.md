@@ -18,9 +18,9 @@ Owner hides or archives a published room listing, removing it from public search
 1. Owner accesses the listing management function and selects a published listing.
 2. System displays the current listing status and available visibility actions (Hide / Archive).
 3. Owner selects the desired visibility action.
-4. System checks that the selected action is valid for the listing's current status.
+4. System evaluates whether the selected action is valid for the listing's current status.
 5. Owner confirms the visibility change.
-6. System updates the listing status to Hidden or Archived.
+6. System records the listing status as Hidden or Archived.
 7. System informs the Owner that the listing visibility has been changed successfully.
 
 ## Description of alternative sequences
@@ -32,7 +32,7 @@ Owner hides or archives a published room listing, removing it from public search
 - **Performance:** Visibility change must be reflected immediately so the listing no longer appears in public search.
 
 ## Postcondition
-The listing is no longer visible in public search. Status is Hidden or Archived.
+Selected listing is no longer visible in public search and is in Hidden or Archived status.
 
 ## Outstanding questions
 - The archive retention policy and whether archived listings can be restored will be finalized later.

@@ -1,10 +1,11 @@
-# Communication Diagram: UC-13 Submit Owner Verification — Main Sequence
+# Communication Diagram: UC-13 Submit Owner Verification - Main Sequence
 
 ## Object Layout
 
-```
-Owner --- OwnerUI --- VerificationCoordinator --- VerificationLogic --- OwnerVerification
-                                  |--- CloudStorageProxy --- Cloud Storage
+```text
+Owner --- VerificationSubmissionUI --- VerificationCoordinator --- VerificationLogic --- OwnerVerification
+                                                 |
+                                                 --- CloudStorageProxy --- Cloud Storage
 ```
 
 ## Participants
@@ -12,7 +13,7 @@ Owner --- OwnerUI --- VerificationCoordinator --- VerificationLogic --- OwnerVer
 | Position | Object | Stereotype |
 |---|---|---|
 | 1 | Owner | Actor (primary) |
-| 2 | OwnerUI | `<<user interaction>>` |
+| 2 | VerificationSubmissionUI | `<<user interaction>>` |
 | 3 | VerificationCoordinator | `<<coordinator>>` |
 | 4 | VerificationLogic | `<<business logic>>` |
 | 5 | OwnerVerification | `<<entity>>` |
@@ -21,24 +22,35 @@ Owner --- OwnerUI --- VerificationCoordinator --- VerificationLogic --- OwnerVer
 
 ## Messages
 
-| # | From → To | Message |
+| # | From -> To | Message |
 |---|---|---|
-| 1 | Owner → OwnerUI | access verification submission |
-| 1.1 | OwnerUI → VerificationCoordinator | request verification form |
-| 1.2 | VerificationCoordinator → VerificationLogic | get verification requirements |
-| 1.3 | VerificationLogic → VerificationCoordinator | verification form requirements |
-| 1.4 | VerificationCoordinator → OwnerUI | verification form |
-| 1.5 | OwnerUI → Owner | display verification form and document requirements |
-| 2 | Owner → OwnerUI | personal info + supporting documents |
-| 2.1 | OwnerUI → VerificationCoordinator | personal info + documents |
-| 2.2 | VerificationCoordinator → CloudStorageProxy | upload identification documents |
-| 2.3 | CloudStorageProxy → Cloud Storage | store documents |
-| 2.4 | Cloud Storage → CloudStorageProxy | documents stored (document refs) |
-| 2.5 | CloudStorageProxy → VerificationCoordinator | document refs |
-| 2.6 | VerificationCoordinator → VerificationLogic | validate and record submission (info + doc refs) |
-| 2.7 | VerificationLogic → OwnerVerification | create submission (status = Pending Review) |
-| 2.8 | VerificationLogic → VerificationCoordinator | submission recorded |
-| 2.9 | VerificationCoordinator → OwnerUI | submission received and pending review |
-| 2.10 | OwnerUI → Owner | display submission received, awaiting admin review |
+| 1 | Owner -> VerificationSubmissionUI | Owner Verification Submission Access |
+| 1.1 | VerificationSubmissionUI -> VerificationCoordinator | Verification Submission Form Request |
+| 1.2 | VerificationCoordinator -> VerificationLogic | Verification Requirements Request |
+| 1.3 | VerificationLogic -> VerificationCoordinator | Verification Requirements |
+| 1.4 | VerificationCoordinator -> VerificationSubmissionUI | Verification Submission Form |
+| 1.5 | VerificationSubmissionUI -> Owner | Verification Submission Form |
+| 2 | Owner -> VerificationSubmissionUI | Verification Information and Documents |
+| 2.1 | VerificationSubmissionUI -> VerificationCoordinator | Verification Information and Documents |
+| 2.2 | VerificationCoordinator -> CloudStorageProxy | Verification Documents |
+| 2.3 | CloudStorageProxy -> Cloud Storage | Verification Documents |
+| 2.4 | Cloud Storage -> CloudStorageProxy | Document References |
+| 2.5 | CloudStorageProxy -> VerificationCoordinator | Document References |
+| 2.6 | VerificationCoordinator -> VerificationSubmissionUI | Verification Submission Review |
+| 2.7 | VerificationSubmissionUI -> Owner | Verification Submission Review |
+| 3 | Owner -> VerificationSubmissionUI | Verification Submission Confirmation |
+| 3.1 | VerificationSubmissionUI -> VerificationCoordinator | Verification Submission Request |
+| 3.2 | VerificationCoordinator -> VerificationLogic | Verification Submission Information |
+| 3.3 | VerificationLogic -> OwnerVerification | Owner Verification Record |
+| 3.4 | OwnerVerification -> VerificationLogic | Owner Verification Record |
+| 3.5 | VerificationLogic -> VerificationCoordinator | Verification Submission Result |
+| 3.6 | VerificationCoordinator -> VerificationSubmissionUI | Verification Submission Outcome |
+| 3.7 | VerificationSubmissionUI -> Owner | Verification Submission Confirmation |
 
-Use `/drawio` to generate a visual .drawio file from this blueprint.
+## Notes
+
+- `VerificationCoordinator` handles document storage through `CloudStorageProxy` before the submission is confirmed.
+- `VerificationLogic` encapsulates verification-submission rules and records the resulting `OwnerVerification`.
+- Messages are kept at analysis level and avoid method-style naming.
+
+Use `/drawio` to generate a visual `.drawio` file from this blueprint.

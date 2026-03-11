@@ -1,7 +1,7 @@
 # Use Case: Update Room Listing
 
 ## Summary
-Owner updates information on an existing room listing. System records the changes and updates listing data.
+Owner updates information on an existing room listing. System records the updated room listing information.
 
 ## Dependency
 - None
@@ -16,26 +16,26 @@ Owner updates information on an existing room listing. System records the change
 
 ## Description of main sequence
 1. Owner accesses the room listing management function and selects an existing listing to update.
-2. System displays the current listing information in editable form.
-3. Owner modifies the desired fields (title, description, price, capacity, amenities, available-from date) and optionally uploads new images.
-4. System validates the updated fields and sends any new images to Cloud Storage.
+2. System displays the current room listing information in editable form.
+3. Owner modifies the desired fields (title, description, price, capacity, amenities, available-from date) and optionally provides new images.
+4. System records any new images and prepares the updated listing information for review.
 5. Owner reviews the changes and confirms the update.
-6. System records the updated listing information.
+6. System records the updated room listing information.
 7. System informs the Owner that the listing has been updated successfully.
 
 ## Description of alternative sequences
 - **Step 4: Required fields are cleared or invalid**
   - 4.1: System informs the Owner which fields must be corrected.
   - Returns to Step 3.
-- **Step 4: Cloud Storage unavailable**
-  - 4.1: System informs the Owner that image upload failed at this time.
+- **Step 4: Image storage unavailable**
+  - 4.1: System informs the Owner that image storage failed at this time.
   - Returns to Step 3.
 
 ## Nonfunctional Requirements
-- **Performance:** Updated listing information must be persisted reliably and reflect promptly.
+- **Performance:** Updated listing information must be recorded reliably and reflect promptly.
 
 ## Postcondition
-Room listing information is updated in the system.
+Updated room listing information is recorded in the system.
 
 ## Outstanding questions
 - Whether updating a published listing triggers a re-verification step will be finalized later.

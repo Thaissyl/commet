@@ -1,9 +1,9 @@
-# Communication Diagram: UC-12 Change Listing Visibility — Main Sequence
+# Communication Diagram: UC-12 Change Listing Visibility - Main Sequence
 
 ## Object Layout
 
-```
-Owner --- OwnerUI --- ListingManagementCoordinator --- RoomListingLogic --- RoomListing
+```text
+Owner --- RoomListingManagementUI --- ListingManagementCoordinator --- RoomListingRules --- RoomListing
 ```
 
 ## Participants
@@ -11,30 +11,44 @@ Owner --- OwnerUI --- ListingManagementCoordinator --- RoomListingLogic --- Room
 | Position | Object | Stereotype |
 |---|---|---|
 | 1 | Owner | Actor (primary) |
-| 2 | OwnerUI | `<<user interaction>>` |
+| 2 | RoomListingManagementUI | `<<user interaction>>` |
 | 3 | ListingManagementCoordinator | `<<coordinator>>` |
-| 4 | RoomListingLogic | `<<business logic>>` |
+| 4 | RoomListingRules | `<<business logic>>` |
 | 5 | RoomListing | `<<entity>>` |
 
 ## Messages
 
-| # | From → To | Message |
+| # | From -> To | Message |
 |---|---|---|
-| 1 | Owner → OwnerUI | access listing management, select published listing |
-| 1.1 | OwnerUI → ListingManagementCoordinator | listing selected (listing id) |
-| 1.2 | ListingManagementCoordinator → RoomListingLogic | get listing status + available visibility actions |
-| 1.3 | RoomListingLogic → RoomListing | fetch listing data |
-| 1.4 | RoomListingLogic → ListingManagementCoordinator | listing status + available actions |
-| 1.5 | ListingManagementCoordinator → OwnerUI | listing status + visibility actions (Hide / Archive) |
-| 1.6 | OwnerUI → Owner | display listing status and visibility options |
-| 2 | Owner → OwnerUI | select visibility action (Hide or Archive) |
-| 2.1 | OwnerUI → ListingManagementCoordinator | visibility action (Hide / Archive) |
-| 2.2 | ListingManagementCoordinator → RoomListingLogic | validate and apply visibility change |
-| 2.3 | RoomListingLogic → RoomListing | check current status (action valid?) |
-| 2.4 | RoomListing → RoomListingLogic | current status = Published Available (valid) |
-| 2.5 | RoomListingLogic → RoomListing | update status to Hidden or Archived |
-| 2.6 | RoomListingLogic → ListingManagementCoordinator | visibility changed |
-| 2.7 | ListingManagementCoordinator → OwnerUI | visibility changed successfully |
-| 2.8 | OwnerUI → Owner | display listing visibility changed successfully |
+| 1 | Owner -> RoomListingManagementUI | Listing Management Access |
+| 1.1 | RoomListingManagementUI -> ListingManagementCoordinator | Published Listing Selection |
+| 1.2 | ListingManagementCoordinator -> RoomListingRules | Visibility Options Request |
+| 1.3 | RoomListingRules -> RoomListing | Visibility Options Request |
+| 1.4 | RoomListing -> RoomListingRules | Listing Visibility Context |
+| 1.5 | RoomListingRules -> ListingManagementCoordinator | Listing Visibility Context |
+| 1.6 | ListingManagementCoordinator -> RoomListingManagementUI | Listing Visibility Options |
+| 1.7 | RoomListingManagementUI -> Owner | Listing Visibility Options |
+| 2 | Owner -> RoomListingManagementUI | Visibility Action Selection |
+| 2.1 | RoomListingManagementUI -> ListingManagementCoordinator | Visibility Action Selection |
+| 2.2 | ListingManagementCoordinator -> RoomListingRules | Visibility Change Assessment |
+| 2.3 | RoomListingRules -> RoomListing | Visibility Change Assessment |
+| 2.4 | RoomListing -> RoomListingRules | Visibility Change Result |
+| 2.5 | RoomListingRules -> ListingManagementCoordinator | Visibility Change Review |
+| 2.6 | ListingManagementCoordinator -> RoomListingManagementUI | Visibility Change Review |
+| 2.7 | RoomListingManagementUI -> Owner | Visibility Change Review |
+| 3 | Owner -> RoomListingManagementUI | Visibility Change Confirmation |
+| 3.1 | RoomListingManagementUI -> ListingManagementCoordinator | Visibility Change Request |
+| 3.2 | ListingManagementCoordinator -> RoomListingRules | Visibility Change Decision |
+| 3.3 | RoomListingRules -> RoomListing | Listing Visibility Record |
+| 3.4 | RoomListing -> RoomListingRules | Listing Visibility Record |
+| 3.5 | RoomListingRules -> ListingManagementCoordinator | Visibility Change Result |
+| 3.6 | ListingManagementCoordinator -> RoomListingManagementUI | Visibility Change Outcome |
+| 3.7 | RoomListingManagementUI -> Owner | Visibility Change Confirmation |
 
-Use `/drawio` to generate a visual .drawio file from this blueprint.
+## Notes
+
+- `ListingManagementCoordinator` separates the visibility review step from the confirmed visibility change step.
+- `RoomListingRules` evaluates action validity and applies the resulting visibility state change to `RoomListing`.
+- Messages are kept at analysis level and avoid method-style naming.
+
+Use `/drawio` to generate a visual `.drawio` file from this blueprint.
