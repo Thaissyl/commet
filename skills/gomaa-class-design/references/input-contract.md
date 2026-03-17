@@ -13,6 +13,16 @@ Use this reference to decide whether the source set is complete enough for markd
 - matching `step-2.3-statechart-*.md` files for classes with lifecycle behavior
 - `step-3.0-design-communication-diagram.md` when the user wants class interfaces and the design class diagram to align with a finalized design interaction view
 
+## Step-3.0 precedence
+
+If `step-3.0-design-communication-diagram.md` exists in the same design scope folder, treat it as the authoritative source for:
+
+- design participant names
+- design participant stereotypes
+- interaction ordering
+- synchronous versus asynchronous call style
+- message signatures that should propagate into `step-3.1` and `step-3.2`
+
 ## Normalize to this model
 
 - `target_scope`

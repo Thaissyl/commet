@@ -1,4 +1,4 @@
 interface:
   display_name: "Draw.io Design Class Diagram"
-  short_description: "Build UML class diagrams in draw.io"
-  default_prompt: "Use $drawio-design-class-diagram to turn this design class diagram blueprint into an editable .drawio UML class diagram."
+  short_description: "Build UML class diagrams in draw.io synced with step-3.0"
+  default_prompt: "Use $drawio-design-class-diagram to turn this synced step-3.2 design class diagram blueprint into an editable .drawio UML class diagram aligned with step-3.0."

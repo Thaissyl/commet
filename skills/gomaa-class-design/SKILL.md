@@ -1,6 +1,6 @@
 ---
 name: gomaa-class-design
-description: Generate markdown-only Gomaa/COMET Phase Design artifacts from Phase 1.3 use case descriptions, Phase 2.1 static model, Phase 2.2 communication diagrams, and optional Phase 2.3 statecharts. Use when Codex must derive class interface specifications, operation contracts, private attributes, design communication diagrams, and a design class diagram blueprint for detailed design. Support both COMET-pure outputs and stack-specific simplifications such as ASP.NET simple layered backend. Do not use for analysis-level communication diagrams or draw.io rendering.
+description: Generate markdown-only Gomaa/COMET Phase Design artifacts from Phase 1.3 use case descriptions, Phase 2.1 static model, Phase 2.2 communication diagrams, optional Phase 2.3 statecharts, and design-level communication diagrams at step 3.0. Use when Codex must derive class interface specifications, operation contracts, private attributes, design communication diagrams, and a design class diagram blueprint for detailed design. Support both COMET-pure outputs and stack-specific simplifications such as ASP.NET simple layered backend. When `step-3.0-design-communication-diagram.md` exists, propagate its participants, stereotypes, and call flow into `step-3.1` and `step-3.2`. Do not use for analysis-level communication diagrams or draw.io rendering.
 ---
 
 # Gomaa Class Design
@@ -21,6 +21,7 @@ Load [references/input-contract.md](references/input-contract.md) before derivin
 
 Generate markdown only.
 
+- `phase-3/<scope-folder>/step-3.0-design-communication-diagram.md` when the user asks for design interaction output or when later outputs must be aligned to an existing design interaction model
 - `phase-3/<scope-folder>/step-3.1-class-interface-<class>.md`
 - `phase-3/<scope-folder>/step-3.2-design-class-diagram-blueprint.md`
 
@@ -34,9 +35,6 @@ Use:
 - [references/class-interface-spec-template.md](references/class-interface-spec-template.md)
 - [references/design-class-diagram-blueprint-template.md](references/design-class-diagram-blueprint-template.md)
 
-Optional when the user asks for design interaction output:
-- `phase-3/<scope-folder>/step-3.0-design-communication-diagram.md`
-
 ## Workflow
 
 1. Define scope by target class, subsystem, or use-case cluster.
@@ -48,7 +46,7 @@ Optional when the user asks for design interaction output:
 7. Map incoming messages to candidate public operations. Do not turn every outgoing message into a public operation. If a class is in scope only for relationships or hierarchy and has no justified incoming messages, record `no public operations in current scope` instead of inventing services.
 8. Derive `in` parameters, `out` parameters, preconditions, postconditions, and invariants.
 9. When the user asks for a design communication diagram, convert analysis messages into function-style messages. Prefer one directional message per function call and place both `in` and `out` parameters in that single message signature. Show a `<<user interaction>>` object between a human actor and any backend controller or boundary object. Use asynchronous messages without `out` parameters when the user explicitly wants background or fire-and-forget behavior such as outbound email dispatch.
-10. If `step-3.0-design-communication-diagram.md` exists or is being generated in the same request, treat it as the authoritative design interaction model for participant names, stereotypes, orchestration order, synchronous versus asynchronous calls, and message signatures.
+10. If `step-3.0-design-communication-diagram.md` exists or is being generated in the same request, load it before writing `step-3.1` or `step-3.2` and treat it as the authoritative design interaction model for participant names, stereotypes, orchestration order, synchronous versus asynchronous calls, and message signatures.
 11. Merge duplicate operations across use cases when they represent the same service.
 12. Write the class interface specification.
 13. Add the class to the design class diagram blueprint and update relationships if the analysis model already defines them.
@@ -77,6 +75,7 @@ Load [references/operation-mapping-rules.md](references/operation-mapping-rules.
   - non-actor participants in `step-3.0` become candidate class boxes in `step-3.2`
   - call links in `step-3.0` become candidate associations in `step-3.2`
   - participant stereotypes from `step-3.0` should be preserved across `step-3.1` and `step-3.2` unless the user explicitly wants a refinement
+- Do not finalize `step-3.1` or `step-3.2` while ignoring an existing `step-3.0` in the same scope folder.
 - Trace every operation to at least one communication message and one use-case responsibility.
 
 ## Default Behavior for Gaps

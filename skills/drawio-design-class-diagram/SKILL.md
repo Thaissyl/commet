@@ -1,6 +1,6 @@
 ---
 name: drawio-design-class-diagram
-description: Create or update editable draw.io UML design class diagrams from markdown design class diagram blueprints and optional class interface specification files. Use when Codex must parse class names, stereotypes, private attributes, public operations, associations, aggregation or composition, generalization, multiplicity, and render a design class diagram as draw.io XML. Support both COMET-pure class models and stack-specific simplified class models such as ASP.NET simple layered backend. Use only for design class diagrams, not communication diagrams.
+description: Create or update editable draw.io UML design class diagrams from markdown design class diagram blueprints and optional class interface specification files. Use when Codex must parse class names, stereotypes, private attributes, public operations, associations, aggregation or composition, generalization, multiplicity, and render a design class diagram as draw.io XML. Support both COMET-pure class models and stack-specific simplified class models such as ASP.NET simple layered backend. When `step-3.0-design-communication-diagram.md` exists in the same scope, use it to keep class presence, stereotypes, and left-to-right flow aligned with the finalized design interaction model. Use only for design class diagrams, not communication diagrams.
 ---
 
 # Drawio Design Class Diagram
@@ -21,6 +21,8 @@ Use this skill to turn design class diagram source text into editable draw.io XM
 - Use for a Phase 3 folder that contains `step-3.2-design-class-diagram-blueprint.md` and optional `step-3.1-class-interface-*.md` files.
 - When available, also read `step-3.0-design-communication-diagram.md` to keep the class diagram aligned with the finalized design interaction model.
 - Use for update requests that include an existing `.drawio` file plus revised blueprint text.
+
+If `step-3.0-design-communication-diagram.md` exists in the same scope folder, load it before drawing.
 
 Load [references/example-blueprint.md](references/example-blueprint.md) only when you need a concrete example of the normalized source format.
 
@@ -50,6 +52,7 @@ When a class box in the blueprint already defines attributes or operations, trea
 - Parse the blueprint into the normalized model.
 - Validate class names, stereotypes, relationship endpoints, multiplicities, and generalization pairs before drawing.
 - When `step-3.0-design-communication-diagram.md` is available, cross-check that non-actor design participants from `step-3.0` are represented consistently in the blueprint before drawing.
+- If the blueprint conflicts with `step-3.0`, stop and reconcile the difference instead of drawing from stale class-level inputs.
 - Normalize infix relationship shorthand `ClassA mult -- mult ClassB : label` to `association` before drawing.
 - Render each class as a simple single-cell UML class box, not a nested container assembly.
 - Keep private attributes in the middle section and public operations in the bottom section of that single class box.
@@ -78,6 +81,7 @@ When a class box in the blueprint already defines attributes or operations, trea
 - Render each class as a simple UML class box with three visible sections inside one draw.io cell.
 - Use stereotype-driven colors consistently across the full diagram.
 - When `step-3.0` is available, do not silently omit a still-relevant non-actor participant that appears there but is also intended to exist in the class-level design.
+- When `step-3.0` is available, do not draw a class-level participant order that contradicts its finalized left-to-right interaction flow unless the user explicitly asks for a different layout.
 - Keep multiplicities visible when the source provides them.
 - Prefer short association names on the line; do not dump long prose onto the edge.
 - Show navigability only when it is explicit or unambiguous from the normalized model.
