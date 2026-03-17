@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gomaa Class Design"
+  short_description: "Generate markdown class design blueprints"
+  default_prompt: "Use $gomaa-class-design to turn these COMET artifacts into markdown class interface specifications and a design class diagram blueprint."
