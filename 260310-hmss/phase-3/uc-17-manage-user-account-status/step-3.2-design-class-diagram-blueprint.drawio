@@ -1,0 +1,99 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="uc17-design-class-diagram" name="UC-17 Manage User Account Status">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1800" pageHeight="1100">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="class-admin-ui" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&#171;user interaction&#187;&lt;br/&gt;AdminUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;- displayedUserAccountList: UserAccountSummaryList&lt;br/&gt;- selectedUserAccountReference: UserAccountReference&lt;br/&gt;- displayedAvailableStatusActions: AccountStatusActionList&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ accessUserAccountAdministration(out userAccountList: UserAccountSummaryList)&lt;br/&gt;+ selectUserAccount(in userAccountReference: UserAccountReference, out userAccountDetail: UserAccountDetail, out availableStatusActions: AccountStatusActionList)&lt;br/&gt;+ submitAccountStatusChange(in userAccountReference: UserAccountReference, in accountStatusAction: AccountStatusAction, out accountStatusChangeOutcome: AccountStatusChangeOutcome)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="330" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="class-admin-coordinator" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&#171;coordinator&#187;&lt;br/&gt;AdminCoordinator&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none in current scope&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getUserAccountList(out userAccountList: UserAccountSummaryList)&lt;br/&gt;+ getUserAccountDetailAndAvailableStatusActions(in userAccountReference: UserAccountReference, out userAccountDetail: UserAccountDetail, out availableStatusActions: AccountStatusActionList)&lt;br/&gt;+ applyAccountStatusChange(in userAccountReference: UserAccountReference, in accountStatusAction: AccountStatusAction, out accountStatusChangeOutcome: AccountStatusChangeOutcome, out deliveryStatus: DeliveryStatus)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="190" width="340" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="class-user-management-logic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&#171;business logic&#187;&lt;br/&gt;UserManagementLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none in current scope&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ getUserAccountList(out userAccountList: UserAccountSummaryList)&lt;br/&gt;+ getUserAccountDetailAndAvailableStatusActions(in userAccountReference: UserAccountReference, out userAccountDetail: UserAccountDetail, out availableStatusActions: AccountStatusActionList)&lt;br/&gt;+ changeUserAccountStatus(in userAccountReference: UserAccountReference, in accountStatusAction: AccountStatusAction, out accountStatusChangeOutcome: AccountStatusChangeOutcome)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="810" y="190" width="340" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="class-user-account" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;data abstraction&#187;&lt;br/&gt;UserAccount&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- userId: UserId&lt;br/&gt;- fullName: FullName&lt;br/&gt;- email: EmailAddress&lt;br/&gt;- role: UserRole&lt;br/&gt;- accountStatus: AccountStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ getUserAccountList(out userAccountList: UserAccountSummaryList)&lt;br/&gt;+ getUserAccountDetail(in userAccountReference: UserAccountReference, out userAccountDetail: UserAccountDetail, out availableStatusActions: AccountStatusActionList)&lt;br/&gt;+ applyStatusTransition(in accountStatusAction: AccountStatusAction, out accountStatusRecord: AccountStatusRecord)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="180" width="340" height="220" as="geometry"/>
+        </mxCell>
+        <mxCell id="class-notification-service" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#c4b5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ede9fe&quot;&gt;&lt;font color=&quot;#7c3aed&quot;&gt;&lt;b&gt;&#171;service&#187;&lt;br/&gt;NotificationService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;none in current scope&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;+ composeUserAccountStatusChangeNotification(in userAccountReference: UserAccountReference, in accountStatusChangeOutcome: AccountStatusChangeOutcome, out userNotification: NotificationMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="500" width="340" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="class-email-proxy" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&#171;proxy&#187;&lt;br/&gt;EmailProxy&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none in current scope&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ sendUserAccountStatusChangeNotification(in userNotification: NotificationMessage, out deliveryStatus: DeliveryStatus)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="500" width="340" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-admin-ui-admin-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-admin-ui" target="class-admin-coordinator">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-admin-coordinator-user-management-logic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-admin-coordinator" target="class-user-management-logic">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-user-management-logic-user-account" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-user-management-logic" target="class-user-account">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-admin-coordinator-notification-service" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-admin-coordinator" target="class-notification-service">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="edge-admin-coordinator-email-proxy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-admin-coordinator" target="class-email-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="460"/>
+              <mxPoint x="1370" y="460"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-admin-ui-admin-coordinator-source" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="355" y="275" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-ui-admin-coordinator-target" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="395" y="275" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-admin-ui-admin-coordinator" value="submits requests &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="235" width="170" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-user-management-logic-source" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="745" y="265" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-user-management-logic-target" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="785" y="265" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-admin-coordinator-user-management-logic" value="delegates rules &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="675" y="225" width="190" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-user-management-logic-user-account-source" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1135" y="265" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-user-management-logic-user-account-target" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1165" y="265" width="50" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-user-management-logic-user-account" value="manages status &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="225" width="180" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-notification-service-source" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="570" y="400" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-notification-service-target" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="570" y="475" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-admin-coordinator-notification-service" value="requests notification v" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="430" width="210" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-email-proxy-source" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="565" y="440" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-admin-coordinator-email-proxy-target" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="475" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-admin-coordinator-email-proxy" value="dispatches email &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="430" width="180" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="note-1" value="Normalized from phase-2 participant `User` to canonical design class `UserAccount`." style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="690" width="320" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="note-2" value="Account-status policy is provisional in design scope: `Active &lt;-&gt; Suspended -&gt; Disabled`." style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="810" y="690" width="340" height="70" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

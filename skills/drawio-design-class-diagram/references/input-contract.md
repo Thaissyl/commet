@@ -6,6 +6,7 @@ Use this reference when normalizing design class diagram source text or deciding
 
 - Accept structured markdown with sections such as `Scope`, `Class Boxes`, `Relationships`, `Generalizations`, and optional `Notes`.
 - Accept a Phase 3 use-case or subsystem folder when it contains a design class diagram blueprint and optional per-class interface specs.
+- When present in the same folder, accept `step-3.0-design-communication-diagram.md` as an alignment source for class presence and stereotypes.
 - Accept an existing `.drawio` file only when the user also provides the revised blueprint source or a precise change request.
 - Ignore supplemental sections that help traceability but do not define geometry, such as `Source artifacts` and `Traceability Summary`, unless the user explicitly asks to visualize them.
 - Accept infix association shorthand in `Relationships`, such as ``ClassA 1 -- 1 ClassB : label``.
@@ -15,6 +16,9 @@ Use this reference when normalizing design class diagram source text or deciding
 Use a model with these fields before drawing:
 
 - `title`
+- `design_style`
+  - `comet-pure`, or
+  - `stack-specific-simplified`
 - `classes[]`
   - `name`
   - `stereotype`
@@ -34,6 +38,11 @@ Use a model with these fields before drawing:
 - `generalizations[]`
   - `superclass`
   - `subclass`
+- `design_interaction`
+  - `participants[]`
+    - `name`
+    - `stereotype`
+    - `kind`
 - `notes[]`
 
 ## Class Rules
@@ -46,6 +55,8 @@ Use a model with these fields before drawing:
 - Treat `- attr: Type` and `+ op(...)` lines in the blueprint as the authoritative visible members for drawing.
 - If the blueprint omits attributes or operations for a class, use matching `step-3.1-class-interface-*.md` files only when they are explicitly in scope and clearly match that class.
 - Keep blueprint ordering when it is already reasonable because it often reflects the intended reading order in the report.
+- If the blueprint intentionally omits a separate `data abstraction`, `business logic`, or facade class for a stack-specific simplified backend, preserve that omission and do not infer the missing class.
+- If `step-3.0` is available, keep class presence and stereotype naming aligned with its non-actor design participants unless the blueprint explicitly documents a deliberate refinement.
 
 ## Relationship Rules
 
@@ -81,6 +92,7 @@ Stop and ask focused clarification questions when any of these appear:
 - generalization without clear superclass and subclass
 - the request is not actually for a UML design class diagram
 - two different source files disagree on a class signature and the user did not define precedence
+- `step-3.0` clearly contains a still-relevant non-actor participant that the blueprint silently drops, and the omission is not explained
 
 ## Output Convention
 

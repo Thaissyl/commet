@@ -202,10 +202,18 @@ Use these defaults unless the blueprint or user says otherwise:
 - coordinators and business logic near the center
 - data abstractions to the right or lower-right
 - services and proxies below or to the right of the coordinating class
+- for a simple layered backend such as `AdminUI -> Controller -> Repository`:
+  - keep `user interaction` at the far left
+  - place the controller or boundary object in the center-left as the visual hub
+  - place the repository to the right of the controller
+  - place notification or infrastructure services below or lower-right of the controller
+  - do not invent extra `data abstraction` or facade class boxes when the blueprint intentionally omits them
 - superclasses above subclasses when generalization exists
 - keep the main association chain on one row when possible
 - keep a bottom or right-side strip free for optional notes only when notes are actually rendered
 - avoid crossing the main horizontal association chain with service or proxy edges
+
+When `step-3.0-design-communication-diagram.md` is available, prefer a left-to-right layout that mirrors its participant flow for any overlapping non-actor design participants.
 
 Recommended spacing:
 - horizontal spacing around `220-280`

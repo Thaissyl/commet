@@ -11,6 +11,7 @@ Use this reference to decide whether the source set is complete enough for markd
 ## Optional source set
 
 - matching `step-2.3-statechart-*.md` files for classes with lifecycle behavior
+- `step-3.0-design-communication-diagram.md` when the user wants class interfaces and the design class diagram to align with a finalized design interaction view
 
 ## Normalize to this model
 
@@ -18,6 +19,11 @@ Use this reference to decide whether the source set is complete enough for markd
   - class names, or
   - use-case cluster, or
   - subsystem name
+- `design_style`
+  - `comet-pure`, or
+  - `stack-specific-simplified`
+- `stack_hint`
+  - optional framework or technology target such as `asp.net simple layered backend`
 - `classes[]`
   - `name`
   - `stereotype`
@@ -37,6 +43,16 @@ Use this reference to decide whether the source set is complete enough for markd
     - `from`
     - `to`
     - `text`
+- `design_interaction`
+  - `participants[]`
+    - `name`
+    - `stereotype`
+    - `kind`
+  - `messages[]`
+    - `number`
+    - `from`
+    - `to`
+    - `signature`
 - `state_models[]`
   - `class_name`
   - `states[]`
@@ -48,6 +64,9 @@ Use this reference to decide whether the source set is complete enough for markd
 - Require at least one incoming message to the target class, unless the class is purely structural in the chosen scope.
 - Require use-case coverage for every operation that will be exposed publicly.
 - Require statechart coverage when the class contract depends on status or state transitions.
+- If the user explicitly selects a simplified stack-specific design, allow analysis `<<entity>>` responsibilities to be represented by a repository-managed record type instead of a separate `<<data abstraction>>` class.
+- If the user explicitly selects a simplified stack-specific design, allow a controller or boundary object to orchestrate repository and infrastructure collaborators directly.
+- If `step-3.0` exists, require participant names and stereotypes in `step-3.1` and `step-3.2` to stay aligned unless the user explicitly requests a redesign between steps.
 
 Purely structural classes are allowed only when they are kept in scope for relationships, composition, aggregation, or generalization. For those classes:
 
@@ -74,6 +93,8 @@ If the user insists on proceeding with incomplete inputs:
 - do not invent private attributes or relationships that are not supported by the static model
 - do not finalize lifecycle-sensitive preconditions, postconditions, or invariants without a supporting statechart
 - mark all unsupported lifecycle-sensitive statements as assumptions
+- preserve any user-requested simplification that intentionally removes intermediate layers or separate in-memory design objects
+- when `step-3.0` exists, prefer its participant list and message signatures over older analysis naming when deriving `step-3.1` and `step-3.2`
 
 ## Output Naming
 
