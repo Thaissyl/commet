@@ -21,7 +21,7 @@
 
 ### `UserAccountAdminController`
 
-- Stereotype: `<<boundary>>`
+- Stereotype: `<<coordinator>>`
 - Attributes:
   - none in current scope
 - Operations:

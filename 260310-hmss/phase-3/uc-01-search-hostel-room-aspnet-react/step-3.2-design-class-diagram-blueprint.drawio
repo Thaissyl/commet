@@ -1,0 +1,179 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UC-01 Design Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1800" pageHeight="1000">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ============================================================ -->
+        <!-- CLASS BOXES                                                   -->
+        <!-- Layout: VisitorUI → Controller → [IRepo / Service / IGateway]-->
+        <!--         IRepo → RoomListing                                  -->
+        <!-- ============================================================ -->
+
+        <!-- VisitorUI <<user interaction>> x=30 y=200 w=280 h=170 -->
+        <mxCell id="class-visitor-ui"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;«user interaction»&lt;br/&gt;VisitorUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openSearch()&lt;br/&gt;+ submitSearch(in criteria: SearchCriteriaDto)&lt;br/&gt;+ selectListing(in listingId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="30" y="200" width="280" height="170" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomSearchController <<coordinator>> x=390 y=170 w=320 h=195 -->
+        <mxCell id="class-controller"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;«coordinator»&lt;br/&gt;RoomSearchController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getSearchPage(out response: SearchPageResponseDto)&lt;br/&gt;+ searchRooms(in criteria: SearchCriteriaDto, out response: SearchResponseDto)&lt;br/&gt;+ getListingEntryPoint(in listingId: Guid, out response: ListingEntryPointResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="390" y="170" width="320" height="195" as="geometry"/>
+        </mxCell>
+
+        <!-- IRoomListingRepository <<database wrapper>> x=800 y=60 w=300 h=130 -->
+        <mxCell id="class-repo"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;«database wrapper»&lt;br/&gt;IRoomListingRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ findPublishedListings(out listings: RoomListingList)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="800" y="60" width="300" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomListing <<data abstraction>> x=1190 y=30 w=300 h=380 -->
+        <mxCell id="class-roomlisting"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;«data abstraction»&lt;br/&gt;RoomListing&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- listingId: Guid&lt;br/&gt;- propertyId: Guid&lt;br/&gt;- title: string&lt;br/&gt;- description: string&lt;br/&gt;- price: decimal&lt;br/&gt;- capacity: int&lt;br/&gt;- amenities: AmenityList&lt;br/&gt;- availableFrom: DateOnly&lt;br/&gt;- furnishedStatus: FurnishedStatus&lt;br/&gt;- privateWCStatus: bool&lt;br/&gt;- imagesRef: string&lt;br/&gt;- status: ListingStatus&lt;br/&gt;- publishedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="1190" y="30" width="300" height="380" as="geometry"/>
+        </mxCell>
+
+        <!-- SearchMatchingService <<service>> x=800 y=240 w=320 h=160 -->
+        <mxCell id="class-service"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#c4b5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ede9fe&quot;&gt;&lt;font color=&quot;#7c3aed&quot;&gt;&lt;b&gt;«service»&lt;br/&gt;SearchMatchingService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;+ filterByCriteria(in listings: RoomListingList, in criteria: SearchCriteriaDto, out matchedListings: RoomListingList)&lt;br/&gt;+ buildListingSummaries(in listings: RoomListingList, out summaries: ListingSummaryList)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="800" y="240" width="320" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- IGoogleMapsGateway <<proxy>> x=800 y=460 w=310 h=130 -->
+        <mxCell id="class-gateway"
+          value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:11px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;«proxy»&lt;br/&gt;IGoogleMapsGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;&lt;i&gt;(none)&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ getLocationData(in listings: RoomListingList, out locationData: LocationDataList)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;"
+          style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;"
+          vertex="1" parent="1">
+          <mxGeometry x="800" y="460" width="310" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- RELATIONSHIPS (directed associations, navigable to target)   -->
+        <!-- ============================================================ -->
+
+        <!-- VisitorUI → RoomSearchController -->
+        <mxCell id="edge-ui-controller"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;"
+          edge="1" source="class-visitor-ui" target="class-controller" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-ui-controller" value="submits requests &gt;"
+          style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="310" y="265" width="120" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-ui-src" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="322" y="290" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-ui-tgt" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="368" y="290" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomSearchController → IRoomListingRepository -->
+        <mxCell id="edge-controller-repo"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;"
+          edge="1" source="class-controller" target="class-repo" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-controller-repo" value="loads listings &gt;"
+          style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="680" y="100" width="110" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-repo-src" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="740" y="120" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-repo-tgt" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="788" y="120" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomSearchController → SearchMatchingService -->
+        <mxCell id="edge-controller-service"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;"
+          edge="1" source="class-controller" target="class-service" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-controller-service" value="filters and summarises &gt;"
+          style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="680" y="282" width="140" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-service-src" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="748" y="302" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-service-tgt" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="788" y="302" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomSearchController → IGoogleMapsGateway -->
+        <mxCell id="edge-controller-gateway"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;"
+          edge="1" source="class-controller" target="class-gateway" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-controller-gateway" value="fetches location data &gt;"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="660" y="460" width="150" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-gateway-src" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="758" y="480" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-gateway-tgt" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="788" y="480" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- IRoomListingRepository → RoomListing -->
+        <mxCell id="edge-repo-listing"
+          style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;"
+          edge="1" source="class-repo" target="class-roomlisting" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-repo-listing" value="returns &gt;"
+          style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="1090" y="100" width="80" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-listing-src" value="1"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="1108" y="122" width="20" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-listing-tgt" value="0..*"
+          style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;fontSize=10;"
+          vertex="1" parent="1">
+          <mxGeometry x="1164" y="122" width="30" height="20" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

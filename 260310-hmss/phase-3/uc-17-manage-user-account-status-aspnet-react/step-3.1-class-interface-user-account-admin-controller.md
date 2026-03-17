@@ -2,10 +2,10 @@
 
 ## Class Summary
 
-- Stereotype: `<<boundary>>`
+- Stereotype: `<<coordinator>>`
 - Scope: `UC-17 Manage User Account Status - ASP.NET simple layered backend`
 - Hidden Information: HTTP route binding, ASP.NET model binding, API response translation, and simplified use-case orchestration across repository and infrastructure collaborators
-- Structuring Criterion: boundary
+- Structuring Criterion: coordinator
 
 ## Assumptions
 

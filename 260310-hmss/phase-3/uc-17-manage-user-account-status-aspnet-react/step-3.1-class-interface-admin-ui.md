@@ -28,7 +28,7 @@
 
 ## Collaborators
 
-- `UserAccountAdminController`: backend boundary that handles admin account-management requests
+- `UserAccountAdminController`: backend coordinator that handles admin account-management requests
 
 ## Operations Provided
 
