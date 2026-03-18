@@ -43,4 +43,6 @@ Visitor --- VisitorUI --- SearchCoordinator --- SearchMatchingLogic --- RoomList
 
 - Google Maps is a secondary actor.
 - The coordinator calls the proxy, not the business logic, for external map data.
+- Default rendering should create separate grouped message blocks for each direction, such as `Visitor -> VisitorUI` and `VisitorUI -> Visitor`.
+- In grouped blocks, list only `number: message text` lines under the directional heading.
 ```

@@ -49,7 +49,9 @@ Use a model with these fields before drawing:
 - Allow numbering gaps if order is still explicit and unique.
 - Require every message to have a source, a target, and visible text.
 - Require every message endpoint to match a validated participant name exactly.
-- Keep one editable text element per message number by default.
+- In the default grouped style, combine messages into directional groups keyed by exact `from -> to` participant pairs.
+- Inside each directional group, preserve every message number and text exactly.
+- Keep separate groups for opposite directions such as `A -> B` and `B -> A`.
 
 ## Blocking Conditions
 

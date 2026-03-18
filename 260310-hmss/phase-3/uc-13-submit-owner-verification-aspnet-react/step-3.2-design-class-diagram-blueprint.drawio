@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UC-13 Submit Owner Verification - Design Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- OwnerUI -->
+        <mxCell id="class-ownerui" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;OwnerUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openVerification()&lt;br/&gt;+ processDetails(in request: VerificationDraftDto, in documents: FileList)&lt;br/&gt;+ submitVerification(in request: VerificationDraftDto, in documentUrls: List&lt;String&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="320" width="460" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- SubmitVerificationController -->
+        <mxCell id="class-submitverificationcontroller" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;SubmitVerificationController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getVerificationForm(in ownerId: Guid, out response: VerificationFormDto)&lt;br/&gt;+ processVerificationDetails(in request: VerificationDraftDto, in documents: FileList, out response: ProcessVerificationResponseDto)&lt;br/&gt;+ submitVerification(in request: VerificationDraftDto, in documentUrls: List&lt;String&gt;, out response: SubmissionResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="290" width="760" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- IOwnerVerificationRepository -->
+        <mxCell id="class-iownerverificationrepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IOwnerVerificationRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ save(in entity: OwnerVerification, out persisted: OwnerVerification)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="180" width="440" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- VerificationLogic -->
+        <mxCell id="class-verificationlogic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;business logic&amp;#187;&lt;br/&gt;VerificationLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;+ validateRequiredFields(in request: VerificationDraftDto, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="320" width="620" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- ICloudStorageGateway -->
+        <mxCell id="class-icloudstoragegateway" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;ICloudStorageGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ uploadDocuments(in documents: FileList, out documentUrls: List&lt;String&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="460" width="520" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- OwnerVerification -->
+        <mxCell id="class-ownerverification" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;OwnerVerification&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- verificationId: Guid&lt;br/&gt;- ownerId: Guid&lt;br/&gt;- personalInformation: string&lt;br/&gt;- idDocumentRef: string&lt;br/&gt;- supportingDocsRef: string&lt;br/&gt;- status: VerificationStatus&lt;br/&gt;- submittedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="600" width="380" height="200" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: OwnerUI -> SubmitVerificationController -->
+        <mxCell id="edge-ownerui-submitverificationcontroller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-ownerui" target="class-submitverificationcontroller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-ownerui-submitverificationcontroller" value="submits verification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="335" width="180" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: SubmitVerificationController -> IOwnerVerificationRepository -->
+        <mxCell id="edge-submitverificationcontroller-iownerverificationrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-submitverificationcontroller" target="class-iownerverificationrepository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="340"/>
+              <mxPoint x="1340" y="220."));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-submitverificationcontroller-iownerverificationrepository" value="persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="250" width="100" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: SubmitVerificationController -> VerificationLogic -->
+        <mxCell id="edge-submitverificationcontroller-verificationlogic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-submitverificationcontroller" target="class-verificationlogic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="380"/>
+              <mxPoint x="1340" y="360."));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-submitverificationcontroller-verificationlogic" value="validates &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="350" width="100" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: SubmitVerificationController -> ICloudStorageGateway -->
+        <mxCell id="edge-submitverificationcontroller-icloudstoragegateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-submitverificationcontroller" target="class-icloudstoragegateway">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1340" y="400."));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-submitverificationcontroller-icloudstoragegateway" value="uploads documents &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="450" width="160" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: IOwnerVerificationRepository -> OwnerVerification -->
+        <mxCell id="edge-iownerverificationrepository-ownerverification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-iownerverificationrepository" target="class-ownerverification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1640" y="260."));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-iownerverificationrepository-ownerverification-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="265" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-iownerverificationrepository-ownerverification-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="570" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-iownerverificationrepository-ownerverification" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1650" y="400" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,139 +1,59 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
-  <diagram name="UC-03 Register Account - Main Sequence" id="a-SliPlIKYVyoXpj4FLc">
-    <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net">
+  <diagram id="uc-03-register-account-communication" name="UC-03 Register Account - Main Sequence">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1214" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Visitor" vertex="1">
-          <mxGeometry height="90" width="50" x="63.99842105263167" y="441.00317074424356" as="geometry" />
+        <mxCell id="visitor" value="Visitor" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: RegistrationUI" vertex="1">
-          <mxGeometry height="70" width="170" x="278.99842105263167" y="451.00317074424356" as="geometry" />
+        <mxCell id="registrationui" value="&#171;user interaction&#187;&lt;br/&gt;: RegistrationUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="180" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: RegistrationCoordinator" vertex="1">
-          <mxGeometry height="70" width="190" x="618.9984210526317" y="451.00317074424356" as="geometry" />
+        <mxCell id="registrationcoordinator" value="&#171;coordinator&#187;&lt;br/&gt;: RegistrationCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="420" y="180" width="210" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: AccountRegistrationRules" vertex="1">
-          <mxGeometry height="70" width="210" x="997.9984210526317" y="451.00317074424356" as="geometry" />
+        <mxCell id="accountregistrationrules" value="&#171;business logic&#187;&lt;br/&gt;: AccountRegistrationRules" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="700" y="180" width="200" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: UserAccount" vertex="1">
-          <mxGeometry height="70" width="160" x="1274.9984210526318" y="451.00317074424356" as="geometry" />
+        <mxCell id="useraccount" value="&#171;entity&#187;&lt;br/&gt;: UserAccount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-6" edge="1" parent="1" source="5-X-PoJ4_Ot6Jq7MMAVq-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="5-X-PoJ4_Ot6Jq7MMAVq-2">
+        <mxCell id="assoc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="visitor" target="registrationui">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-7" edge="1" parent="1" source="5-X-PoJ4_Ot6Jq7MMAVq-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="5-X-PoJ4_Ot6Jq7MMAVq-3">
+        <mxCell id="assoc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="registrationui" target="registrationcoordinator">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-8" edge="1" parent="1" source="5-X-PoJ4_Ot6Jq7MMAVq-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="5-X-PoJ4_Ot6Jq7MMAVq-4">
+        <mxCell id="assoc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="registrationcoordinator" target="accountregistrationrules">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-9" edge="1" parent="1" source="5-X-PoJ4_Ot6Jq7MMAVq-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="5-X-PoJ4_Ot6Jq7MMAVq-5">
+        <mxCell id="assoc-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="registrationcoordinator" target="useraccount">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-10" edge="1" parent="1" source="5-X-PoJ4_Ot6Jq7MMAVq-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="5-X-PoJ4_Ot6Jq7MMAVq-5">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="717" y="651" />
-              <mxPoint x="1360" y="651" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="visitor-to-ui" value="&lt;b&gt;Visitor -&gt; RegistrationUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Registration Access&lt;br/&gt;2: Registration Information&lt;br/&gt;3: Registration Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="300" width="330" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-11" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: Registration Access" vertex="1">
-          <mxGeometry height="24" width="160" x="118.99842105263167" y="391.00317074424356" as="geometry" />
+        <mxCell id="ui-to-visitor" value="&lt;b&gt;RegistrationUI -&gt; Visitor&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Registration Form&lt;br/&gt;2.1: Registration Review&lt;br/&gt;3.7: Registration Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="410" width="330" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-12" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="171.99842105263167" y="474.00317074424356" as="sourcePoint" />
-            <mxPoint x="211.99842105263167" y="474.00317074424356" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="ui-to-coordinator" value="&lt;b&gt;RegistrationUI -&gt; RegistrationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Registration Request&lt;br/&gt;3.1: Registration Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="20" width="420" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-13" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: Registration Request" vertex="1">
-          <mxGeometry height="24" width="180" x="455.99842105263167" y="427.00317074424356" as="geometry" />
+        <mxCell id="coordinator-to-ui" value="&lt;b&gt;RegistrationCoordinator -&gt; RegistrationUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Registration Form&lt;br/&gt;3.6: Registration Outcome" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="120" width="420" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-14" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="511.99842105263167" y="475.00317074424356" as="sourcePoint" />
-            <mxPoint x="551.9984210526317" y="475.00317074424356" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-rules" value="&lt;b&gt;RegistrationCoordinator -&gt; AccountRegistrationRules&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.2: Registration Information" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="640" y="20" width="300" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-15" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: Registration Form" vertex="1">
-          <mxGeometry height="24" width="170" x="455.99842105263167" y="503.00317074424356" as="geometry" />
+        <mxCell id="rules-to-coordinator" value="&lt;b&gt;AccountRegistrationRules -&gt; RegistrationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.3: Registration Assessment" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="300" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-16" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="553.9984210526317" y="498.00317074424356" as="sourcePoint" />
-            <mxPoint x="513.9984210526317" y="498.00317074424356" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-useraccount" value="&lt;b&gt;RegistrationCoordinator -&gt; UserAccount&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.4: Account Information" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="920" y="300" width="260" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-17" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: Registration Form" vertex="1">
-          <mxGeometry height="24" width="170" x="122.99842105263167" y="503.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-18" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="213.99842105263167" y="499.00317074424356" as="sourcePoint" />
-            <mxPoint x="173.99842105263167" y="499.00317074424356" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-19" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: Registration Information" vertex="1">
-          <mxGeometry height="24" width="210" x="118.99842105263167" y="415.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-21" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: Registration Review" vertex="1">
-          <mxGeometry height="24" width="180" x="122.99842105263167" y="531.0031707442436" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-23" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3: Registration Confirmation" vertex="1">
-          <mxGeometry height="24" width="220" x="118.99842105263167" y="439.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-24" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1023.9984210526317" y="642.0031707442436" as="sourcePoint" />
-            <mxPoint x="1110" y="642" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-25" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.1: Registration Request" vertex="1">
-          <mxGeometry height="24" width="180" x="455.99842105263167" y="451.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-27" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.2: Registration Information" vertex="1">
-          <mxGeometry height="24" width="220" x="821.9984210526317" y="445.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-28" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="880.9984210526317" y="472.00317074424356" as="sourcePoint" />
-            <mxPoint x="920.9984210526317" y="472.00317074424356" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-29" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.3: Registration Assessment" vertex="1">
-          <mxGeometry height="24" width="220" x="821.9984210526317" y="507.00317074424356" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-30" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="923.9984210526317" y="500.00317074424356" as="sourcePoint" />
-            <mxPoint x="883.9984210526317" y="500.00317074424356" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-31" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.4: Account Information" vertex="1">
-          <mxGeometry height="24" width="180" x="1004.9984210526317" y="608.0031707442436" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-32" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1207.9984210526318" y="651.0031707442436" as="sourcePoint" />
-            <mxPoint x="1247.9984210526318" y="651.0031707442436" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-33" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.5: Account Record" vertex="1">
-          <mxGeometry height="24" width="150" x="1006.9984210526317" y="679.0031707442436" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-34" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1109" y="667" as="sourcePoint" />
-            <mxPoint x="1020.9984210526318" y="667.0031707442436" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-35" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.6: Registration Outcome" vertex="1">
-          <mxGeometry height="24" width="190" x="455.99842105263167" y="531.0031707442436" as="geometry" />
-        </mxCell>
-        <mxCell id="5-X-PoJ4_Ot6Jq7MMAVq-37" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.7: Registration Confirmation" vertex="1">
-          <mxGeometry height="24" width="220" x="122.99842105263167" y="555.0031707442436" as="geometry" />
+        <mxCell id="useraccount-to-coordinator" value="&lt;b&gt;UserAccount -&gt; RegistrationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.5: Account Record" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="920" y="380" width="260" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

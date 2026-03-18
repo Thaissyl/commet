@@ -126,6 +126,26 @@
   - source navigability: `none`
   - target navigability: `navigable`
 
+- association:
+  - from: `SearchMatchingService`
+  - to: `RoomListing`
+  - source multiplicity: `1`
+  - target multiplicity: `0..*`
+  - association name: `filters and summarises`
+  - reading direction: `source-to-target`
+  - source navigability: `none`
+  - target navigability: `navigable`
+
+- association:
+  - from: `IGoogleMapsGateway`
+  - to: `RoomListing`
+  - source multiplicity: `1`
+  - target multiplicity: `0..*`
+  - association name: `retrieves map coordinates for`
+  - reading direction: `source-to-target`
+  - source navigability: `none`
+  - target navigability: `navigable`
+
 ## Generalizations
 
 - none in current scope
@@ -133,10 +153,10 @@
 ## Notes
 
 - This version uses a simplified orchestration style where `RoomSearchController` coordinates repository, service, and gateway collaborators directly.
-- `VisitorUI` is included to keep the class diagram aligned with the design communication diagram; the human actor interacts through the user-interaction object rather than calling the backend directly.
+- `VisitorUI` is included to keep the class diagram aligned with the design communication diagram.
 - UC-01 is read-only — no write, mutate, or `applyXxxChange` operations exist in this diagram.
-- `RoomListing` (`<<data abstraction>>`) carries domain attributes but provides no behaviour operations in this scope; it acts as a data carrier between the repository and the service.
-- `SearchMatchingService` owns all multi-criteria filter matching and summary construction logic, keeping the controller free of inline domain rules.
+- `RoomListing` (`<<data abstraction>>`) carries domain attributes but provides no behaviour operations in this scope; it acts as a data carrier.
+- `SearchMatchingService` owns all multi-criteria filter matching and summary construction logic.
 - `IGoogleMapsGateway` encapsulates the external Google Maps API; neither `SearchMatchingService` nor `IRoomListingRepository` may call it directly (COMET rule: business logic / service never calls proxy).
 - Map data fetch is modelled as synchronous because the search response depends on it; graceful degradation (empty location data) is handled inside the gateway implementation.
-- This class diagram is synchronised with the current `step-3.1` interface specifications for `VisitorUI`, `RoomSearchController`, `IRoomListingRepository`, `RoomListing`, `SearchMatchingService`, and `IGoogleMapsGateway`.
+- This class diagram is synchronised with the current `step-3.1` interface specifications.

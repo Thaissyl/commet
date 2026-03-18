@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UC-08a Create Property - Design Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1200" pageHeight="700">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="class-ownerui" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;OwnerUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;[none]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openPropertyCreation()&lt;br/&gt;+ submitProperty(in request: PropertyDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="80" y="260" width="300" height="100" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="class-createpropertycontroller" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;CreatePropertyController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;[none]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getCreatePropertyForm(out response: PropertyFormResponseDto)&lt;br/&gt;+ createProperty(in request: PropertyDto, out response: PropertyResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="260" width="460" height="110" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="class-propertyservice" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#c4b5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ede9fe&quot;&gt;&lt;font color=&quot;#7c3aed&quot;&gt;&lt;b&gt;&amp;#171;service&amp;#187;&lt;br/&gt;PropertyService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;[none]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;+ validatePropertyFields(in request: PropertyDto, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="200" width="400" height="90" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="class-ipropertyrepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IPropertyRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ save(in entity: Property, out persisted: Property)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="340" width="340" height="80" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="class-property" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;Property&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- propertyId: Guid&lt;br/&gt;- ownerId: Guid&lt;br/&gt;- name: string&lt;br/&gt;- address: string&lt;br/&gt;- mapLocation: string&lt;br/&gt;- description: string&lt;br/&gt;- generalPolicies: string&lt;br/&gt;- createdAt: DateTime&lt;br/&gt;- updatedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="480" width="320" height="200" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-ownerui-createpropertycontroller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-ownerui" target="class-createpropertycontroller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-ownerui-createpropertycontroller" value="creates property &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="285" width="140" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-createpropertycontroller-propertyservice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-createpropertycontroller" target="class-propertyservice">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="290"/>
+              <mxPoint x="920" y="245"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-createpropertycontroller-propertyservice" value="validates &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="945" y="250" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-createpropertycontroller-ipropertyrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-createpropertycontroller" target="class-ipropertyrepository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="340"/>
+              <mxPoint x="920" y="380"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-createpropertycontroller-ipropertyrepository" value="persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="390" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="edge-ipropertyrepository-property" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-ipropertyrepository" target="class-property">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-ipropertyrepository-property" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="450" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="note-1" value="&lt;font style=&quot;font-size:12px&quot;&gt;&lt;b&gt;Notes:&lt;/b&gt;&lt;br/&gt;• PropertyService validates required fields and format&lt;br/&gt;• ownerId set from authenticated context&lt;br/&gt;• DTO-to-entity mapping implicit before save&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="420" height="80" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,29 +1,29 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
+﻿<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
   <diagram name="UC-13 Submit Owner Verification - Main Sequence" id="dBkDxBF2oWEk02CEcDvd">
     <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="j6OlDSAsucJEP_qWnugL-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
-          <mxGeometry height="90" width="50" x="-2" y="473" as="geometry" />
+          <mxGeometry height="90" width="60" x="-2" y="473" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: VerificationSubmissionUI" vertex="1">
-          <mxGeometry height="70" width="230" x="290" y="483" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;user interaction&#187;&lt;br/&gt;: OwnerUI" vertex="1">
+          <mxGeometry height="70" width="170" x="290" y="483" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: VerificationCoordinator" vertex="1">
-          <mxGeometry height="70" width="220" x="731" y="483" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;coordinator&#187;&lt;br/&gt;: SubmitVerificationCoordinator" vertex="1">
+          <mxGeometry height="70" width="263" x="731" y="483" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: VerificationLogic" vertex="1">
-          <mxGeometry height="70" width="190" x="1041" y="343" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;business logic&#187;&lt;br/&gt;: VerificationRules" vertex="1">
+          <mxGeometry height="70" width="179" x="1041" y="343" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: OwnerVerification" vertex="1">
-          <mxGeometry height="70" width="180" x="1424" y="343" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;proxy&#187;&lt;br/&gt;: CloudStorageProxy" vertex="1">
+          <mxGeometry height="70" width="179" x="1424" y="343" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: CloudStorageProxy" vertex="1">
-          <mxGeometry height="70" width="190" x="1061" y="643" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="Cloud Storage" vertex="1">
+          <mxGeometry height="90" width="60" x="1061" y="643" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-7" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Cloud Storage" vertex="1">
-          <mxGeometry height="90" width="60" x="1449" y="633" as="geometry" />
+        <mxCell id="j6OlDSAsucJEP_qWnugL-7" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="&#171;entity&#187;&lt;br/&gt;: OwnerVerification" vertex="1">
+          <mxGeometry height="70" width="179" x="1449" y="633" as="geometry" />
         </mxCell>
         <mxCell id="j6OlDSAsucJEP_qWnugL-8" edge="1" parent="1" source="j6OlDSAsucJEP_qWnugL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="j6OlDSAsucJEP_qWnugL-2">
           <mxGeometry relative="1" as="geometry" />
@@ -51,143 +51,38 @@
         <mxCell id="j6OlDSAsucJEP_qWnugL-13" edge="1" parent="1" source="j6OlDSAsucJEP_qWnugL-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="j6OlDSAsucJEP_qWnugL-7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: Owner Verification Submission Access" vertex="1">
-          <mxGeometry height="24" width="260" x="67" y="438" as="geometry" />
+        <mxCell id="group-1" value="&lt;b&gt;Owner -&gt; OwnerUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Verification Access&lt;br/&gt;2: Information and Documents Input&lt;br/&gt;3: Submission Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="49" y="469" width="305" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="170" y="506" as="sourcePoint" />
-            <mxPoint x="210" y="506" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-2" value="&lt;b&gt;OwnerUI -&gt; SubmitVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Verification Form Request&lt;br/&gt;2.1: Validation and Upload Request&lt;br/&gt;3.1: Submission Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="445" y="469" width="348" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: Verification Submission Form Request" vertex="1">
-          <mxGeometry height="24" width="180" x="525" y="418" as="geometry" />
+        <mxCell id="group-3" value="&lt;b&gt;SubmitVerificationCoordinator -&gt; OwnerUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Verification Form&lt;br/&gt;2.8: Review Prompt&lt;br/&gt;3.3: Submission Success&lt;br/&gt;2.4a: Correction Prompt&lt;br/&gt;2.8b: Upload Error Prompt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="445" y="451" width="348" height="134" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: Verification Requirements Request" vertex="1">
-          <mxGeometry height="24" width="171" x="864" y="306" as="geometry" />
+        <mxCell id="group-4" value="&lt;b&gt;OwnerUI -&gt; Owner&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Form Display&lt;br/&gt;2.9: Verification Review Display&lt;br/&gt;3.4: Success Message&lt;br/&gt;2.5a: Correction Display&lt;br/&gt;2.9b: Upload Error Display" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="56" y="451" width="290" height="134" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-19" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="922" y="367" as="sourcePoint" />
-            <mxPoint x="962" y="367" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-5" value="&lt;b&gt;SubmitVerificationCoordinator -&gt; VerificationRules&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.2: Required Fields Validation Check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="786" y="413" width="420" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: Verification Requirements" vertex="1">
-          <mxGeometry height="24" width="210" x="864" y="392" as="geometry" />
+        <mxCell id="group-6" value="&lt;b&gt;VerificationRules -&gt; SubmitVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.3: Validation Result (Valid)&lt;br/&gt;2.3a: [Missing fields] Validation Result (Invalid)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="786" y="442" width="420" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-21" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="964" y="385" as="sourcePoint" />
-            <mxPoint x="924" y="385" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-7" value="&lt;b&gt;SubmitVerificationCoordinator -&gt; CloudStorageProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.4: Document Upload Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="978" y="413" width="420" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.4: Verification Submission Form" vertex="1">
-          <mxGeometry height="24" width="230" x="530" y="538" as="geometry" />
+        <mxCell id="group-8" value="&lt;b&gt;CloudStorageProxy -&gt; Cloud Storage&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.5: Document Upload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="498" width="305" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.5: Verification Submission Form" vertex="1">
-          <mxGeometry height="24" width="230" x="67" y="535" as="geometry" />
+        <mxCell id="group-9" value="&lt;b&gt;Cloud Storage -&gt; CloudStorageProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.6: Upload Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="532" width="305" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-25" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="207" y="532" as="sourcePoint" />
-            <mxPoint x="167" y="532" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-10" value="&lt;b&gt;CloudStorageProxy -&gt; SubmitVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.7: Upload Result (Success)&lt;br/&gt;2.7b: [Storage unavailable] Upload Result (Failure)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="974" y="408" width="427" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: Verification Information and Documents" vertex="1">
-          <mxGeometry height="24" width="270" x="67" y="459" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: Verification Information and Documents" vertex="1">
-          <mxGeometry height="24" width="300" x="525" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-29" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="932" y="666" as="sourcePoint" />
-            <mxPoint x="972" y="666" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.2: Verification Documents" vertex="1">
-          <mxGeometry height="24" width="210" x="869" y="633" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.3: Verification Documents" vertex="1">
-          <mxGeometry height="24" width="210" x="1265" y="630" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-33" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1327" y="662" as="sourcePoint" />
-            <mxPoint x="1367" y="662" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-34" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.4: Document References" vertex="1">
-          <mxGeometry height="24" width="190" x="1265" y="697" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-35" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1366" y="690" as="sourcePoint" />
-            <mxPoint x="1326" y="690" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-36" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.5: Document References" vertex="1">
-          <mxGeometry height="24" width="190" x="869" y="727" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.6: Verification Submission Review" vertex="1">
-          <mxGeometry height="24" width="250" x="530" y="566" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.7: Verification Submission Review" vertex="1">
-          <mxGeometry height="24" width="250" x="67" y="559" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-41" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="653" y="531" as="sourcePoint" />
-            <mxPoint x="613" y="531" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3: Verification Submission Confirmation" vertex="1">
-          <mxGeometry height="24" width="260" x="67" y="480" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.2: Verification Submission Information" vertex="1">
-          <mxGeometry height="24" width="196" x="864" y="336" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-48" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.3: Owner Verification Record" vertex="1">
-          <mxGeometry height="24" width="169" x="1241" y="327" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-49" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1303" y="362" as="sourcePoint" />
-            <mxPoint x="1343" y="362" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.4: Owner Verification Record" vertex="1">
-          <mxGeometry height="24" width="187" x="1243" y="400" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-51" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1343" y="393" as="sourcePoint" />
-            <mxPoint x="1303" y="393" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-52" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.5: Verification Submission Result" vertex="1">
-          <mxGeometry height="24" width="181" x="864" y="421" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-53" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="972" y="689" as="sourcePoint" />
-            <mxPoint x="932" y="689" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-54" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.6: Verification Submission Outcome" vertex="1">
-          <mxGeometry height="24" width="250" x="530" y="590" as="geometry" />
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-56" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.7: Verification Submission Confirmation" vertex="1">
-          <mxGeometry height="24" width="270" x="67" y="583" as="geometry" />
-        </mxCell>
-        <mxCell id="h93MuXGD_UTl9rR7r6Gl-3" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="616" y="503" as="sourcePoint" />
-            <mxPoint x="657" y="503" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="j6OlDSAsucJEP_qWnugL-44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.1: Verification Submission Request" vertex="1">
-          <mxGeometry height="24" width="211" x="525" y="473" as="geometry" />
+        <mxCell id="group-11" value="&lt;b&gt;SubmitVerificationCoordinator -&gt; OwnerVerification&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.2: New Verification Record" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="990" y="558" width="420" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

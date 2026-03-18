@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UC-18 Control Listing Visibility - Design Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- AdminUI -->
+        <mxCell id="class-adminui" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;AdminUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openListingAdministration()&lt;br/&gt;+ selectListing(in listingId: Guid)&lt;br/&gt;+ disableListing(in listingId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="340" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ControlListingController -->
+        <mxCell id="class-controllistingcontroller" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;ControlListingController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getVisibleListings(out response: ListingListDto)&lt;br/&gt;+ getListingDetails(in listingId: Guid, out response: ListingDetailDto)&lt;br/&gt;+ disableListing(in listingId: Guid, out response: ControlActionDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="310" width="620" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- IRoomListingRepository -->
+        <mxCell id="class-iroomlistingrepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IRoomListingRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ findByStatus(in status: String, out list: ListingList)&lt;br/&gt;+ findById(in id: Guid, out entity: RoomListing)&lt;br/&gt;+ update(in entity: RoomListing, out persisted: RoomListing)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="180" width="440" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ListingControlLogic -->
+        <mxCell id="class-listingcontrollogic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;business logic&amp;#187;&lt;br/&gt;ListingControlLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;+ validateDisableAction(in listing: RoomListing, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="340" width="600" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- NotificationService -->
+        <mxCell id="class-notificationservice" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#c4b5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ede9fe&quot;&gt;&lt;font color=&quot;#7c3aed&quot;&gt;&lt;b&gt;&amp;#171;application logic&amp;#187;&lt;br/&gt;NotificationService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#faf8ff&quot;&gt;+ createDisableNotification(in listing: RoomListing, out message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="480" width="600" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- IEmailGateway -->
+        <mxCell id="class-iemailgateway" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ sendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="620" width="320" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomListing -->
+        <mxCell id="class-roomlisting" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;RoomListing&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- listingId: Guid&lt;br/&gt;- title: string&lt;br/&gt;- status: ListingStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ disableByAdmin(out result: StatusChangeResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="760" width="320" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: AdminUI -> ControlListingController -->
+        <mxCell id="edge-adminui-controllistingcontroller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-adminui" target="class-controllistingcontroller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-adminui-controllistingcontroller" value="controls listings &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="355" width="160" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ControlListingController -> IRoomListingRepository -->
+        <mxCell id="edge-controllistingcontroller-iroomlistingrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-controllistingcontroller" target="class-iroomlistingrepository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="350"/>
+              <mxPoint x="1080" y="235])));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-controllistingcontroller-iroomlistingrepository" value="loads and persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="260" width="150" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ControlListingController -> ListingControlLogic -->
+        <mxCell id="edge-controllistingcontroller-listingcontrollogic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-controllistingcontroller" target="class-listingcontrollogic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="380")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-controllistingcontroller-listingcontrollogic" value="validates action &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="375" width="140" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ControlListingController -> NotificationService -->
+        <mxCell id="edge-controllistingcontroller-notificationservice" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-controllistingcontroller" target="class-notificationservice">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="400")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-controllistingcontroller-notificationservice" value="requests notification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="470" width="180" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ControlListingController -> IEmailGateway -->
+        <mxCell id="edge-controllistingcontroller-iemailgateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-controllistingcontroller" target="class-iemailgateway">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="410)));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-controllistingcontroller-iemailgateway" value="dispatches notification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="590" width="190" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ControlListingController -> RoomListing -->
+        <mxCell id="edge-controllistingcontroller-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-controllistingcontroller" target="class-roomlisting">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="420)));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-controllistingcontroller-roomlisting" value="mutates state &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="620" width="120" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: IRoomListingRepository -> RoomListing -->
+        <mxCell id="edge-iroomlistingrepository-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-iroomlistingrepository" target="class-roomlisting">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="290)));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-iroomlistingrepository-roomlisting-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="295" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-iroomlistingrepository-roomlisting-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="730" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-iroomlistingrepository-roomlisting" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="490" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,119 +1,56 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
-  <diagram name="UC-04 Sign In - Main Sequence" id="U8Di9UKrP2s7pQk-vNpI">
-    <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net">
+  <diagram id="uc-04-sign-in-communication" name="UC-04 Sign In - Main Sequence">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1214" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Eg7M36KlqskglsXQvO0U-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Registered User" vertex="1">
-          <mxGeometry height="90" width="60" x="157" y="395" as="geometry" />
+        <mxCell id="registereduser" value="Registered User" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="60" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: SignInUI" vertex="1">
-          <mxGeometry height="70" width="170" x="385" y="405" as="geometry" />
+        <mxCell id="signinui" value="&#171;user interaction&#187;&lt;br/&gt;: SignInUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: SignInCoordinator" vertex="1">
-          <mxGeometry height="70" width="180" x="705" y="405" as="geometry" />
+        <mxCell id="signincodeordinator" value="&#171;coordinator&#187;&lt;br/&gt;: SignInCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«service»&lt;br/&gt;: AuthenticationService" vertex="1">
-          <mxGeometry height="70" width="200" x="1035" y="405" as="geometry" />
+        <mxCell id="authenticationservice" value="&#171;service&#187;&lt;br/&gt;: AuthenticationService" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="700" y="180" width="200" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: UserAccount" vertex="1">
-          <mxGeometry height="70" width="160" x="1408" y="405" as="geometry" />
+        <mxCell id="useraccount" value="&#171;entity&#187;&lt;br/&gt;: UserAccount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-6" edge="1" parent="1" source="Eg7M36KlqskglsXQvO0U-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Eg7M36KlqskglsXQvO0U-2">
+        <mxCell id="assoc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="registereduser" target="signinui">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-7" edge="1" parent="1" source="Eg7M36KlqskglsXQvO0U-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Eg7M36KlqskglsXQvO0U-3">
+        <mxCell id="assoc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="signinui" target="signincodeordinator">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-8" edge="1" parent="1" source="Eg7M36KlqskglsXQvO0U-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Eg7M36KlqskglsXQvO0U-4">
+        <mxCell id="assoc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="signincodeordinator" target="authenticationservice">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-9" edge="1" parent="1" source="Eg7M36KlqskglsXQvO0U-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Eg7M36KlqskglsXQvO0U-5">
+        <mxCell id="assoc-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="authenticationservice" target="useraccount">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: Sign-In Access" vertex="1">
-          <mxGeometry height="24" width="150" x="242" y="378" as="geometry" />
+        <mxCell id="user-to-ui" value="&lt;b&gt;Registered User -&gt; SignInUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Sign-In Access&lt;br/&gt;2: Sign-In Credentials" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="300" width="340" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-11" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="274" y="428" as="sourcePoint" />
-            <mxPoint x="340" y="428" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="ui-to-user" value="&lt;b&gt;SignInUI -&gt; Registered User&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Sign-In Form&lt;br/&gt;2.7: Sign-In Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="400" width="340" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: Sign-In Request" vertex="1">
-          <mxGeometry height="24" width="160" x="570" y="368" as="geometry" />
+        <mxCell id="ui-to-coordinator" value="&lt;b&gt;SignInUI -&gt; SignInCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Sign-In Request&lt;br/&gt;2.1: Sign-In Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="360" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-13" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="615" y="429" as="sourcePoint" />
-            <mxPoint x="655" y="429" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-ui" value="&lt;b&gt;SignInCoordinator -&gt; SignInUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Sign-In Form&lt;br/&gt;2.6: Sign-In Outcome" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="360" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: Sign-In Form" vertex="1">
-          <mxGeometry height="24" width="108" x="570" y="456" as="geometry" />
+        <mxCell id="coordinator-to-service" value="&lt;b&gt;SignInCoordinator -&gt; AuthenticationService&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.2: Sign-In Credentials" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="20" width="320" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="655" y="451" as="sourcePoint" />
-            <mxPoint x="615" y="451" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="service-to-useraccount" value="&lt;b&gt;AuthenticationService -&gt; UserAccount&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.3: Account Information Request&lt;br/&gt;2.4: Account Information" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="20" width="360" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: Sign-In Form" vertex="1">
-          <mxGeometry height="24" width="150" x="238" y="466" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-17" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="337" y="457" as="sourcePoint" />
-            <mxPoint x="273" y="457" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: Sign-In Credentials" vertex="1">
-          <mxGeometry height="24" width="170" x="242" y="399" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: Sign-In Request" vertex="1">
-          <mxGeometry height="24" width="160" x="570" y="392" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.2: Sign-In Credentials" vertex="1">
-          <mxGeometry height="24" width="135" x="894" y="399" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-23" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="938" y="431" as="sourcePoint" />
-            <mxPoint x="978" y="431" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.3: Account Information Request" vertex="1">
-          <mxGeometry height="24" width="161" x="1247" y="395" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-25" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1300" y="428" as="sourcePoint" />
-            <mxPoint x="1340" y="428" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.4: Account Information" vertex="1">
-          <mxGeometry height="24" width="180" x="1247" y="466" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-27" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1345" y="459" as="sourcePoint" />
-            <mxPoint x="1305" y="459" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.5: Authentication Result" vertex="1">
-          <mxGeometry height="24" width="148" x="894" y="461" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-29" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="975.5" y="456" as="sourcePoint" />
-            <mxPoint x="935.5" y="456" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.6: Sign-In Outcome" vertex="1">
-          <mxGeometry height="24" width="125" x="570" y="485" as="geometry" />
-        </mxCell>
-        <mxCell id="Eg7M36KlqskglsXQvO0U-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.7: Sign-In Confirmation" vertex="1">
-          <mxGeometry height="24" width="190" x="238" y="492" as="geometry" />
+        <mxCell id="service-to-coordinator" value="&lt;b&gt;AuthenticationService -&gt; SignInCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.5: Authentication Result" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="100" width="320" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

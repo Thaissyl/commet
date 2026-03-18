@@ -1,191 +1,83 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
-  <diagram name="step-2.2-uc-01-search-hostel-room-main-seq" id="cas7uj6dh_vEaxasiDxk">
-    <mxGraphModel dx="2790" dy="763" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net">
+  <diagram id="uc-01-search-hostel-room-communication" name="uc-01">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1214" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Visitor" vertex="1">
-          <mxGeometry height="90" width="50" x="-260" y="420" as="geometry" />
+        <mxCell id="visitor" value="Visitor" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: VisitorUI" vertex="1">
-          <mxGeometry height="70" width="180" x="-15" y="430" as="geometry" />
+        <mxCell id="visitorui" value="&#171;user interaction&#187;&lt;br/&gt;: VisitorUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: SearchCoordinator" vertex="1">
-          <mxGeometry height="70" width="190" x="470" y="430" as="geometry" />
+        <mxCell id="searchroomcoordinator" value="&#171;coordinator&#187;&lt;br/&gt;: SearchRoomCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="420" y="180" width="215" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: SearchMatchingLogic" vertex="1">
-          <mxGeometry height="70" width="190" x="900" y="430" as="geometry" />
+        <mxCell id="searchrules" value="&#171;business logic&#187;&lt;br/&gt;: SearchRules" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="715" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RoomListing" vertex="1">
-          <mxGeometry height="70" width="180" x="1278" y="430" as="geometry" />
+        <mxCell id="googlemapsproxy" value="&#171;proxy&#187;&lt;br/&gt;: GoogleMapsProxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="368" y="500" width="185" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: GoogleMapsProxy" vertex="1">
-          <mxGeometry height="70" width="190" x="470" y="660" as="geometry" />
+        <mxCell id="google-maps" value="Google Maps" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="633" y="500" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-7" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Google Maps" vertex="1">
-          <mxGeometry height="90" width="50" x="855" y="650" as="geometry" />
+        <mxCell id="roomlisting" value="&#171;entity&#187;&lt;br/&gt;: RoomListing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="965" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-8" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-2">
+        <mxCell id="assoc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="visitor" target="visitorui">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-9" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-3">
+        <mxCell id="assoc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="searchroomcoordinator" target="visitorui">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-10" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-4">
+        <mxCell id="assoc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="roomlisting" target="searchroomcoordinator">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-11" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-5">
+        <mxCell id="assoc-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="googlemapsproxy" target="searchroomcoordinator">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-12" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-6">
+        <mxCell id="assoc-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="google-maps" target="googlemapsproxy">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-13" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="jzsOzaF6h6iQJ3oa8tHy-7">
+        <mxCell id="assoc-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="searchroomcoordinator" target="searchrules">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: open search" vertex="1">
-          <mxGeometry height="24" width="120" x="-199" y="348" as="geometry" />
+        <mxCell id="visitor-to-ui-group" value="&lt;b&gt;Visitor -&gt; VisitorUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Search Function Access&lt;br/&gt;2: Search Criteria Submission&lt;br/&gt;3: Listings Review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="300" width="330" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-150" y="452" as="sourcePoint" />
-            <mxPoint x="-85" y="453" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="ui-to-visitor-group" value="&lt;b&gt;VisitorUI -&gt; Visitor&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.9: Initial Search Display&lt;br/&gt;2.7a: No Results Display (Returns to Step 3)&lt;br/&gt;2.11: Matching Listings Display" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="410" width="330" height="115" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: request search page" vertex="1">
-          <mxGeometry height="24" width="170" x="245" y="373" as="geometry" />
+        <mxCell id="ui-to-coordinator-group" value="&lt;b&gt;VisitorUI -&gt; SearchRoomCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Initial Search Page Request&lt;br/&gt;2.1: Search Criteria Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="10" width="420" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-17" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="277" y="451" as="sourcePoint" />
-            <mxPoint x="357" y="451" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-ui-group" value="&lt;b&gt;SearchRoomCoordinator -&gt; VisitorUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.8: Search Form, Published Listings, and Map&lt;br/&gt;2.6a: Revision Prompt&lt;br/&gt;2.10: Matching Listings and Map Information&lt;br/&gt;2.10b: Matching Listings (no map information)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="100" width="420" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: request initial published listings" vertex="1">
-          <mxGeometry height="24" width="202" x="696" y="396" as="geometry" />
+        <mxCell id="coordinator-to-rules-group" value="&lt;b&gt;SearchRoomCoordinator -&gt; SearchRules&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.2: Criteria Validation Check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="640" y="10" width="340" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-19" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="724" y="444" as="sourcePoint" />
-            <mxPoint x="826" y="445" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="rules-to-coordinator-group" value="&lt;b&gt;SearchRules -&gt; SearchRoomCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;2.3: Validation Result (Valid)&lt;br/&gt;2.3a: [No criteria] Validation Result (Empty)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="640" y="85" width="340" height="95" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: provide published listings" vertex="1">
-          <mxGeometry height="24" width="163" x="1099" y="403" as="geometry" />
+        <mxCell id="coordinator-to-roomlisting-group" value="&lt;b&gt;SearchRoomCoordinator -&gt; RoomListing&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Published Listings Query&lt;br/&gt;2.4: Matching Listings Query&lt;br/&gt;2.4a: Published Listings Query (default ordering)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="780" y="320" width="360" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-21" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1150" y="456" as="sourcePoint" />
-            <mxPoint x="1220" y="456" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="roomlisting-to-coordinator-group" value="&lt;b&gt;RoomListing -&gt; SearchRoomCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Published Listings Data&lt;br/&gt;2.5: Matching Listings Data&lt;br/&gt;2.5a: [No match] Empty Listings Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="780" y="430" width="360" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.4: listings data" vertex="1">
-          <mxGeometry height="24" width="130" x="725" y="479" as="geometry" />
+        <mxCell id="coordinator-to-proxy-group" value="&lt;b&gt;SearchRoomCoordinator -&gt; GoogleMapsProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.4: Map Data Request&lt;br/&gt;2.6: Map Data Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="430" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.5: request location data for listings" vertex="1">
-          <mxGeometry height="24" width="240" x="590" y="553" as="geometry" />
+        <mxCell id="proxy-to-coordinator-group" value="&lt;b&gt;GoogleMapsProxy -&gt; SearchRoomCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.7: Map Data&lt;br/&gt;1.7b: [Maps unavailable] Map Data Failure&lt;br/&gt;2.9: Map Data&lt;br/&gt;2.9b: [Maps unavailable] Map Data Failure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="715" width="430" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-25" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="585" y="550" as="sourcePoint" />
-            <mxPoint x="585" y="610" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="proxy-to-googlemaps-group" value="&lt;b&gt;GoogleMapsProxy -&gt; Google Maps&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.5: Map Request&lt;br/&gt;2.7: Map Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="500" y="650" width="300" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.6: location data request" vertex="1">
-          <mxGeometry height="24" width="180" x="675" y="636" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-27" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="717" y="682" as="sourcePoint" />
-            <mxPoint x="787" y="682" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.7: location data" vertex="1">
-          <mxGeometry height="24" width="130" x="700" y="714" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-29" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="787" y="711" as="sourcePoint" />
-            <mxPoint x="717" y="711" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.8: location data" vertex="1">
-          <mxGeometry height="24" width="95" x="442" y="560" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.9: search form + initial listings with location data" vertex="1">
-          <mxGeometry height="24" width="300" x="190" y="482" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-33" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="358" y="479" as="sourcePoint" />
-            <mxPoint x="278" y="479" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-34" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.10: display search form with listings" vertex="1">
-          <mxGeometry height="24" width="167" x="-199" y="491" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-35" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="-87" y="479" as="sourcePoint" />
-            <mxPoint x="-149" y="479" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-36" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: search criteria (location, price range, amenities, availability, move-in date)" vertex="1">
-          <mxGeometry height="38" width="184" x="-199" y="378" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: search criteria" vertex="1">
-          <mxGeometry height="24" width="140" x="245" y="397" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.2: filter listings by criteria" vertex="1">
-          <mxGeometry height="24" width="200" x="696" y="416" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.3: provide matching listings" vertex="1">
-          <mxGeometry height="24" width="200" x="1099" y="427" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.4: matching listings" vertex="1">
-          <mxGeometry height="24" width="150" x="725" y="503" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-45" edge="1" parent="1" source="jzsOzaF6h6iQJ3oa8tHy-22" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;exitX=0.775;exitY=-0.037;exitDx=0;exitDy=0;exitPerimeter=0;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="802" y="478" as="sourcePoint" />
-            <mxPoint x="723" y="478" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.5: request location data for results" vertex="1">
-          <mxGeometry height="24" width="230" x="590" y="577" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-48" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.6: location data request" vertex="1">
-          <mxGeometry height="24" width="180" x="675" y="656" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.7: location data" vertex="1">
-          <mxGeometry height="24" width="130" x="700" y="738" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-52" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.8: location data" vertex="1">
-          <mxGeometry height="24" width="130" x="442" y="582" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-54" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.9: search results with location data" vertex="1">
-          <mxGeometry height="24" width="240" x="190" y="510" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-56" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.10: display matching room listings" vertex="1">
-          <mxGeometry height="24" width="161" x="-199" y="523" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-58" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3: select listing" vertex="1">
-          <mxGeometry height="24" width="110" x="-199" y="424" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-60" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.1: listing selected" vertex="1">
-          <mxGeometry height="24" width="150" x="245" y="421" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-62" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.2: listing detail entry point" vertex="1">
-          <mxGeometry height="24" width="210" x="190" y="534" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-64" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.3: navigate to listing detail" vertex="1">
-          <mxGeometry height="24" width="190" x="-199" y="553" as="geometry" />
-        </mxCell>
-        <mxCell id="jzsOzaF6h6iQJ3oa8tHy-68" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="545" y="609" as="sourcePoint" />
-            <mxPoint x="545" y="551" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="googlemaps-to-proxy-group" value="&lt;b&gt;Google Maps -&gt; GoogleMapsProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.6: Map Data&lt;br/&gt;2.8: Map Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="500" y="745" width="300" height="85" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

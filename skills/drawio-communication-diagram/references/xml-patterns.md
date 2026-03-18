@@ -1,7 +1,7 @@
 # XML Patterns
 
 Use `mcp__drawio__open_drawio_xml` as the primary rendering path.
-Use draw.io XML for the final artifact because communication diagrams in this style need draw.io actor shapes, plain associations, floating text, and free-floating directional connectors.
+Use draw.io XML for the final artifact because communication diagrams in this style need draw.io actor shapes, plain associations, and grouped directional message blocks.
 
 ## Base Document
 
@@ -21,7 +21,7 @@ Start from a normal draw.io XML skeleton:
 ```
 
 Keep coordinates on a 10 px grid.
-Use enough whitespace around associations to hold floating message blocks.
+Use enough whitespace around associations to hold grouped message blocks.
 
 ## Software Object Recipe
 
@@ -82,36 +82,29 @@ edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;e
 These are structural links only.
 Do not encode message direction on the association itself.
 
-## Message Text Recipe
+## Directional Group Recipe
 
-Use one floating text vertex per message near the association, not attached to either endpoint.
+Use one floating rounded rectangle vertex per exact message direction near the related association.
 
-- text format: `1.2: request initial published listings`
-- keep one message number per text box by default
-- do not merge multiple messages into one text box unless the user explicitly asks for grouping
-
-Recommended style:
-
-```text
-text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;
-```
-
-## Direction Connector Recipe
-
-Use one short free-floating connector edge per message next to its text box.
-
-- do not connect this edge to the participant nodes
-- keep a visible line segment plus arrowhead
-- keep it roughly parallel to the nearby association
-- point it from the `from` participant toward the `to` participant
+- group by exact source and target pair, for example `Visitor -> VisitorUI`
+- keep the reverse direction in a separate block, for example `VisitorUI -> Visitor`
+- block heading format: `A -> B`
+- block body format: one line per message, for example `1.2: request initial published listings`
+- do not repeat participant names inside the block body
+- preserve message numbering exactly
 
 Recommended style:
 
 ```text
-edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;
+rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;
 ```
 
-Build the connector with `sourcePoint` and `targetPoint` in the edge geometry so it remains editable as a draw.io connector.
+Recommended sizing:
+
+- width: 280-430
+- height: fit content with 10 px inner padding
+
+Legacy per-message text boxes and free-floating arrow connectors should be used only when the user explicitly asks for that more detailed style.
 
 ## Layout Heuristics
 
@@ -122,7 +115,9 @@ Use these defaults unless the source text clearly says otherwise:
 - place external-system actors and their proxies on the far right or bottom-right
 - use horizontal spacing around `180-220`
 - use vertical branch spacing around `120-160`
-- keep at least `50-70` px of free space near a pathway that carries many separate messages
+- keep at least `50-70` px of free space near a pathway that carries grouped message blocks
+- stack opposite-direction group blocks near the same association when both directions are used
+- keep block headings short and move long message content into the body lines
 
 When the source includes an ASCII `Object Layout`, preserve its relative topology and branch direction, then adjust spacing locally to avoid collisions.
 
@@ -131,8 +126,8 @@ When the source includes an ASCII `Object Layout`, preserve its relative topolog
 When editing an existing `.drawio`:
 
 - preserve current coordinates and IDs when the existing structure is still valid
-- patch local message blocks and labels when the topology is unchanged
-- rebuild the whole XML when topology, actor shape choice, or message placement must change substantially
+- patch local directional group blocks when the topology is unchanged
+- rebuild the whole XML when topology, actor shape choice, or grouped-message placement must change substantially
 
 ## Minimal XML Example
 
@@ -143,14 +138,7 @@ Use this as a pattern, not as a fixed template:
   <mxGeometry x="360" y="180" width="170" height="70" as="geometry"/>
 </mxCell>
 
-<mxCell id="msg-1-1" value="1.1: request search page" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" vertex="1" parent="1">
-  <mxGeometry x="235" y="205" width="170" height="24" as="geometry"/>
-</mxCell>
-
-<mxCell id="msg-1-1-arrow" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;" edge="1" parent="1">
-  <mxGeometry relative="1" as="geometry">
-    <mxPoint x="405" y="216" as="sourcePoint"/>
-    <mxPoint x="445" y="216" as="targetPoint"/>
-  </mxGeometry>
+<mxCell id="group-ui-to-search" value="&lt;b&gt;VisitorUI -&gt; SearchCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: request search page&lt;br/&gt;2.1: submit criteria" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+  <mxGeometry x="210" y="90" width="250" height="90" as="geometry"/>
 </mxCell>
 ```

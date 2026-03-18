@@ -1,6 +1,6 @@
 ---
 name: drawio-communication-diagram
-description: Create or update editable draw.io UML communication diagrams from loose raw text, structured markdown blueprints, or existing `.drawio` files. Use when Codex must parse participants, stereotypes, object layout, and numbered messages, then use `mcp__drawio__open_drawio_xml` to build a communication diagram with the built-in UML actor shape, stereotype-labeled object boxes, plain association links, one editable text box per message, and short free-floating directional connectors with a line and arrowhead. Use only for communication diagrams, not other UML diagram types.
+description: Create or update editable draw.io UML communication diagrams from loose raw text, structured markdown blueprints, or existing `.drawio` files. Use when Codex must parse participants, stereotypes, object layout, and numbered messages, then use `mcp__drawio__open_drawio_xml` to build a communication diagram with the built-in UML actor shape, stereotype-labeled object boxes, plain association links, and directional grouped message blocks organized by source and target participant. Use only for communication diagrams, not other UML diagram types.
 ---
 
 # Drawio Communication Diagram
@@ -20,6 +20,7 @@ Use this skill to turn communication-diagram source text into editable draw.io X
 - Use for loose raw text that names participants, their roles or stereotypes, and numbered messages.
 - Use for structured markdown blueprints with sections such as `Object Layout`, `Participants`, `Messages`, and `Notes`.
 - Use for update requests that include an existing `.drawio` file plus revised source text.
+- Use when the user wants clutter reduced by grouping messages per interaction direction such as `Visitor -> VisitorUI` and `VisitorUI -> Visitor`.
 
 Load [references/example-blueprint.md](references/example-blueprint.md) only when you need a concrete example of the normalized source format.
 
@@ -45,8 +46,9 @@ If two or more plausible topologies exist, stop and ask.
 - Place the main coordinator or central object near the center.
 - Place external actors and their proxies on the far right or bottom-right.
 - Keep association lines plain and undirected.
-- Represent each message with its own editable text box and its own short directional connector near the relevant association.
-- Do not merge multiple message numbers into one text box unless the user explicitly asks for a compact grouped layout.
+- Group messages by exact direction for each participant pair by default, for example `Visitor -> VisitorUI` separately from `VisitorUI -> Visitor`.
+- Render each directional group as one editable text block that lists only message numbers and visible message text.
+- Prefer directional grouped blocks over one-text-per-message layouts unless the user explicitly asks for the legacy detailed style.
 - Save the final XML as a `.drawio` file next to the source file when a source file exists.
 - Save to `output/<slug>.drawio` when the user gives only pasted text and no source path.
 
@@ -54,7 +56,7 @@ If two or more plausible topologies exist, stop and ask.
 
 - Read the existing `.drawio` XML and the revised source text.
 - Preserve current positions and styles when the structure is still compatible.
-- Rebuild affected nodes, links, and message blocks when the text change makes the old layout inconsistent.
+- Rebuild affected nodes, links, and directional message groups when the text change makes the old layout inconsistent.
 - Regenerate the full diagram instead of patching piecemeal when structure, topology, or style drift would make patching less reliable.
 - Tell the user when you switch from minimal patching to full regeneration.
 
@@ -63,12 +65,13 @@ If two or more plausible topologies exist, stop and ask.
 - Do not guess missing participants, stereotypes, message directions, or pathway connections.
 - Do not silently rename participants.
 - Do not attach arrowheads to association lines.
-- Do not use Mermaid or CSV for final rendering when the diagram needs draw.io actor shapes and floating directional connectors. Use XML.
+- Do not use Mermaid or CSV for final rendering when the diagram needs draw.io actor shapes and grouped directional message blocks. Use XML.
 - Render each software object as two centered lines: stereotype on top, `: ObjectName` on the second line.
 - Render actors with the built-in draw.io UML actor shape, not a manually assembled stick figure.
 - Render each actor label with the actor shape and without a leading colon.
-- Use a short directional connector with a visible line and arrowhead for each message. Do not use a standalone triangle marker.
-- Keep one message per text box by default so each message stays independently editable.
+- Keep association lines plain and undirected even when message groups are directional.
+- Group by exact `from -> to` direction. Do not merge opposite directions into one block unless the user explicitly asks.
+- In grouped mode, list each message as `number: text` without repeating participant names inside the block body.
 
 ## References
 

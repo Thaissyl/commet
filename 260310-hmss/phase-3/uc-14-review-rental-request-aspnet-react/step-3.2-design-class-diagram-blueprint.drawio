@@ -1,0 +1,168 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="UC-14 Review Rental Request - Design Class Diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="1600" pageHeight="1000">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- OwnerUI -->
+        <mxCell id="class-ownerui" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;OwnerUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openReviewFunction(in roomId: Guid)&lt;br/&gt;+ selectRequest(in requestId: Guid)&lt;br/&gt;+ acceptRequest(in requestId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="340" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- ReviewRequestController -->
+        <mxCell id="class-reviewrequestcontroller" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;ReviewRequestController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ getRoomRequests(in roomId: Guid, out response: RequestListResponseDto)&lt;br/&gt;+ getRequestDetail(in requestId: Guid, out response: RequestDetailResponseDto)&lt;br/&gt;+ acceptRequest(in requestId: Guid, out response: DecisionResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="310" width="620" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- IRentalRequestRepository -->
+        <mxCell id="class-irentalrequestrepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IRentalRequestRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ findByRoomId(in id: Guid, out list: RequestList)&lt;br/&gt;+ findById(in id: Guid, out entity: RentalRequest)&lt;br/&gt;+ update(in entity: RentalRequest, out persisted: RentalRequest)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="180" width="400" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- IRoomListingRepository -->
+        <mxCell id="class-iroomlistingrepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IRoomListingRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ findByRequestId(in requestId: Guid, out entity: RoomListing)&lt;br/&gt;+ update(in entity: RoomListing, out persisted: RoomListing)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="340" width="440" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ReviewRequestLogic -->
+        <mxCell id="class-reviewrequestlogic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;business logic&amp;#187;&lt;br/&gt;ReviewRequestLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf7&quot;&gt;+ validateAcceptance(in request: RentalRequest, in room: RoomListing, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="500" width="640" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- IEmailGateway -->
+        <mxCell id="class-iemailgateway" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;[none in current scope]&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ sendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="640" width="320" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- RentalRequest -->
+        <mxCell id="class-rentalrequest" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;RentalRequest&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- requestId: Guid&lt;br/&gt;- listingId: Guid&lt;br/&gt;- tenantId: Guid&lt;br/&gt;- status: RequestStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ accept(out result: StatusChangeResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="780" width="300" height="160" as="geometry"/>
+        </mxCell>
+
+        <!-- RoomListing -->
+        <mxCell id="class-roomlisting" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;RoomListing&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- listingId: Guid&lt;br/&gt;- title: string&lt;br/&gt;- status: ListingStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ lock(out result: StatusChangeResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1520" y="780" width="280" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: OwnerUI -> ReviewRequestController -->
+        <mxCell id="edge-ownerui-reviewrequestcontroller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-ownerui" target="class-reviewrequestcontroller">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-ownerui-reviewrequestcontroller" value="reviews requests &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="355" width="150" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> IRentalRequestRepository -->
+        <mxCell id="edge-reviewrequestcontroller-irentalrequestrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-irentalrequestrepository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="350"/>
+              <mxPoint x="1080" y="235."));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-irentalrequestrepository" value="loads and persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="270" width="150" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> IRoomListingRepository -->
+        <mxCell id="edge-reviewrequestcontroller-iroomlistingrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-iroomlistingrepository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="380")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-iroomlistingrepository" value="loads and persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="375" width="150" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> ReviewRequestLogic -->
+        <mxCell id="edge-reviewrequestcontroller-reviewrequestlogic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-reviewrequestlogic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="400")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-reviewrequestlogic" value="validates &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="460" width="100" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> IEmailGateway -->
+        <mxCell id="edge-reviewrequestcontroller-iemailgateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-iemailgateway">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="410")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-iemailgateway" value="dispatches notification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="580" width="190" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> RentalRequest -->
+        <mxCell id="edge-reviewrequestcontroller-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-rentalrequest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="420")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-rentalrequest" value="mutates state &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="620" width="120" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: ReviewRequestController -> RoomListing -->
+        <mxCell id="edge-reviewrequestcontroller-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-roomlisting">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1080" y="430")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-reviewrequestcontroller-roomlisting" value="mutates state &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="720" width="120" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: IRentalRequestRepository -> RentalRequest -->
+        <mxCell id="edge-irentalrequestrepository-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-irentalrequestrepository" target="class-rentalrequest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1360" y="290")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-irentalrequestrepository-rentalrequest-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="295" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-irentalrequestrepository-rentalrequest-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="750" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-irentalrequestrepository-rentalrequest" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="500" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+        <!-- Edge: IRoomListingRepository -> RoomListing -->
+        <mxCell id="edge-iroomlistingrepository-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-iroomlistingrepository" target="class-roomlisting">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="430")));
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-iroomlistingrepository-roomlisting-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="435" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="mult-iroomlistingrepository-roomlisting-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1480" y="760" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label-iroomlistingrepository-roomlisting" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="620" width="90" height="24" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

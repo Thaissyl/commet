@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
+﻿<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
   <diagram name="UC-17 Manage User Account Status - Main Sequence" id="DxMJXHlIK8W39uk-Exr4">
     <mxGraphModel grid="0" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -7,23 +7,23 @@
         <mxCell id="Ma6ajWbu37DKgXP3H2L3-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="System Admin" vertex="1">
           <mxGeometry height="90" width="60" x="73" y="517" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: AdminUI" vertex="1">
-          <mxGeometry height="70" width="180" x="319" y="527" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;user interaction&#187;&lt;br/&gt;: AdminUI" vertex="1">
+          <mxGeometry height="70" width="170" x="319" y="527" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: AdminCoordinator" vertex="1">
-          <mxGeometry height="70" width="190" x="693" y="527" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;coordinator&#187;&lt;br/&gt;: AdminCoordinator" vertex="1">
+          <mxGeometry height="70" width="172" x="693" y="527" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: UserManagementLogic" vertex="1">
-          <mxGeometry height="70" width="200" x="1044" y="360" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;business logic&#187;&lt;br/&gt;: UserManagementLogic" vertex="1">
+          <mxGeometry height="70" width="193" x="1044" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: User" vertex="1">
-          <mxGeometry height="70" width="160" x="1457" y="360" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;entity&#187;&lt;br/&gt;: User" vertex="1">
+          <mxGeometry height="70" width="170" x="1457" y="360" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«service»&lt;br/&gt;: NotificationService" vertex="1">
-          <mxGeometry height="70" width="200" x="688" y="748" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;application logic&#187;&lt;br/&gt;: NotificationService" vertex="1">
+          <mxGeometry height="70" width="193" x="688" y="748" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: EmailProxy" vertex="1">
-          <mxGeometry height="70" width="160" x="1074" y="527" as="geometry" />
+        <mxCell id="Ma6ajWbu37DKgXP3H2L3-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;proxy&#187;&lt;br/&gt;: EmailProxy" vertex="1">
+          <mxGeometry height="70" width="170" x="1074" y="527" as="geometry" />
         </mxCell>
         <mxCell id="Ma6ajWbu37DKgXP3H2L3-8" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Email Provider" vertex="1">
           <mxGeometry height="90" width="60" x="1425" y="517" as="geometry" />
@@ -59,179 +59,47 @@
         <mxCell id="Ma6ajWbu37DKgXP3H2L3-15" edge="1" parent="1" source="Ma6ajWbu37DKgXP3H2L3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Ma6ajWbu37DKgXP3H2L3-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: Account Management Access" vertex="1">
-          <mxGeometry height="24" width="190" x="135" y="465" as="geometry" />
+        <mxCell id="group-1" value="&lt;b&gt;System Admin -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Account Management Access&lt;br/&gt;2: User Account Selection&lt;br/&gt;3: Account Status Change Decision (Suspend)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="68" y="513" width="370" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-17" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="206" y="550" as="sourcePoint" />
-            <mxPoint x="246" y="550" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-2" value="&lt;b&gt;AdminUI -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: User Account List Request&lt;br/&gt;2.1: User Account Detail Request&lt;br/&gt;3.1: Account Status Change Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="439" y="513" width="305" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: User Account List Request" vertex="1">
-          <mxGeometry height="24" width="192" x="506" y="473" as="geometry" />
+        <mxCell id="group-3" value="&lt;b&gt;AdminCoordinator -&gt; UserManagementLogic&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: User Account List Request&lt;br/&gt;2.2: User Account Detail Request&lt;br/&gt;3.2: Account Status Transition Check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="789" y="430" width="341" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-19" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="573" y="550" as="sourcePoint" />
-            <mxPoint x="613" y="550" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-4" value="&lt;b&gt;UserManagementLogic -&gt; User&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: User Account List Query&lt;br/&gt;2.3: User Account Detail Query&lt;br/&gt;3.3: Account Status Transition Update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1178" y="346" width="326" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: User Account List Request" vertex="1">
-          <mxGeometry height="24" width="210" x="813" y="308" as="geometry" />
+        <mxCell id="group-5" value="&lt;b&gt;User -&gt; UserManagementLogic&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.4: User Account List Data&lt;br/&gt;2.4: User Account Data&lt;br/&gt;3.4: Account Status Record Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1171" y="346" width="341" height="98" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: User Account List Request" vertex="1">
-          <mxGeometry height="24" width="210" x="1263" y="312" as="geometry" />
+        <mxCell id="group-6" value="&lt;b&gt;UserManagementLogic -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.5: User Account List Data&lt;br/&gt;2.5: User Account Detail and Available Status Actions&lt;br/&gt;3.5: Account Status Change Result&lt;br/&gt;2.5a: [No actions available] No Available Actions&lt;br/&gt;3.3a: [Transition not permitted] Invalid Transition Result" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="721" y="412" width="478" height="134" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.4: User Account List" vertex="1">
-          <mxGeometry height="24" width="180" x="1266" y="415" as="geometry" />
+        <mxCell id="group-7" value="&lt;b&gt;AdminCoordinator -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.6: User Account List&lt;br/&gt;2.6: User Account Detail and Available Status Actions&lt;br/&gt;3.12: Account Status Change Outcome&lt;br/&gt;2.6a: No Actions Available Error&lt;br/&gt;3.4a: Invalid Transition Error&lt;br/&gt;3.12a: Account Status Change Outcome (notification failed)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="352" y="486" width="478" height="152" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.5: User Account List" vertex="1">
-          <mxGeometry height="24" width="170" x="833" y="415" as="geometry" />
+        <mxCell id="group-8" value="&lt;b&gt;AdminUI -&gt; System Admin&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.7: User Account List Display&lt;br/&gt;2.7: Detail and Available Actions Display&lt;br/&gt;3.13: Account Status Change Confirmation&lt;br/&gt;2.7a: Error Display (Ends unsuccessfully)&lt;br/&gt;3.5a: Error Display (Ends unsuccessfully)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="76" y="495" width="355" height="134" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-27" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1356" y="576" as="sourcePoint" />
-            <mxPoint x="1316" y="576" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-9" value="&lt;b&gt;AdminCoordinator -&gt; NotificationService&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.6: User Notification Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="611" y="638" width="341" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.6: User Account List" vertex="1">
-          <mxGeometry height="24" width="170" x="515" y="583" as="geometry" />
+        <mxCell id="group-10" value="&lt;b&gt;NotificationService -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.7: User Notification Payload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="611" y="672" width="341" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-29" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="612" y="577" as="sourcePoint" />
-            <mxPoint x="572" y="577" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-11" value="&lt;b&gt;AdminCoordinator -&gt; EmailProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.8: User Notification Dispatch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="828" y="527" width="283" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.7: User Account List" vertex="1">
-          <mxGeometry height="24" width="170" x="146" y="586" as="geometry" />
+        <mxCell id="group-12" value="&lt;b&gt;EmailProxy -&gt; Email Provider&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.9: User Notification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1167" y="527" width="280" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-31" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="246" y="575" as="sourcePoint" />
-            <mxPoint x="206" y="575" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-13" value="&lt;b&gt;Email Provider -&gt; EmailProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.10: Notification Delivery Result" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1154" y="527" width="305" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: User Account Selection" vertex="1">
-          <mxGeometry height="24" width="190" x="137" y="489" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-34" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: User Account Detail Request" vertex="1">
-          <mxGeometry height="24" width="191" x="506" y="497" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-36" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.2: User Account Detail Request" vertex="1">
-          <mxGeometry height="24" width="220" x="813" y="332" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-37" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="941" y="549" as="sourcePoint" />
-            <mxPoint x="981" y="549" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.3: User Account Detail Request" vertex="1">
-          <mxGeometry height="24" width="220" x="1263" y="332" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-39" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="903" y="386" as="sourcePoint" />
-            <mxPoint x="943" y="386" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.4: Account Detail and Available Status Actions" vertex="1">
-          <mxGeometry height="24" width="174" x="1266" y="441" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.5: Account Detail and Available Status Actions" vertex="1">
-          <mxGeometry height="24" width="169" x="833" y="439" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-43" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="982" y="577" as="sourcePoint" />
-            <mxPoint x="942" y="577" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.6: Account Detail and Available Status Actions" vertex="1">
-          <mxGeometry height="24" width="134" x="515" y="610" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.7: Account Detail and Available Status Actions" vertex="1">
-          <mxGeometry height="24" width="162" x="146" y="610" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-48" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3: Account Status Change Decision" vertex="1">
-          <mxGeometry height="24" width="183" x="137" y="513" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-50" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.1: Account Status Change Request" vertex="1">
-          <mxGeometry height="24" width="191" x="506" y="523" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-52" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.2: Account Status Change Request" vertex="1">
-          <mxGeometry height="24" width="240" x="813" y="356" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-53" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="811" y="665" as="sourcePoint" />
-            <mxPoint x="811" y="714" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-54" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.3: Account Status Transition" vertex="1">
-          <mxGeometry height="24" width="210" x="1263" y="356" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-55" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1316" y="549" as="sourcePoint" />
-            <mxPoint x="1356" y="549" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-56" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.4: Account Status Record" vertex="1">
-          <mxGeometry height="24" width="154" x="1267" y="473" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-58" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.5: Account Status Change Result" vertex="1">
-          <mxGeometry height="24" width="169" x="833" y="473" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-59" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="761" y="713" as="sourcePoint" />
-            <mxPoint x="761" y="662" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-60" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.6: User Notification Request" vertex="1">
-          <mxGeometry height="24" width="148" x="641" y="679" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-62" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.7: User Notification" vertex="1">
-          <mxGeometry height="24" width="170" x="816" y="673" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-64" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.8: User Notification" vertex="1">
-          <mxGeometry height="24" width="170" x="911" y="521" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-66" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.9: User Notification" vertex="1">
-          <mxGeometry height="24" width="170" x="1261" y="521" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-68" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.10: Notification Delivery Result" vertex="1">
-          <mxGeometry height="24" width="220" x="1246" y="583" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-70" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.11: Notification Delivery Result" vertex="1">
-          <mxGeometry height="24" width="220" x="888" y="583" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-72" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.12: Account Status Change Outcome" vertex="1">
-          <mxGeometry height="24" width="161" x="513" y="642" as="geometry" />
-        </mxCell>
-        <mxCell id="Ma6ajWbu37DKgXP3H2L3-74" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.13: Account Status Change Confirmation" vertex="1">
-          <mxGeometry height="24" width="165" x="146" y="642" as="geometry" />
-        </mxCell>
-        <mxCell id="a-HDga1GuAivWNfLRHGz-6" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="943" y="406" as="sourcePoint" />
-            <mxPoint x="903" y="406" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="a-HDga1GuAivWNfLRHGz-8" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1331" y="384" as="sourcePoint" />
-            <mxPoint x="1371" y="384" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="a-HDga1GuAivWNfLRHGz-9" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1371" y="408" as="sourcePoint" />
-            <mxPoint x="1331" y="408" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="group-14" value="&lt;b&gt;EmailProxy -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.11: Notification Delivery Result&lt;br/&gt;3.11a: [Provider unavailable] Delivery Failure" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="774" y="522" width="391" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,125 +1,59 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
-  <diagram name="UC-08b Update Property - Main Sequence" id="25I9iZ2s9WXaqn_ouQI7">
-    <mxGraphModel dx="866" dy="468" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net">
+  <diagram id="uc-08b-update-property" name="UC-08b Update Property - Main Sequence">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1214" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
-          <mxGeometry height="90" width="50" x="266" y="378" as="geometry" />
+        <mxCell id="owner" value="Owner" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="50" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: PropertyManagementUI" vertex="1">
-          <mxGeometry height="70" width="200" x="543" y="388" as="geometry" />
+        <mxCell id="ownerui" value="&#171;user interaction&#187;&lt;br/&gt;: OwnerUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="180" width="170" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: PropertyCoordinator" vertex="1">
-          <mxGeometry height="70" width="180" x="998" y="388" as="geometry" />
+        <mxCell id="coordinator" value="&#171;coordinator&#187;&lt;br/&gt;: UpdatePropertyCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="430" y="180" width="230" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: Property" vertex="1">
-          <mxGeometry height="70" width="150" x="1385" y="388" as="geometry" />
+        <mxCell id="rules" value="&#171;business logic&#187;&lt;br/&gt;: PropertyRules" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="720" y="180" width="180" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-5" edge="1" parent="1" source="G0oMQh6pk9GCBcG5-TxB-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="G0oMQh6pk9GCBcG5-TxB-2">
+        <mxCell id="property" value="&#171;entity&#187;&lt;br/&gt;: Property" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="980" y="180" width="150" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-owner-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="owner" target="ownerui">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-6" edge="1" parent="1" source="G0oMQh6pk9GCBcG5-TxB-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="G0oMQh6pk9GCBcG5-TxB-3">
+        <mxCell id="assoc-ui-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="ownerui" target="coordinator">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-7" edge="1" parent="1" source="G0oMQh6pk9GCBcG5-TxB-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="G0oMQh6pk9GCBcG5-TxB-4">
+        <mxCell id="assoc-coordinator-rules" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="coordinator" target="rules">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-8" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1: Property Management Access" vertex="1">
-          <mxGeometry height="24" width="190" x="331" y="299" as="geometry" />
+        <mxCell id="assoc-coordinator-property" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="coordinator" target="property">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-9" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="405" y="412" as="sourcePoint" />
-            <mxPoint x="445" y="412" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="owner-to-ui" value="&lt;b&gt;Owner -&gt; OwnerUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Property Management Access&lt;br/&gt;2: Property Selection&lt;br/&gt;3: Property Information Edit&lt;br/&gt;4: Update Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="300" width="340" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-10" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.1: Property List Request" vertex="1">
-          <mxGeometry height="24" width="170" x="771" y="323" as="geometry" />
+        <mxCell id="ui-to-owner" value="&lt;b&gt;OwnerUI -&gt; Owner&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.5: Properties Display&lt;br/&gt;2.5: Editable Property Form Display&lt;br/&gt;3.1: Property Review Display&lt;br/&gt;4.6: Update Success Message&lt;br/&gt;4.5a: Correction Display" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="430" width="360" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-11" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="846" y="408" as="sourcePoint" />
-            <mxPoint x="886" y="408" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="ui-to-coordinator" value="&lt;b&gt;OwnerUI -&gt; UpdatePropertyCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Owner Properties Request&lt;br/&gt;2.1: Property Detail Request&lt;br/&gt;4.1: Property Update Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="20" width="410" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-12" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.2: Property List Request" vertex="1">
-          <mxGeometry height="24" width="170" x="1200" y="319.5" as="geometry" />
+        <mxCell id="coordinator-to-ui" value="&lt;b&gt;UpdatePropertyCoordinator -&gt; OwnerUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.4: Owner Properties List&lt;br/&gt;2.4: Editable Property Form&lt;br/&gt;4.5: Update Success&lt;br/&gt;4.4a: Correction Prompt" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="410" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-13" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1259" y="410" as="sourcePoint" />
-            <mxPoint x="1299" y="410" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-property" value="&lt;b&gt;UpdatePropertyCoordinator -&gt; Property&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Owner Properties Query&lt;br/&gt;2.2: Property Detail Query&lt;br/&gt;4.4: Property Update Record" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="900" y="20" width="340" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-14" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.3: Property List" vertex="1">
-          <mxGeometry height="24" width="140" x="1200" y="449" as="geometry" />
+        <mxCell id="property-to-coordinator" value="&lt;b&gt;Property -&gt; UpdatePropertyCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Owner Properties Data&lt;br/&gt;2.3: Property Detail Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="900" y="130" width="300" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-15" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="886" y="440" as="sourcePoint" />
-            <mxPoint x="846" y="440" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="coordinator-to-rules" value="&lt;b&gt;UpdatePropertyCoordinator -&gt; PropertyRules&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;4.2: Required Fields Validation Check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="620" width="340" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.4: Property List" vertex="1">
-          <mxGeometry height="24" width="140" x="771" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-18" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="1.5: Property List" vertex="1">
-          <mxGeometry height="24" width="140" x="328" y="449" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-19" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="445" y="440" as="sourcePoint" />
-            <mxPoint x="405" y="440" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-20" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2: Property Update Selection" vertex="1">
-          <mxGeometry height="24" width="190" x="333" y="323" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-22" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.1: Property Detail Request" vertex="1">
-          <mxGeometry height="24" width="180" x="771" y="351" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-24" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.2: Property Detail Request" vertex="1">
-          <mxGeometry height="24" width="180" x="1200" y="346.5" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-26" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.3: Property Detail" vertex="1">
-          <mxGeometry height="24" width="140" x="1200" y="473" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-27" edge="1" parent="1" style="edgeStyle=none;rounded=0;html=1;endArrow=classic;startArrow=none;strokeColor=#000000;">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1300" y="441" as="sourcePoint" />
-            <mxPoint x="1260" y="441" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-28" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.4: Property Update Form" vertex="1">
-          <mxGeometry height="24" width="180" x="771" y="477" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-30" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="2.5: Property Update Form" vertex="1">
-          <mxGeometry height="24" width="180" x="328" y="477" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-32" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3: Updated Property Information" vertex="1">
-          <mxGeometry height="24" width="210" x="333" y="347" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-34" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="3.1: Property Review" vertex="1">
-          <mxGeometry height="24" width="150" x="331" y="506" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-36" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4: Property Update Confirmation" vertex="1">
-          <mxGeometry height="24" width="220" x="331" y="371" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-38" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4.1: Property Update Request" vertex="1">
-          <mxGeometry height="24" width="190" x="771" y="378" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-40" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4.2: Updated Property Information" vertex="1">
-          <mxGeometry height="24" width="210" x="1200" y="374.5" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-42" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4.3: Property Record" vertex="1">
-          <mxGeometry height="24" width="150" x="1200" y="501" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-44" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4.4: Property Update Outcome" vertex="1">
-          <mxGeometry height="24" width="200" x="771" y="506" as="geometry" />
-        </mxCell>
-        <mxCell id="G0oMQh6pk9GCBcG5-TxB-46" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="4.5: Property Update Confirmation" vertex="1">
-          <mxGeometry height="24" width="220" x="331" y="535" as="geometry" />
+        <mxCell id="rules-to-coordinator" value="&lt;b&gt;PropertyRules -&gt; UpdatePropertyCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;4.3: Validation Result (Valid)&lt;br/&gt;4.3a: [Invalid fields] Validation Result (Invalid)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="710" width="370" height="95" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
