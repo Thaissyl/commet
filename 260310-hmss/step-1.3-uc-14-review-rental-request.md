@@ -19,9 +19,9 @@ Owner reviews submitted rental requests for a room and decides to accept, reject
 2. System displays all submitted requests for that room with their visible request information.
 3. Owner selects a request to handle.
 4. System displays the request details and available decision options (Accept / Reject / Keep Pending).
-5. Owner selects the desired decision.
-6. System records the decision for the selected request.
-7. System records the resulting request status and, if accepted, records the room as Locked / Not Requestable.
+5. Owner accepts the rental request.
+6. System records the request status as Accepted.
+7. System updates the room listing status to Locked / Not Requestable.
 8. System sends the decision notification to the tenant.
 9. System informs the Owner that the decision has been recorded successfully.
 

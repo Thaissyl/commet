@@ -18,7 +18,7 @@ Owner submits personal identification information and supporting documents for m
 1. Owner accesses the owner verification submission function.
 2. System displays the required verification information fields and document requirements.
 3. Owner enters personal information and provides supporting identification documents.
-4. System records the submitted documents and prepares the verification submission for review.
+4. System validates that all required information and documents are provided, records the submitted documents, and prepares the verification submission for review.
 5. Owner reviews the submission and confirms it.
 6. System records the owner verification submission with status Pending Review.
 7. System informs the Owner that the submission has been received and is pending admin review.

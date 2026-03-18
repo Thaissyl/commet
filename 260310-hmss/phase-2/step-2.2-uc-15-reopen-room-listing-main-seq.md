@@ -1,70 +1,71 @@
-# Communication Diagram: UC-15 Reopen Room Listing - Main Sequence
+# Communication Diagram: UC-15 Reopen Room Listing - Analysis Model
 
 ## Object Layout
 
 ```text
-Owner --- ReopenArrangementUI --- RequestReviewCoordinator --- RentalRequestLogic --- RentalRequest
-                                            |                                      |
-                                            |                                      --- RoomListing
-                                            |
-                                            --- NotificationService
-                                            |
-                                            --- EmailProxy --- Email Provider
+Owner --- OwnerUI --- ReopenRoomCoordinator --- ReopenRules --- RentalRequest
+                                      |                     |
+                                      |                     --- RoomListing
+                                      |
+                                      --- EmailProxy --- Email Provider
 ```
 
 ## Participants
 
-| Position | Object | Stereotype |
-|---|---|---|
-| 1 | Owner | Actor (primary) |
-| 2 | ReopenArrangementUI | `<<user interaction>>` |
-| 3 | RequestReviewCoordinator | `<<coordinator>>` |
-| 4 | RentalRequestLogic | `<<business logic>>` |
-| 5 | RentalRequest | `<<entity>>` |
-| 6 | RoomListing | `<<entity>>` |
-| 7 | NotificationService | `<<service>>` |
-| 8 | EmailProxy | `<<proxy>>` |
-| 9 | Email Provider | Actor (secondary) |
+| Position | Object                | Stereotype             | Justification                                                                                           |
+| -------- | --------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1        | Owner                 | Actor (primary)        | The human user initiating the reopening.                                                                |
+| 2        | OwnerUI               | `<<user interaction>>` | Boundary object receiving physical inputs and displaying information.                                   |
+| 3        | ReopenRoomCoordinator | `<<coordinator>>`      | Control object sequencing the overall flow of the use case without holding state.                         |
+| 4        | ReopenRules           | `<<business logic>>`   | Encapsulates the specific business rules for validating status concurrency and eligibility.              |
+| 5        | RentalRequest         | `<<entity>>`           | Conceptual data object encapsulating the rental request record.                                          |
+| 6        | RoomListing           | `<<entity>>`           | Conceptual data object encapsulating the locked room record.                                             |
+| 7        | EmailProxy            | `<<proxy>>`            | Boundary object hiding the technical details of the external email system API.                           |
+| 8        | Email Provider        | Actor (secondary)      | The external system receiving notifications.                                                             |
 
-## Messages
+## Messages (Main Sequence)
 
-| # | From -> To | Message |
-|---|---|---|
-| 1 | Owner -> ReopenArrangementUI | Accepted Arrangement Management Access |
-| 1.1 | ReopenArrangementUI -> RequestReviewCoordinator | Accepted Arrangement List Request |
-| 1.2 | RequestReviewCoordinator -> RentalRequestLogic | Accepted Arrangement List Request |
-| 1.3 | RentalRequestLogic -> RentalRequest | Accepted Arrangement List Request |
-| 1.4 | RentalRequest -> RentalRequestLogic | Accepted Arrangement List |
-| 1.5 | RentalRequestLogic -> RequestReviewCoordinator | Accepted Arrangement List and Room Information |
-| 1.6 | RequestReviewCoordinator -> ReopenArrangementUI | Accepted Arrangement List |
-| 1.7 | ReopenArrangementUI -> Owner | Accepted Arrangement List |
-| 2 | Owner -> ReopenArrangementUI | Accepted Arrangement Selection |
-| 2.1 | ReopenArrangementUI -> RequestReviewCoordinator | Accepted Arrangement Detail Request |
-| 2.2 | RequestReviewCoordinator -> RentalRequestLogic | Accepted Arrangement Detail Request |
-| 2.3 | RentalRequestLogic -> RentalRequest | Accepted Arrangement Detail Request |
-| 2.4 | RentalRequest -> RentalRequestLogic | Accepted Arrangement Detail |
-| 2.5 | RentalRequestLogic -> RequestReviewCoordinator | Reopen Detail and Business Consequence |
-| 2.6 | RequestReviewCoordinator -> ReopenArrangementUI | Reopen Detail and Business Consequence |
-| 2.7 | ReopenArrangementUI -> Owner | Reopen Detail and Business Consequence |
-| 3 | Owner -> ReopenArrangementUI | Reopen Confirmation |
-| 3.1 | ReopenArrangementUI -> RequestReviewCoordinator | Reopen Request |
-| 3.2 | RequestReviewCoordinator -> RentalRequestLogic | Reopen Request |
-| 3.3 | RentalRequestLogic -> RentalRequest | Rental Request Record |
-| 3.4 | RentalRequestLogic -> RoomListing | Room Listing Status Record |
-| 3.5 | RentalRequestLogic -> RequestReviewCoordinator | Reopen Result |
-| 3.6 | RequestReviewCoordinator -> NotificationService | Tenant Notification Request |
-| 3.7 | NotificationService -> RequestReviewCoordinator | Tenant Notification |
-| 3.8 | RequestReviewCoordinator -> EmailProxy | Tenant Notification |
-| 3.9 | EmailProxy -> Email Provider | Tenant Notification |
-| 3.10 | Email Provider -> EmailProxy | Notification Delivery Result |
-| 3.11 | EmailProxy -> RequestReviewCoordinator | Notification Delivery Result |
-| 3.12 | RequestReviewCoordinator -> ReopenArrangementUI | Reopen Outcome |
-| 3.13 | ReopenArrangementUI -> Owner | Reopen Confirmation |
+| #   | From -> To                                   | Message / Information Passed        | Use Case Step     |
+| --- | -------------------------------------------- | ----------------------------------- | ----------------- |
+| 1   | Owner -> OwnerUI                             | Accepted Arrangements Access        | Step 1            |
+| 1.1 | OwnerUI -> ReopenRoomCoordinator            | Accepted Arrangements Query         |                   |
+| 1.2 | ReopenRoomCoordinator -> RentalRequest      | Accepted Arrangements Request       |                   |
+| 1.3 | RentalRequest -> ReopenRoomCoordinator      | Accepted Arrangements Data          |                   |
+| 1.4 | ReopenRoomCoordinator -> OwnerUI            | Accepted Arrangements and Room Info | Step 2            |
+| 1.5 | OwnerUI -> Owner                             | Arrangements Display                |                   |
+| 2   | Owner -> OwnerUI                             | Arrangement Selection               | Step 3            |
+| 2.1 | OwnerUI -> ReopenRoomCoordinator            | Arrangement Selection Request       |                   |
+| 2.2 | ReopenRoomCoordinator -> ReopenRules        | Status Concurrency Check            | Step 4            |
+| 2.3 | ReopenRules -> RentalRequest                | Request Status Query                |                   |
+| 2.4 | RentalRequest -> ReopenRules                | Request Status Data                 |                   |
+| 2.5 | ReopenRules -> ReopenRoomCoordinator        | Validation Result (Valid)           |                   |
+| 2.6 | ReopenRoomCoordinator -> OwnerUI            | Reopen Action Prompt and Consequences | Step 5          |
+| 2.7 | OwnerUI -> Owner                             | Prompt Display                      |                   |
+| 3   | Owner -> OwnerUI                             | Reopen Confirmation                | Step 6 (Orig. 5)  |
+| 3.1 | OwnerUI -> ReopenRoomCoordinator            | Confirmed Reopen Request            |                   |
+| 3.2 | ReopenRoomCoordinator -> RentalRequest      | Revoked Status Update               | Step 7 (Orig. 6)  |
+| 3.3 | ReopenRoomCoordinator -> RoomListing        | Published Available Status Update   | Step 8 (Orig. 7)  |
+| 3.4 | ReopenRoomCoordinator -> EmailProxy         | Tenant Notification Request         | Step 9 (Orig. 8)  |
+| 3.5 | EmailProxy -> Email Provider                | Tenant Notification                 |                   |
+| 3.6 | ReopenRoomCoordinator -> OwnerUI            | Reopen Success                      | Step 10 (Orig. 9) |
+| 3.7 | OwnerUI -> Owner                             | Reopen Success Message              |                   |
 
-## Notes
+## Alternative Sequences
 
-- `RentalRequestLogic` owns both the request revocation and the room reopening rule.
-- The notification path is coordinated after the reopen result is recorded.
-- Messages are kept at analysis level and avoid method-style naming.
+| #    | From -> To                                   | Message / Information Passed                    | Use Case Step        |
+| ---- | -------------------------------------------- | ---------------------------------------------- | -------------------- |
+| 2.5a | ReopenRules -> ReopenRoomCoordinator         | [Status changed] Validation Result (Invalid)    | Alt Step 3.1         |
+| 2.6a | ReopenRoomCoordinator -> OwnerUI             | Invalid Status Error Prompt                     |                      |
+| 2.7a | OwnerUI -> Owner                             | Error Display                                   | Ends unsuccessfully   |
+| 3.5a | EmailProxy -> ReopenRoomCoordinator         | [Provider unavailable] Delivery Failure         | Alt Step 8.1         |
+| 3.5b | ReopenRoomCoordinator -> RentalRequest       | Failed Notification Record                      | Continues to 3.6      |
 
-Use `/drawio` to generate a visual `.drawio` file from this blueprint.
+## Architectural Notes
+
+- **Explicit Concurrency Check**: Step 4 (Status Concurrency Check) was inserted to validate that the selected request is still in Accepted status. This handles the edge case where status changes between Step 2 (display) and Step 3 (selection) due to concurrency.
+- **Two Entity Updates**: Reopening updates BOTH `RentalRequest` (to Revoked by Owner) AND `RoomListing` (to Published Available). This reverses the locking that occurred in UC-14 (Review Rental Request).
+- **Analysis vs. Design**: In this analysis model, messages use descriptive noun phrases (e.g., `Revoked Status Update`, `Published Available Status Update`) rather than operation signatures (e.g., `reopenListing(in, out)`).
+- **Separation of Concerns**: The `ReopenRoomCoordinator` delegates status validation to `ReopenRules` (`<<business logic>>`), ensuring the request is still in Accepted status before proceeding.
+- **Explicit Returns**: The analysis model shows explicit data flow (e.g., `Request Status Data` in Message 2.4). In the design phase, these will be embedded into `out` parameters of synchronous calls.
+
+Use `/drawio-communication-diagram` to generate a visual `.drawio` file from this blueprint.

@@ -19,8 +19,8 @@ System Admin changes a user account status by applying a status transition permi
 2. System displays user accounts and their current statuses.
 3. System Admin selects a user account to manage.
 4. System displays the current account information and the status-management actions permitted for the selected account's current status.
-5. System Admin selects a permitted status-management action.
-6. System updates the user account status according to the selected action.
+5. System Admin selects the Suspend action (for an Active account).
+6. System validates the status transition and updates the user account status to Suspended.
 7. System sends notification to the user about the status change.
 8. System informs the System Admin that the account-management action has been applied successfully.
 

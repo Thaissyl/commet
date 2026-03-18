@@ -11,9 +11,8 @@ A verified owner publishes a prepared room listing so it becomes publicly visibl
 - **Secondary Actor(s):** None
 
 ## Preconditions
-1. Owner is signed in and has been verified by System Admin.
+1. Owner is signed in.
 2. Selected room listing exists in Draft or unpublished state.
-3. Selected room listing has at least one stored image.
 
 ## Description of main sequence
 1. Owner accesses the publication function for a prepared listing.

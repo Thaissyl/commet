@@ -18,12 +18,13 @@ Owner revokes a previously accepted rental request after the offline arrangement
 1. Owner accesses the accepted arrangement management function.
 2. System displays the accepted request and the corresponding locked room information.
 3. Owner selects the accepted arrangement to handle.
-4. System displays the reopen action and the business consequence (request will be Revoked, room will become requestable again).
-5. Owner confirms that the offline arrangement has failed and requests reopening.
-6. System records the accepted request as Revoked by Owner.
-7. System records the room as Published Available.
-8. System sends notification to the Tenant that the accepted request has been revoked.
-9. System informs the Owner that the room listing has been reopened successfully.
+4. System validates that the selected request is still in Accepted status.
+5. System displays the reopen action and the business consequence (request will be Revoked, room will become requestable again).
+6. Owner confirms that the offline arrangement has failed and requests reopening.
+7. System records the accepted request as Revoked by Owner.
+8. System records the room as Published Available.
+9. System sends notification to the Tenant that the accepted request has been revoked.
+10. System informs the Owner that the room listing has been reopened successfully.
 
 ## Description of alternative sequences
 - **Step 3: Selected request is no longer in Accepted status**

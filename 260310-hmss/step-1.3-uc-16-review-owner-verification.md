@@ -18,14 +18,18 @@ System Admin reviews a pending owner verification submission, records an approva
 1. System Admin accesses the owner verification review function.
 2. System displays pending verification submissions.
 3. System Admin selects a submission to review.
-4. System displays the submitted owner information and supporting documents.
-5. System Admin reviews the submission and selects Approve or Reject.
-6. System records the administrative decision.
-7. System updates the selected owner verification status to Verified or Rejected.
+4. System retrieves supporting documents from Cloud Storage and displays the submitted owner information and documents to the System Admin.
+5. System Admin reviews the submission and selects Approve.
+6. System records the administrative decision as Approved.
+7. System updates the owner's overall status to Verified.
 8. System sends notification to the Owner of the verification result.
 9. System informs the System Admin that the review has been completed successfully.
 
 ## Description of alternative sequences
+- **Step 5: System Admin selects Reject**
+  - 5.1: System records the administrative decision as Rejected.
+  - 5.2: System updates the owner's overall status to Rejected.
+  - Continues to Step 8.
 - **Step 8: Email Provider unavailable**
   - 8.1: System records the notification as failed but the decision still succeeds.
   - Continues to Step 9.

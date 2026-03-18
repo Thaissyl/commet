@@ -16,7 +16,7 @@ Owner hides or archives a published room listing, removing it from public search
 
 ## Description of main sequence
 1. Owner accesses the listing management function and selects a published listing.
-2. System displays the current listing status and available visibility actions (Hide / Archive).
+2. System displays the current listing status and a standard menu of visibility actions.
 3. Owner selects the desired visibility action.
 4. System evaluates whether the selected action is valid for the listing's current status.
 5. Owner confirms the visibility change.
