@@ -58,7 +58,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1080" y="350"/>
-              <mxPoint x="1080" y="235."));
+              <mxPoint x="1080" y="235"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -70,7 +70,7 @@
         <mxCell id="edge-reviewrequestcontroller-iroomlistingrepository" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-iroomlistingrepository">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="380")));
+              <mxPoint x="1080" y="380"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -82,7 +82,7 @@
         <mxCell id="edge-reviewrequestcontroller-reviewrequestlogic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-reviewrequestlogic">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="400")));
+              <mxPoint x="1080" y="400"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -94,7 +94,7 @@
         <mxCell id="edge-reviewrequestcontroller-iemailgateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-iemailgateway">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="410")));
+              <mxPoint x="1080" y="410"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -106,7 +106,7 @@
         <mxCell id="edge-reviewrequestcontroller-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-rentalrequest">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="420")));
+              <mxPoint x="1080" y="420"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -118,7 +118,7 @@
         <mxCell id="edge-reviewrequestcontroller-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-reviewrequestcontroller" target="class-roomlisting">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1080" y="430")));
+              <mxPoint x="1080" y="430"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -130,7 +130,7 @@
         <mxCell id="edge-irentalrequestrepository-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-irentalrequestrepository" target="class-rentalrequest">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1360" y="290")));
+              <mxPoint x="1360" y="290"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -148,7 +148,7 @@
         <mxCell id="edge-iroomlistingrepository-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-iroomlistingrepository" target="class-roomlisting">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1380" y="430")));
+              <mxPoint x="1380" y="430"/>
             </Array>
           </mxGeometry>
         </mxCell>

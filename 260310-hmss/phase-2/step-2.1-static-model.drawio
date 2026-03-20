@@ -1,0 +1,128 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="step-2-1-static-model" name="Step 2.1 Static Model">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="class-useraccount" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;entity&amp;#187;&lt;br/&gt;UserAccount&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ userId: Guid&lt;br/&gt;+ fullName: string&lt;br/&gt;+ email: string&lt;br/&gt;+ phone: string&lt;br/&gt;+ passwordHash: string&lt;br/&gt;+ role: UserRole&lt;br/&gt;+ accountStatus: AccountStatus&lt;br/&gt;+ createdAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[operations deferred to Phase 3]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="350" width="290" height="250" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-property" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;entity&amp;#187;&lt;br/&gt;Property&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ propertyId: Guid&lt;br/&gt;+ ownerId: Guid&lt;br/&gt;+ name: string&lt;br/&gt;+ address: string&lt;br/&gt;+ mapLocation: string&lt;br/&gt;+ description: string&lt;br/&gt;+ generalPolicies: string&lt;br/&gt;+ createdAt: DateTime&lt;br/&gt;+ updatedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[operations deferred to Phase 3]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="90" width="310" height="270" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-roomlisting" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;entity&amp;#187;&lt;br/&gt;RoomListing&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ listingId: Guid&lt;br/&gt;+ propertyId: Guid&lt;br/&gt;+ title: string&lt;br/&gt;+ description: string&lt;br/&gt;+ price: decimal&lt;br/&gt;+ capacity: int&lt;br/&gt;+ amenities: string&lt;br/&gt;+ availableFrom: Date&lt;br/&gt;+ furnishedStatus: FurnishedType&lt;br/&gt;+ privateWCStatus: PrivateWCType&lt;br/&gt;+ imagesRef: string&lt;br/&gt;+ status: ListingStatus&lt;br/&gt;+ createdAt: DateTime&lt;br/&gt;+ updatedAt: DateTime&lt;br/&gt;+ publishedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[operations deferred to Phase 3]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="60" width="330" height="390" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-rentalrequest" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;entity&amp;#187;&lt;br/&gt;RentalRequest&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ requestId: Guid&lt;br/&gt;+ listingId: Guid&lt;br/&gt;+ tenantId: Guid&lt;br/&gt;+ moveInDate: Date&lt;br/&gt;+ expectedRentalDuration: int&lt;br/&gt;+ occupantCount: int&lt;br/&gt;+ occupationCategory: string&lt;br/&gt;+ budgetExpectation: decimal&lt;br/&gt;+ contactPhone: string&lt;br/&gt;+ preferredContactMethod: string&lt;br/&gt;+ specialNotes: string&lt;br/&gt;+ status: RequestStatus&lt;br/&gt;+ submittedAt: DateTime&lt;br/&gt;+ decidedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[operations deferred to Phase 3]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="610" width="360" height="370" as="geometry" />
+        </mxCell>
+
+        <mxCell id="class-ownerverification" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c0;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;entity&amp;#187;&lt;br/&gt;OwnerVerification&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ verificationId: Guid&lt;br/&gt;+ ownerId: Guid&lt;br/&gt;+ personalInformation: string&lt;br/&gt;+ idDocumentRef: string&lt;br/&gt;+ supportingDocsRef: string&lt;br/&gt;+ status: VerificationStatus&lt;br/&gt;+ submittedAt: DateTime&lt;br/&gt;+ reviewedAt: DateTime&lt;br/&gt;+ reviewNote: string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;[operations deferred to Phase 3]&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="700" width="320" height="260" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-user-property" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-useraccount" target="class-property">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-user-property-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="470" y="300" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-user-property-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="580" y="120" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-user-property" value="owns (as Owner) &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="185" width="150" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-property-roomlisting" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=diamondThin;startFill=1;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="class-property" target="class-roomlisting">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-property-roomlisting-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="940" y="120" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-property-roomlisting-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="990" y="120" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-property-roomlisting" value="contains &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="155" width="110" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-user-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-useraccount" target="class-rentalrequest">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="795" />
+              <mxPoint x="900" y="795" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mult-user-rentalrequest-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="470" y="780" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-user-rentalrequest-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="950" y="780" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-user-rentalrequest" value="submits (as Tenant) &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="780" width="180" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-roomlisting-rentalrequest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-roomlisting" target="class-rentalrequest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-roomlisting-rentalrequest-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="520" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-roomlisting-rentalrequest-tgt" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="580" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-roomlisting-rentalrequest" value="receives &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1330" y="550" width="100" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge-user-ownerverification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-useraccount" target="class-ownerverification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-user-ownerverification-src" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="470" y="640" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="mult-user-ownerverification-tgt" value="0..1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="490" y="680" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-user-ownerverification" value="owns (as Owner) &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="660" width="170" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-boundary" value="&lt;b&gt;Boundary Classes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;VisitorUI&lt;br/&gt;TenantUI&lt;br/&gt;OwnerUI&lt;br/&gt;AdminUI&lt;br/&gt;AuthUI&lt;br/&gt;GoogleMapsProxy&lt;br/&gt;CloudStorageProxy&lt;br/&gt;EmailProxy" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#e0f2fe;strokeColor=#0284c7;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="250" height="220" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-control" value="&lt;b&gt;Control Classes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;SearchCoordinator&lt;br/&gt;RoomDetailCoordinator&lt;br/&gt;AuthCoordinator&lt;br/&gt;RentalRequestCoordinator&lt;br/&gt;PropertyCoordinator&lt;br/&gt;ListingManagementCoordinator&lt;br/&gt;VerificationCoordinator&lt;br/&gt;RequestReviewCoordinator&lt;br/&gt;AdminCoordinator" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#ffedd5;strokeColor=#ea580c;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="40" width="280" height="260" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-business" value="&lt;b&gt;Business Logic Classes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;SearchMatchingLogic&lt;br/&gt;RoomListingLogic&lt;br/&gt;AuthenticationLogic&lt;br/&gt;RentalRequestLogic&lt;br/&gt;VerificationLogic&lt;br/&gt;UserManagementLogic" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#ede9fe;strokeColor=#7c3aed;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="330" width="280" height="190" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-service" value="&lt;b&gt;Service Classes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;PropertyService&lt;br/&gt;NotificationService" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fce7f3;strokeColor=#be185d;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="1450" y="560" width="260" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-status" value="&lt;b&gt;Status / Enum Notes&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;UserRole = Tenant | Owner | SystemAdmin&lt;br/&gt;AccountStatus = Active | Suspended | Disabled&lt;br/&gt;ListingStatus = Draft | PublishedAvailable | Locked | Hidden | Archived&lt;br/&gt;RequestStatus = Pending | Accepted | Rejected | CancelledByTenant | RevokedByOwner&lt;br/&gt;VerificationStatus = PendingReview | Verified | Rejected&lt;br/&gt;FurnishedType = FullyFurnished | PartiallyFurnished | Unfurnished&lt;br/&gt;PrivateWCType = Private | Shared | None" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="980" width="760" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="note-scope" value="&lt;b&gt;Diagram Scope&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;The source defines formal relationships only for the five entity classes. Boundary, control, business-logic, service, and proxy classes are included here as categorized notes to preserve the full static model without inventing unsupported UML associations." style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#f8fafc;strokeColor=#94a3b8;fontColor=#0f172a;align=left;verticalAlign=top;spacingTop=8;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="990" width="760" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

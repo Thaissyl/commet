@@ -1,0 +1,77 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="29.6.4">
+  <diagram id="step-3-0-design-communication-diagram" name="step-3.0-design-communication-diagram">
+    <mxGraphModel dx="3278" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tenant" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Tenant" vertex="1">
+          <mxGeometry height="90" width="50" x="-135" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="tenantui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: TenantUI" vertex="1">
+          <mxGeometry height="70" width="170" x="180" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="trackcontroller" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: TrackRentalRequestController" vertex="1">
+          <mxGeometry height="70" width="240" x="582" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="rentalrepo" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«database wrapper»&lt;br/&gt;: IRentalRequestRepository" vertex="1">
+          <mxGeometry height="70" width="230" x="1092" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="rentalrequest" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«data abstraction»&lt;br/&gt;: RentalRequest" vertex="1">
+          <mxGeometry height="70" width="190" x="1526" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-tenant-ui" edge="1" parent="1" source="tenant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="tenantui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-ui-controller" edge="1" parent="1" source="tenantui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="trackcontroller">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-controller-repo" edge="1" parent="1" source="trackcontroller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="rentalrepo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-repo-request" edge="1" parent="1" source="rentalrepo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="rentalrequest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tenant-to-ui-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Rental Request Status Access&lt;br&gt;2: Status Detail Selection&lt;br&gt;3: Status Detail Review" vertex="1">
+          <mxGeometry height="70" width="245" x="-70" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-to-tenant-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Request List and Statuses Display&lt;br&gt;1a: [No requests] No Request History Display&lt;br&gt;2.3: Full Status Details and Actions Display" vertex="1">
+          <mxGeometry height="71" width="293" x="-85" y="438" as="geometry" />
+        </mxCell>
+        <mxCell id="ui-to-controller-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: getTenantRequests(in tenantId: Guid, out response: TenantRequestsResponseDto)&lt;br&gt;2.1: getRequestDetail(in requestId: Guid, out response: RequestDetailResponseDto)" vertex="1">
+          <mxGeometry height="78" width="470" x="263" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="controller-to-repo-group" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: findTenantRequests(in tenantId: Guid, out list: RentalRequestList)&lt;br&gt;2.2: findById(in id: Guid, out entity: RentalRequest)" vertex="1">
+          <mxGeometry height="54" width="407" x="778" y="259" as="geometry" />
+        </mxCell>
+        <mxCell id="0FqREZQOxjvdg_ANZtjc-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-18" y="353" as="sourcePoint" />
+            <mxPoint x="90" y="353" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0FqREZQOxjvdg_ANZtjc-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="415" y="351" as="sourcePoint" />
+            <mxPoint x="523" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0FqREZQOxjvdg_ANZtjc-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="917" y="351" as="sourcePoint" />
+            <mxPoint x="1025" y="351" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0FqREZQOxjvdg_ANZtjc-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="84" y="398" as="sourcePoint" />
+            <mxPoint x="-21" y="398" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -48,7 +48,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1340" y="340"/>
-              <mxPoint x="1340" y="220."));
+              <mxPoint x="1340" y="220"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -61,7 +61,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1340" y="380"/>
-              <mxPoint x="1340" y="360."));
+              <mxPoint x="1340" y="360"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -73,7 +73,7 @@
         <mxCell id="edge-submitverificationcontroller-icloudstoragegateway" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;" edge="1" parent="1" source="class-submitverificationcontroller" target="class-icloudstoragegateway">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1340" y="400."));
+              <mxPoint x="1340" y="400"/>
             </Array>
           </mxGeometry>
         </mxCell>
@@ -85,7 +85,7 @@
         <mxCell id="edge-iownerverificationrepository-ownerverification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;endArrow=open;endFill=0;endSize=10;startArrow=none;dashed=1;" edge="1" parent="1" source="class-iownerverificationrepository" target="class-ownerverification">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1640" y="260."));
+              <mxPoint x="1640" y="260"/>
             </Array>
           </mxGeometry>
         </mxCell>
