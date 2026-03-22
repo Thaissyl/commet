@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.4">
+  <diagram name="UC-08a Create Property - Main Sequence" id="v7wdz3PKo1whIJ4p0ok3">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
+          <mxGeometry height="90" width="50" x="60" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
+          <mxGeometry height="70" width="170" x="440" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: CreatePropertyCoordinator" vertex="1">
+          <mxGeometry height="70" width="230" x="875" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: PropertyRules" vertex="1">
+          <mxGeometry height="70" width="180" x="1370" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: Property" vertex="1">
+          <mxGeometry height="70" width="150" x="1370" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-6" edge="1" parent="1" source="ZtB7JjTMGd_vEzMhP_WC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="ZtB7JjTMGd_vEzMhP_WC-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-7" edge="1" parent="1" source="ZtB7JjTMGd_vEzMhP_WC-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="ZtB7JjTMGd_vEzMhP_WC-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-8" edge="1" parent="1" source="ZtB7JjTMGd_vEzMhP_WC-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="ZtB7JjTMGd_vEzMhP_WC-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="740" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-9" edge="1" parent="1" source="ZtB7JjTMGd_vEzMhP_WC-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="ZtB7JjTMGd_vEzMhP_WC-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="540" />
+              <mxPoint x="1050" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Property Creation Access&lt;br&gt;2: Property Information Input&lt;br&gt;3: Creation Confirmation" vertex="1">
+          <mxGeometry height="70" width="230" x="180" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Property Form Display&lt;br&gt;2.1: Property Review Display&lt;br&gt;3.5a: Correction Display&lt;br&gt;3.6: Property Creation Success Message" vertex="1">
+          <mxGeometry height="80" width="260" x="150" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Property Form Request&lt;br&gt;3.1: Property Creation Request" vertex="1">
+          <mxGeometry height="60" width="230" x="645" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Property Creation Form&lt;br&gt;3.4a: Correction Prompt&lt;br&gt;3.5: Creation Success" vertex="1">
+          <mxGeometry height="70" width="180" x="670" y="575" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.2: Required Fields Validation Check" vertex="1">
+          <mxGeometry height="40" width="265" x="1060" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.3: Validation Result (Valid)&lt;br&gt;3.3a: [Invalid fields] Validation Result (Invalid)" vertex="1">
+          <mxGeometry height="60" width="290" x="1047.5" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.4: New Property Record" vertex="1">
+          <mxGeometry height="50" width="180" x="1150" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="212.75" y="520" as="sourcePoint" />
+            <mxPoint x="347.25" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-21" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="690" y="520" as="sourcePoint" />
+            <mxPoint x="824.5" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-22" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1172.75" y="520" as="sourcePoint" />
+            <mxPoint x="1307.25" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1127.75" y="720" as="sourcePoint" />
+            <mxPoint x="1262.25" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1257.5" y="760" as="sourcePoint" />
+            <mxPoint x="1127.5" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="825" y="549" as="sourcePoint" />
+            <mxPoint x="695" y="549" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZtB7JjTMGd_vEzMhP_WC-26" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="345" y="549" as="sourcePoint" />
+            <mxPoint x="215" y="549" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,113 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="use-case-16-design-class-diagram" id="0">
+    <mxGraphModel dx="4577" dy="1415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="adminui" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;AdminUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ OpenVerificationReview()&lt;br/&gt;+ SelectSubmission(in verificationId: Guid)&lt;br/&gt;+ ApproveVerification(in verificationId: Guid, in dto: ReviewDecisionDto)&lt;br/&gt;+ RejectVerification(in verificationId: Guid, in dto: ReviewDecisionDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="180" width="300" x="-70" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="controller" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;ReviewVerificationController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetPendingSubmissions(out response: List&amp;lt;SubmissionSummaryDto&amp;gt;)&lt;br/&gt;+ GetSubmissionDetail(in verificationId: Guid, out response: SubmissionDetailResponseDto)&lt;br/&gt;+ ApproveVerification(in verificationId: Guid, in dto: ReviewDecisionDto, out response: AdminDecisionResponseDto)&lt;br/&gt;+ RejectVerification(in verificationId: Guid, in dto: ReviewDecisionDto, out response: AdminDecisionResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="240" width="470" x="400" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="verificationrepo" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IOwnerVerificationRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindPendingAsync(out records: List&amp;lt;OwnerVerification&amp;gt;)&lt;br/&gt;+ FindByIdAsync(in id: Guid, out verification: OwnerVerification)&lt;br/&gt;+ UpdateAsync(in entity: OwnerVerification, out persisted: OwnerVerification)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="150" width="360" x="1110" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="userrepo" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IUserAccountRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindByIdAsync(in id: Guid, out owner: UserAccount)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="110" width="310" x="1110" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="logic" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;business logic&amp;#187;&lt;br/&gt;VerificationLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ValidateDecision(in verification: OwnerVerification, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="110" width="280" x="1150" y="494" as="geometry" />
+        </mxCell>
+        <mxCell id="cloud" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;ICloudStorageGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ RetrieveDocumentsAsync(in documentRefs: List&amp;lt;string&amp;gt;, out documentUrls: List&amp;lt;string&amp;gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="110" width="260" x="1160" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="email" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ SendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="95" width="280" x="1160" y="835" as="geometry" />
+        </mxCell>
+        <mxCell id="verification" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;OwnerVerification&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- verificationId: Guid&lt;br/&gt;- ownerId: Guid&lt;br/&gt;- status: string&lt;br/&gt;- reviewNote: string?&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ Approve(in reviewNote: string)&lt;br/&gt;+ Reject(in reviewNote: string)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="190" width="190" x="1570" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="user" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;UserAccount&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- userId: Guid&lt;br/&gt;- fullName: string&lt;br/&gt;- email: string&lt;br/&gt;- accountStatus: string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="150" width="150" x="1540" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" value="Verification detail loads owner information and document URLs before review.&lt;br/&gt;Only OwnerVerification is persisted in this flow.&lt;br/&gt;Email dispatch stays fire-and-forget." vertex="1">
+          <mxGeometry height="120" width="360" x="1470" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="adminui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="controller">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="reviews submissions &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="140" x="240" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="verificationrepo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="510" />
+              <mxPoint x="960" y="185" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="loads and persists &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="960" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="userrepo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="510" />
+              <mxPoint x="960" y="375" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="loads owner info &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="140" x="970" y="341" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="logic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="555" />
+              <mxPoint x="960" y="555" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="validates decision &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="960" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cloud">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="590" />
+              <mxPoint x="960" y="715" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="retrieves documents &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="170" x="980" y="688" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="email">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="610" />
+              <mxPoint x="960" y="885" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a6-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="dispatches email &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="980" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="verificationrepo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="verification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="manages &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="90" x="1480" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="userrepo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a8-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="manages &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="90" x="1430" y="341" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

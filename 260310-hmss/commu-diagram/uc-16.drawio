@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net" version="29.6.3">
+  <diagram name="UC-16 Review Owner Verification - Main Sequence" id="uc16-analysis-main">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="actor-admin" value="System Admin" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-ui" value="&#171;user interaction&#187;&lt;br/&gt;: AdminUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="240" y="370" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-coordinator" value="&#171;coordinator&#187;&lt;br/&gt;: ReviewVerificationCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="510" y="370" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-verification" value="&#171;entity&#187;&lt;br/&gt;: OwnerVerification" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="170" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-cloud-proxy" value="&#171;proxy&#187;&lt;br/&gt;: CloudStorageProxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="430" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-cloud" value="Cloud Storage" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="420" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-email-proxy" value="&#171;proxy&#187;&lt;br/&gt;: EmailProxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="670" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-email" value="Email Provider" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="660" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="assoc-admin-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="actor-admin" target="obj-ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-ui-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-ui" target="obj-coordinator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-verification" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-verification">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="405" />
+              <mxPoint x="900" y="205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-coordinator-cloud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-cloud-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="405" />
+              <mxPoint x="900" y="465" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-cloud-storage" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-cloud-proxy" target="actor-cloud">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-email-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="405" />
+              <mxPoint x="900" y="705" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-email-provider" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-email-proxy" target="actor-email">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="grp-admin-ui" value="&lt;b&gt;System Admin -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1: Verification Review Access&lt;br/&gt;V2: Select Submission&lt;br/&gt;V3: Approve Submission" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="270" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-coordinator" value="&lt;b&gt;AdminUI -&gt; ReviewVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1.1: Get Pending Submissions&lt;br/&gt;V2.1: Get Submission Details&lt;br/&gt;V3.1: Approval Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-verification" value="&lt;b&gt;ReviewVerificationCoordinator -&gt; OwnerVerification&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1.2: Read Pending Submissions&lt;br/&gt;V2.6: Read Submission Data&lt;br/&gt;V3.2: Update Status (Approved)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="600" y="70" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-verification-coordinator" value="&lt;b&gt;OwnerVerification -&gt; ReviewVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1.3: Pending Submissions Data&lt;br/&gt;V2.7: Submission Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="960" y="90" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-ui" value="&lt;b&gt;ReviewVerificationCoordinator -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1.4: Pending Submissions Data&lt;br/&gt;V2.8: Submission Details &amp; Documents&lt;br/&gt;V3.5: Approval Success" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="250" y="500" width="340" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-admin" value="&lt;b&gt;AdminUI -&gt; System Admin&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V1.5: Display Pending Submissions&lt;br/&gt;V2.9: Display Review Interface&lt;br/&gt;V3.6: Display Success Message" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-cloud" value="&lt;b&gt;ReviewVerificationCoordinator -&gt; CloudStorageProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V2.2: Retrieve Documents Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="600" y="420" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-cloud-storage" value="&lt;b&gt;CloudStorageProxy -&gt; Cloud Storage&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V2.3: Request Documents" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="360" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-storage-cloud" value="&lt;b&gt;Cloud Storage -&gt; CloudStorageProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V2.4: Documents Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="510" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-cloud-coordinator" value="&lt;b&gt;CloudStorageProxy -&gt; ReviewVerificationCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V2.5: Documents Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="600" y="520" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-email" value="&lt;b&gt;ReviewVerificationCoordinator -&gt; EmailProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V3.3: Send Notification Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="610" y="670" width="320" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-email-provider" value="&lt;b&gt;EmailProxy -&gt; Email Provider&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;V3.4: Send Email Notification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="610" width="280" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

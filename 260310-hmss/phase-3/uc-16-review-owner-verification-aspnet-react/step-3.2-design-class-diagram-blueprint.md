@@ -2,10 +2,10 @@
 
 ## Scope
 
-- Included classes: `AdminUI`, `ReviewVerificationController`, `VerificationLogic`, `IOwnerVerificationRepository`, `IOwnerProfileRepository`, `ICloudStorageGateway`, `IEmailGateway`, `OwnerVerification`, `OwnerProfile`
+- Included classes: `AdminUI`, `ReviewVerificationController`, `VerificationLogic`, `IOwnerVerificationRepository`, `IUserAccountRepository`, `ICloudStorageGateway`, `IEmailGateway`, `OwnerVerification`, `UserAccount`
 - Synchronization source:
   - participant set and call structure from `step-3.0-design-communication-diagram.md`
-  - class operations derived from step-3.0 messages
+  - class operations derived from step-3.0 messages and the actual ASP.NET controller implementation
 
 ## Class Boxes
 
@@ -15,9 +15,10 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ openVerificationReview()`
-  - `+ selectSubmission(in verificationId: Guid)`
-  - `+ approveVerification(in verificationId: Guid, in reviewNote: String)`
+  - `+ OpenVerificationReview()`
+  - `+ SelectSubmission(in verificationId: Guid)`
+  - `+ ApproveVerification(in verificationId: Guid, in dto: ReviewDecisionDto)`
+  - `+ RejectVerification(in verificationId: Guid, in dto: ReviewDecisionDto)`
 
 ### `ReviewVerificationController`
 
@@ -25,9 +26,10 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ getPendingSubmissions(out response: SubmissionListResponseDto)`
-  - `+ getSubmissionDetail(in verificationId: Guid, out response: SubmissionDetailResponseDto)`
-  - `+ approveVerification(in verificationId: Guid, in reviewNote: String, out response: DecisionResponseDto)`
+  - `+ GetPendingSubmissions(out response: List<SubmissionSummaryDto>)`
+  - `+ GetSubmissionDetail(in verificationId: Guid, out response: SubmissionDetailResponseDto)`
+  - `+ ApproveVerification(in verificationId: Guid, in dto: ReviewDecisionDto, out response: AdminDecisionResponseDto)`
+  - `+ RejectVerification(in verificationId: Guid, in dto: ReviewDecisionDto, out response: AdminDecisionResponseDto)`
 
 ### `IOwnerVerificationRepository`
 
@@ -35,18 +37,17 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ findPending(out list: VerificationList)`
-  - `+ findById(in id: Guid, out entity: OwnerVerification)`
-  - `+ update(in entity: OwnerVerification, out persisted: OwnerVerification)`
+  - `+ FindPendingAsync(out records: List<OwnerVerification>)`
+  - `+ FindByIdAsync(in id: Guid, out verification: OwnerVerification)`
+  - `+ UpdateAsync(in entity: OwnerVerification, out persisted: OwnerVerification)`
 
-### `IOwnerProfileRepository`
+### `IUserAccountRepository`
 
 - Stereotype: `<<database wrapper>>`
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ findByVerificationId(in verificationId: Guid, out entity: OwnerProfile)`
-  - `+ update(in entity: OwnerProfile, out persisted: OwnerProfile)`
+  - `+ FindByIdAsync(in id: Guid, out owner: UserAccount)`
 
 ### `VerificationLogic`
 
@@ -54,7 +55,7 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ validateDecision(in verification: OwnerVerification, out result: ValidationResult)`
+  - `+ ValidateDecision(in verification: OwnerVerification, out result: ValidationResult)`
 
 ### `ICloudStorageGateway`
 
@@ -62,7 +63,7 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ retrieveDocuments(in documentRefs: List<String>, out documents: FileList)`
+  - `+ RetrieveDocumentsAsync(in documentRefs: List<String>, out documentUrls: List<String>)`
 
 ### `IEmailGateway`
 
@@ -70,7 +71,7 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ sendAsync(in message: EmailMessage)`
+  - `+ SendAsync(in message: EmailMessage)`
 
 ### `OwnerVerification`
 
@@ -78,23 +79,22 @@
 - Attributes:
   - `- verificationId: Guid`
   - `- ownerId: Guid`
-  - `- personalInformation: string`
-  - `- idDocumentRef: string`
-  - `- supportingDocsRef: string`
-  - `- status: VerificationStatus`
+  - `- status: string`
   - `- reviewNote: string`
 - Operations:
-  - `+ approve(in reviewNote: String, out result: StatusChangeResult)`
+  - `+ Approve(in reviewNote: String)`
+  - `+ Reject(in reviewNote: String)`
 
-### `OwnerProfile`
+### `UserAccount`
 
 - Stereotype: `<<data abstraction>>`
 - Attributes:
-  - `- ownerId: Guid`
+  - `- userId: Guid`
   - `- fullName: string`
-  - `- verificationStatus: VerificationStatus`
+  - `- email: string`
+  - `- accountStatus: string`
 - Operations:
-  - `+ verify(out result: StatusChangeResult)`
+  - none in current scope
 
 ## Relationships
 
@@ -103,7 +103,7 @@
   - to: `ReviewVerificationController`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `reviews verifications`
+  - association name: `reviews submissions`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -120,10 +120,10 @@
 
 - association:
   - from: `ReviewVerificationController`
-  - to: `IOwnerProfileRepository`
+  - to: `IUserAccountRepository`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `loads and persists`
+  - association name: `loads owner info`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -153,27 +153,7 @@
   - to: `IEmailGateway`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `dispatches notification`
-  - reading direction: `source-to-target`
-  - source navigability: `none`
-  - target navigability: `navigable`
-
-- association:
-  - from: `ReviewVerificationController`
-  - to: `OwnerVerification`
-  - source multiplicity: `1`
-  - target multiplicity: `1`
-  - association name: `mutates state`
-  - reading direction: `source-to-target`
-  - source navigability: `none`
-  - target navigability: `navigable`
-
-- association:
-  - from: `ReviewVerificationController`
-  - to: `OwnerProfile`
-  - source multiplicity: `1`
-  - target multiplicity: `1`
-  - association name: `mutates state`
+  - association name: `dispatches email`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -189,8 +169,8 @@
   - target navigability: `navigable`
 
 - association:
-  - from: `IOwnerProfileRepository`
-  - to: `OwnerProfile`
+  - from: `IUserAccountRepository`
+  - to: `UserAccount`
   - source multiplicity: `1`
   - target multiplicity: `0..*`
   - association name: `manages`
@@ -204,8 +184,6 @@
 
 ## Notes
 
-- Dual entity modification: `OwnerVerification.approve()` and `OwnerProfile.verify()` both mutate state
-- Both entities loaded and persisted separately in sequence 3
-- Document retrieval from cloud storage is synchronous with reply for admin review display
-- Email dispatch is async (fire-and-forget)
-- Alternative flow: reject (similar flow with different status transitions)
+- The old `OwnerProfile` / `IOwnerProfileRepository` branch is intentionally removed because it does not exist in the actual controller implementation.
+- The decision sequence re-fetches `OwnerVerification` before validation and persistence to preserve controller statelessness.
+- Approval and rejection share the same structural flow; rejection adds the non-empty review-note rule.

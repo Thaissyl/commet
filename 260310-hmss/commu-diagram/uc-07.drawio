@@ -1,0 +1,114 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.4">
+  <diagram name="UC-07 Track Rental Request Status - Main Sequence" id="9Ju9jYZLr_JP1y6iQEoi">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Tenant" vertex="1">
+          <mxGeometry height="90" width="50" x="130" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: RentalRequestStatusUI" vertex="1">
+          <mxGeometry height="70" width="190" x="400" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: RentalRequestCoordinator" vertex="1">
+          <mxGeometry height="70" width="220" x="800" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: RentalRequestStatusRules" vertex="1">
+          <mxGeometry height="70" width="220" x="1210" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RentalRequest" vertex="1">
+          <mxGeometry height="70" width="160" x="1650" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-6" edge="1" parent="1" source="1UJQwtjUIXuYgCts-u4X-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="1UJQwtjUIXuYgCts-u4X-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-7" edge="1" parent="1" source="1UJQwtjUIXuYgCts-u4X-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="1UJQwtjUIXuYgCts-u4X-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-8" edge="1" parent="1" source="1UJQwtjUIXuYgCts-u4X-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="1UJQwtjUIXuYgCts-u4X-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="485" />
+              <mxPoint x="1120" y="485" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-9" edge="1" parent="1" source="1UJQwtjUIXuYgCts-u4X-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="1UJQwtjUIXuYgCts-u4X-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Rental Request Status Access&lt;br&gt;2: Status Detail Selection&lt;br&gt;3: Status Detail Review" vertex="1">
+          <mxGeometry height="70" width="240" x="185" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.7: Request List and Statuses Display&lt;br&gt;1.7a: No Request History Display&lt;br&gt;2.7: Full Status Details Display" vertex="1">
+          <mxGeometry height="70" width="240" x="185" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Rental Request Status Request&lt;br&gt;2.1: Status Detail Request" vertex="1">
+          <mxGeometry height="60" width="230" x="590" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.6: Rental Request Status List&lt;br&gt;1.6a: No Request History Message&lt;br&gt;2.6: Status Detail and Available Actions" vertex="1">
+          <mxGeometry height="70" width="270" x="570" y="537.5" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Rental Request Status Request&lt;br&gt;2.2: Status Detail Request" vertex="1">
+          <mxGeometry height="60" width="230" x="1000" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.5: Rental Request Status List&lt;br&gt;1.5a: Empty Status List&lt;br&gt;2.5: Status Detail and Available Actions" vertex="1">
+          <mxGeometry height="67.5" width="260" x="990" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.4: Rental Request Status List&lt;br&gt;1.4a: Empty Status List&lt;br&gt;2.4: Status Detail" vertex="1">
+          <mxGeometry height="70" width="210" x="1420" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="1UJQwtjUIXuYgCts-u4X-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Rental Request Status List Request&lt;br&gt;2.3: Status Detail Request" vertex="1">
+          <mxGeometry height="55" width="270" x="1390" y="382.5" as="geometry" />
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="230" y="470" as="sourcePoint" />
+            <mxPoint x="364.5" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="640" y="470" as="sourcePoint" />
+            <mxPoint x="774.5" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1045.5" y="470" as="sourcePoint" />
+            <mxPoint x="1180" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1445.5" y="470" as="sourcePoint" />
+            <mxPoint x="1580" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1580" y="500" as="sourcePoint" />
+            <mxPoint x="1450" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1180" y="500" as="sourcePoint" />
+            <mxPoint x="1050" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="770" y="500" as="sourcePoint" />
+            <mxPoint x="640" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="STeyb6mbk50YnIiq2DxA-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="360" y="500" as="sourcePoint" />
+            <mxPoint x="230" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

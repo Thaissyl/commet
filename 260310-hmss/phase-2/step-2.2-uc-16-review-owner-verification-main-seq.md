@@ -3,9 +3,7 @@
 ## Object Layout
 
 ```text
-System Admin --- AdminUI --- ReviewVerificationCoordinator --- VerificationRules --- OwnerVerification
-                                           |                         |
-                                           |                         --- OwnerProfile
+System Admin --- AdminUI --- ReviewVerificationCoordinator --- OwnerVerification
                                            |
                                            --- CloudStorageProxy --- Cloud Storage
                                            |
@@ -14,66 +12,60 @@ System Admin --- AdminUI --- ReviewVerificationCoordinator --- VerificationRules
 
 ## Participants
 
-| Position | Object                    | Stereotype             | Justification                                                                                           |
-| -------- | ------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------- |
-| 1        | System Admin              | Actor (primary)        | The human user initiating the review.                                                                  |
-| 2        | AdminUI                   | `<<user interaction>>` | Boundary object receiving physical inputs and displaying information.                                   |
-| 3        | ReviewVerificationCoordinator | `<<coordinator>>`      | Control object sequencing the overall flow of the use case without holding state.                        |
-| 4        | VerificationRules         | `<<business logic>>`   | Encapsulates the business rules for validating administrative decisions.                                 |
-| 5        | CloudStorageProxy         | `<<proxy>>`            | Boundary object hiding the technical details of the external document storage API.                       |
-| 6        | Cloud Storage             | Actor (secondary)      | The external system storing the physical documents.                                                     |
-| 7        | OwnerVerification         | `<<entity>>`           | Conceptual data object encapsulating the pending verification submission record.                        |
-| 8        | OwnerProfile              | `<<entity>>`           | Conceptual data object encapsulating the owner's system-wide account status.                             |
-| 9        | EmailProxy                | `<<proxy>>`            | Boundary object hiding the external email system API.                                                   |
-| 10       | Email Provider            | Actor (secondary)      | The external system dispatching notifications.                                                           |
+| Position | Object                         | Stereotype             | Justification                                                                                   |
+| -------- | ------------------------------ | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| 1        | System Admin                   | Actor (primary)        | The human user initiating the verification review.                                             |
+| 2        | AdminUI                        | `<<user interaction>>` | Boundary object receiving admin input and displaying review information.                        |
+| 3        | ReviewVerificationCoordinator  | `<<coordinator>>`      | Control object sequencing the review flow without holding long-lived conversational state.      |
+| 4        | OwnerVerification              | `<<entity>>`           | Conceptual data object encapsulating pending verification submissions and their review status.   |
+| 5        | CloudStorageProxy              | `<<proxy>>`            | Boundary object hiding the technical details of the external document storage API.              |
+| 6        | Cloud Storage                  | Actor (secondary)      | The external system storing supporting documents.                                               |
+| 7        | EmailProxy                     | `<<proxy>>`            | Boundary object hiding the technical details of the external email system API.                  |
+| 8        | Email Provider                 | Actor (secondary)      | The external system dispatching notification emails.                                           |
 
 ## Messages (Main Sequence - Approve Path)
 
-| #   | From -> To                                        | Message / Information Passed        | Use Case Step |
-| --- | ------------------------------------------------- | ----------------------------------- | ------------- |
-| 1   | System Admin -> AdminUI                           | Verification Review Access         | Step 1        |
-| 1.1 | AdminUI -> ReviewVerificationCoordinator          | Pending Submissions Query          |               |
-| 1.2 | ReviewVerificationCoordinator -> OwnerVerification | Pending Records Request            |               |
-| 1.3 | OwnerVerification -> ReviewVerificationCoordinator | Pending Records Data               |               |
-| 1.4 | ReviewVerificationCoordinator -> AdminUI         | Pending Submissions List            | Step 2        |
-| 1.5 | AdminUI -> System Admin                           | Pending Submissions Display         |               |
-| 2   | System Admin -> AdminUI                           | Submission Selection                | Step 3        |
-| 2.1 | AdminUI -> ReviewVerificationCoordinator          | Submission Detail Query            |               |
-| 2.2 | ReviewVerificationCoordinator -> OwnerVerification | Submission Detail Request         |               |
-| 2.3 | OwnerVerification -> ReviewVerificationCoordinator | Submission Detail Data             |               |
-| 2.4 | ReviewVerificationCoordinator -> CloudStorageProxy | Document Retrieval Request         | Step 4        |
-| 2.5 | CloudStorageProxy -> Cloud Storage                | Document Request                    |               |
-| 2.6 | Cloud Storage -> CloudStorageProxy                | Document Data                       |               |
-| 2.7 | CloudStorageProxy -> ReviewVerificationCoordinator | Document Files                     |               |
-| 2.8 | ReviewVerificationCoordinator -> AdminUI         | Submission Details and Documents    | Step 4        |
-| 2.9 | AdminUI -> System Admin                           | Review Interface Display            |               |
-| 3   | System Admin -> AdminUI                           | Approval Decision                   | Step 5        |
-| 3.1 | AdminUI -> ReviewVerificationCoordinator          | Approval Request                    |               |
-| 3.2 | ReviewVerificationCoordinator -> VerificationRules | Decision Validation Check         |               |
-| 3.3 | VerificationRules -> ReviewVerificationCoordinator | Validation Result (Valid)         |               |
-| 3.4 | ReviewVerificationCoordinator -> OwnerVerification | Approved Status Update             | Step 6        |
-| 3.5 | ReviewVerificationCoordinator -> OwnerProfile    | Verified Status Update             | Step 7        |
-| 3.6 | ReviewVerificationCoordinator -> EmailProxy       | Owner Notification Request         | Step 8        |
-| 3.7 | EmailProxy -> Email Provider                      | Owner Notification                  |               |
-| 3.8 | ReviewVerificationCoordinator -> AdminUI         | Decision Success                    | Step 9        |
-| 3.9 | AdminUI -> System Admin                           | Success Message Display             |               |
+| Seq No. | Sender -> Receiver                               | Message Label (Simple Message)   | Use Case Step |
+| ------- | ------------------------------------------------ | -------------------------------- | ------------- |
+| V1      | System Admin -> AdminUI                          | Verification Review Access       | Step 1        |
+| V1.1    | AdminUI -> ReviewVerificationCoordinator         | Get Pending Submissions          |               |
+| V1.2    | ReviewVerificationCoordinator -> OwnerVerification | Read Pending Submissions       |               |
+| V1.3    | OwnerVerification -> ReviewVerificationCoordinator | Pending Submissions Data       |               |
+| V1.4    | ReviewVerificationCoordinator -> AdminUI        | Pending Submissions Data         | Step 2        |
+| V1.5    | AdminUI -> System Admin                          | Display Pending Submissions      |               |
+| V2      | System Admin -> AdminUI                          | Select Submission                | Step 3        |
+| V2.1    | AdminUI -> ReviewVerificationCoordinator         | Get Submission Details           |               |
+| V2.2    | ReviewVerificationCoordinator -> CloudStorageProxy | Retrieve Documents Request     | Step 4        |
+| V2.3    | CloudStorageProxy -> Cloud Storage               | Request Documents                |               |
+| V2.4    | Cloud Storage -> CloudStorageProxy               | Documents Data                   |               |
+| V2.5    | CloudStorageProxy -> ReviewVerificationCoordinator | Documents Data                 |               |
+| V2.6    | ReviewVerificationCoordinator -> OwnerVerification | Read Submission Data           |               |
+| V2.7    | OwnerVerification -> ReviewVerificationCoordinator | Submission Data                |               |
+| V2.8    | ReviewVerificationCoordinator -> AdminUI        | Submission Details & Documents   | Step 4        |
+| V2.9    | AdminUI -> System Admin                          | Display Review Interface         |               |
+| V3      | System Admin -> AdminUI                          | Approve Submission               | Step 5        |
+| V3.1    | AdminUI -> ReviewVerificationCoordinator         | Approval Request                 |               |
+| V3.2    | ReviewVerificationCoordinator -> OwnerVerification | Update Status (Approved)       | Step 6, 7     |
+| V3.3    | ReviewVerificationCoordinator -> EmailProxy      | Send Notification Request        | Step 8        |
+| V3.4    | EmailProxy -> Email Provider                     | Send Email Notification          |               |
+| V3.5    | ReviewVerificationCoordinator -> AdminUI        | Approval Success                 | Step 9        |
+| V3.6    | AdminUI -> System Admin                          | Display Success Message          |               |
 
 ## Alternative Sequences
 
-| #    | From -> To                                        | Message / Information Passed                     | Use Case Step    |
-| ---- | ------------------------------------------------- | ---------------------------------------------- | ---------------- |
-| 3.1a | AdminUI -> ReviewVerificationCoordinator          | [Reject] Rejection Request                      | Alt Step 5.1     |
-| 3.4a | ReviewVerificationCoordinator -> OwnerVerification | Rejected Status Update                         | Alt Step 5.1     |
-| 3.5a | ReviewVerificationCoordinator -> OwnerProfile    | Rejected Status Update                          | Continues to 3.6  |
-| 3.7a | EmailProxy -> ReviewVerificationCoordinator      | [Provider unavailable] Delivery Failure        | Alt Step 8.1     |
-| 3.8a | ReviewVerificationCoordinator -> AdminUI         | Decision Success (notification failed recorded) | Continues to 3.8  |
+| Seq No. | Sender -> Receiver                               | Message Label (Simple Message)                         | Use Case Step |
+| ------- | ------------------------------------------------ | ------------------------------------------------------ | ------------- |
+| V3.1a   | AdminUI -> ReviewVerificationCoordinator         | [Reject] Rejection Request                             | Alt Step 5.1  |
+| V3.2a   | ReviewVerificationCoordinator -> OwnerVerification | Update Status (Rejected)                             | Alt Step 5.1  |
+| V3.4a   | EmailProxy -> ReviewVerificationCoordinator      | [Provider unavailable] Delivery Failure                | Alt Step 8.1  |
+| V3.5a   | ReviewVerificationCoordinator -> AdminUI        | Review Success (notification failed recorded)          | Continues to V3.6 |
 
 ## Architectural Notes
 
-- **Explicit Approve Path**: The main sequence explicitly describes the "Approve" scenario (primary success). The "Reject" scenario is entirely moved to alternative sequences.
-- **Two Entity Updates**: Approving updates BOTH `OwnerVerification` (submission → Approved) AND `OwnerProfile` (overall status → Verified). This verifies the owner account system-wide, enabling UC-11 (Publish Room Listing).
-- **External Actor Integration**: Step 4 explicitly retrieves documents from `Cloud Storage` secondary actor via `CloudStorageProxy` before displaying to admin.
-- **Analysis vs. Design**: In this analysis model, messages use descriptive noun phrases (e.g., `Approved Status Update`, `Verified Status Update`) rather than operation signatures (e.g., `approveVerification(in, out)`).
-- **Separation of Concerns**: The `ReviewVerificationCoordinator` delegates decision validation to `VerificationRules` (`<<business logic>>`), ensuring administrative decisions comply with business policies.
+- **Direct Review Flow**: This revised analysis keeps the review centered on `OwnerVerification`. The coordinator reads pending submissions, loads submission details, updates the submission status, and triggers notification without separate `VerificationRules` or `OwnerProfile` participants.
+- **Cloud Storage Integration**: Step V2 explicitly retrieves supporting documents from the `Cloud Storage` secondary actor through `CloudStorageProxy` before the admin reviews the submission.
+- **Status Update Scope**: Step V3.2 captures the approved decision and verified-status update on the verification submission in one simple analysis message.
+- **Notification Separation**: Notification dispatch is still modeled as a boundary crossing through `EmailProxy` to the external `Email Provider`.
+- **Analysis vs. Design**: This analysis model uses descriptive message labels such as `Get Submission Details` and `Update Status (Approved)` rather than code-level operation signatures.
 
 Use `/drawio-communication-diagram` to generate a visual `.drawio` file from this blueprint.

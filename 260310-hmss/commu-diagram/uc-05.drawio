@@ -1,0 +1,190 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="UC-05 Submit Rental Request - Main Sequence" id="hRQQiUN97RKtd5SrX5Rk">
+    <mxGraphModel dx="1783" dy="1061" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Tenant" vertex="1">
+          <mxGeometry height="90" width="50" x="120" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: TenantUI" vertex="1">
+          <mxGeometry height="70" width="170" x="380" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: RentalRequestCoordinator" vertex="1">
+          <mxGeometry height="70" width="210" x="770" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: RentalRequestRules" vertex="1">
+          <mxGeometry height="70" width="190" x="1200" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RoomListing" vertex="1">
+          <mxGeometry height="70" width="170" x="1635" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RentalRequest" vertex="1">
+          <mxGeometry height="70" width="170" x="1420" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: EmailProxy" vertex="1">
+          <mxGeometry height="70" width="170" x="1050" y="750" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-8" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Email Provider" vertex="1">
+          <mxGeometry height="90" width="60" x="1490" y="740" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-9" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-10" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-11" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="875" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-12" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-13" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-14" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-15" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-16" edge="1" parent="1" source="4WsidDQx5I48Fw-aGyFM-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="4WsidDQx5I48Fw-aGyFM-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Rental Request Access&lt;br&gt;2: Rental Request Information&lt;br&gt;3: Submission Confirmation" vertex="1">
+          <mxGeometry height="70" width="200" x="170" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.5: Rental Request Form Display&lt;br&gt;2.7: Rental Request Review Display&lt;br&gt;3.6: Submission Success Message" vertex="1">
+          <mxGeometry height="80" width="230" x="170" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Room Summary Request&lt;br&gt;2.1: Rental Request Information&lt;br&gt;3.1: Submission Confirmation" vertex="1">
+          <mxGeometry height="70" width="210" x="560" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.4: Rental Request Form and Room Summary&lt;br&gt;2.6: Review Prompt&lt;br&gt;3.5: Submission Success" vertex="1">
+          <mxGeometry height="80" width="300" x="500" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: Room Status Request" vertex="1">
+          <mxGeometry height="40" width="160" x="1490" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.4: Room Status Data" vertex="1">
+          <mxGeometry height="50" width="145" x="1497.5" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: Request Validation Check&lt;div&gt;3.4b: Failed Notification Record&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="960" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.3: Owner Notification" vertex="1">
+          <mxGeometry height="40" width="180" x="850" y="707.5" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.4: Owner Notification" vertex="1">
+          <mxGeometry height="45" width="160" x="1275" y="705" as="geometry" />
+        </mxCell>
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.4a: [Provider unavailable] Delivery Failure" vertex="1">
+          <mxGeometry height="50" width="270" x="770" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.2: New Rental Request Record&lt;br&gt;3.4b: Failed Notification Record" vertex="1">
+          <mxGeometry height="60" width="210" x="1003" y="567" as="geometry" />
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.5: Validation Result&lt;br&gt;2.5a: [Room not requestable] Validation Result (Unavailable)&lt;br&gt;2.5b: [Invalid Fields] Validation Result (Invalid)" vertex="1">
+          <mxGeometry height="70" width="350" x="890" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1000" y="810" as="sourcePoint" />
+            <mxPoint x="870" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="500" as="sourcePoint" />
+            <mxPoint x="210" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="730" y="500" as="sourcePoint" />
+            <mxPoint x="600" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1430" y="810" as="sourcePoint" />
+            <mxPoint x="1300" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-12" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1635" y="270" as="sourcePoint" />
+            <mxPoint x="1505" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1120" y="280" as="sourcePoint" />
+            <mxPoint x="990" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-14" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="200" y="460" as="sourcePoint" />
+            <mxPoint x="334.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-15" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="460" as="sourcePoint" />
+            <mxPoint x="734.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-16" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="990" y="240" as="sourcePoint" />
+            <mxPoint x="1124.5" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-17" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1500" y="240" as="sourcePoint" />
+            <mxPoint x="1634.5" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-18" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1033" y="637" as="sourcePoint" />
+            <mxPoint x="1167.5" y="637" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-19" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="860" y="770" as="sourcePoint" />
+            <mxPoint x="994.5" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TFdWhCi0mjOp3DzJENRN-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1295.5" y="760" as="sourcePoint" />
+            <mxPoint x="1430" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="D00hOzthhYXsQ5E_xl7x-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Room Information Request" vertex="1">
+          <mxGeometry height="40" width="190" x="1230" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="D00hOzthhYXsQ5E_xl7x-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Room Summary Data" vertex="1">
+          <mxGeometry height="40" width="190" x="1230" y="490" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

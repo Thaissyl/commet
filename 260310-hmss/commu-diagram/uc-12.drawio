@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0" version="29.6.4">
+  <diagram name="UC-12 Change Listing Visibility - Main Sequence" id="tJz1kjugOCQRBhfwLMKC">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AodBYBfM7iCf69I-iwc4-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
+          <mxGeometry height="90" width="50" x="-260" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
+          <mxGeometry height="70" width="180" x="50" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: ChangeVisibilityCoordinator" vertex="1">
+          <mxGeometry height="70" width="250" x="430" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: VisibilityRules" vertex="1">
+          <mxGeometry height="70" width="190" x="860" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RoomListing" vertex="1">
+          <mxGeometry height="70" width="170" x="950" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-6" edge="1" parent="1" source="AodBYBfM7iCf69I-iwc4-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="AodBYBfM7iCf69I-iwc4-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-7" edge="1" parent="1" source="AodBYBfM7iCf69I-iwc4-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="AodBYBfM7iCf69I-iwc4-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-8" edge="1" parent="1" source="AodBYBfM7iCf69I-iwc4-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="AodBYBfM7iCf69I-iwc4-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-9" edge="1" parent="1" source="AodBYBfM7iCf69I-iwc4-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="AodBYBfM7iCf69I-iwc4-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="555" y="695" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Listing Selection&lt;br&gt;2: Visibility Action Selection&lt;br&gt;3: Visibility Change Confirmation" vertex="1">
+          <mxGeometry height="80" width="220" x="-180" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.5: Listing Details and Actions Display&lt;br&gt;2.5: Confirmation Prompt Display&lt;br&gt;3.4: Visibility Success Message&lt;br&gt;2.5a: Error Display" vertex="1">
+          <mxGeometry height="80" width="230" x="-180" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Listing Detail Request&lt;br&gt;2.1: Visibility Action Request&lt;br&gt;3.1: Confirmed Visibility Change" vertex="1">
+          <mxGeometry height="80" width="230" x="230" y="325" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.4: Listing Data and Visibility Actions&lt;br&gt;2.4: Visibility Confirmation Prompt&lt;br&gt;3.3: Visibility Change Success&lt;br&gt;2.4a: Invalid Action Error Prompt" vertex="1">
+          <mxGeometry height="90" width="240" x="240" y="505" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: Action Validity Check" vertex="1">
+          <mxGeometry height="50" width="180" x="670" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: Validity Result (Valid)&lt;br&gt;2.3a: [Invalid action] Validity Result (Invalid)" vertex="1">
+          <mxGeometry height="60" width="260" x="650" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Listing Detail Query&lt;br&gt;3.2: Visibility Status Update" vertex="1">
+          <mxGeometry height="55" width="190" x="660" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="AodBYBfM7iCf69I-iwc4-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Listing Data&lt;br&gt;2.6: Visibility Change Result" vertex="1">
+          <mxGeometry height="70" width="180" x="660" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-150" y="440" as="sourcePoint" />
+            <mxPoint x="-15.5" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="270" y="440" as="sourcePoint" />
+            <mxPoint x="404.5" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="700" y="440" as="sourcePoint" />
+            <mxPoint x="834.5" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="692.75" y="680" as="sourcePoint" />
+            <mxPoint x="827.25" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="820" y="710" as="sourcePoint" />
+            <mxPoint x="690" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="840" y="470" as="sourcePoint" />
+            <mxPoint x="710" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="410" y="470" as="sourcePoint" />
+            <mxPoint x="280" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WXaukS5wPWO-9QE_e7zE-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-20" y="470" as="sourcePoint" />
+            <mxPoint x="-150" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

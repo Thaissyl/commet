@@ -1,0 +1,123 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="UC-11 Publish Room Listing - Main Sequence" id="X2I1HuYG4-Tf80u1WLqq">
+    <mxGraphModel dx="809" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="UomxMBUslsnr9H-frSzo-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
+          <mxGeometry height="90" width="50" x="920" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-10" edge="1" parent="1" source="UomxMBUslsnr9H-frSzo-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="UomxMBUslsnr9H-frSzo-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
+          <mxGeometry height="70" width="180" x="1250" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: PublishListingCoordinator" vertex="1">
+          <mxGeometry height="70" width="240" x="1700" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: PublicationRules" vertex="1">
+          <mxGeometry height="70" width="200" x="2270" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RoomListing" vertex="1">
+          <mxGeometry height="70" width="170" x="2010" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-7" edge="1" parent="1" source="UomxMBUslsnr9H-frSzo-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="UomxMBUslsnr9H-frSzo-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-8" edge="1" parent="1" source="UomxMBUslsnr9H-frSzo-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="UomxMBUslsnr9H-frSzo-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-9" edge="1" parent="1" source="UomxMBUslsnr9H-frSzo-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="UomxMBUslsnr9H-frSzo-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2030" y="480" />
+              <mxPoint x="2030" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Publication Access&lt;br&gt;2: Publication Request&lt;br&gt;3: Publication Confirmation" vertex="1">
+          <mxGeometry height="70" width="180" x="1020" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.5: Listing and Checklist Display&lt;br&gt;2.5: Confirmation Prompt Display&lt;br&gt;3.4: Publication Success Message&lt;br&gt;2.5a: Error Display" vertex="1">
+          <mxGeometry height="90" width="230" x="1010" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Listing Detail Request&lt;br&gt;2.1: Publication Evaluation Request&lt;br&gt;3.1: Confirmed Publication" vertex="1">
+          <mxGeometry height="70" width="220" x="1440" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.4: Listing Data and Checklist&lt;br&gt;2.4: Publication Confirmation Prompt&lt;br&gt;3.3: Publication Success&lt;br&gt;2.4a: Ineligibility Error Prompt" vertex="1">
+          <mxGeometry height="100" width="250" x="1440" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Listing Detail Query&lt;br&gt;3.2: Published Status Update" vertex="1">
+          <mxGeometry height="60" width="200" x="1810" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Listing Data" vertex="1">
+          <mxGeometry height="40" width="130" x="1845" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: Eligibility Check (Listing &amp;amp; Owner Data)" vertex="1">
+          <mxGeometry height="50" width="280" x="1970" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="UomxMBUslsnr9H-frSzo-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: Eligibility Result (Eligible)&lt;br&gt;2.3a: [Ineligible] Eligibility Result (Unverified/Incomplete)" vertex="1">
+          <mxGeometry height="70" width="330" x="1950" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-1" edge="1" parent="1" source="UomxMBUslsnr9H-frSzo-3" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.555;entryDx=0;entryDy=0;entryPerimeter=0;" target="UomxMBUslsnr9H-frSzo-5" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="1820" y="290" />
+            </Array>
+            <mxPoint x="2000" y="490" as="sourcePoint" />
+            <mxPoint x="2050" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1040" y="460" as="sourcePoint" />
+            <mxPoint x="1174.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1490" y="460" as="sourcePoint" />
+            <mxPoint x="1624.5" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1850" y="270" as="sourcePoint" />
+            <mxPoint x="1984.5" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2027.75" y="460" as="sourcePoint" />
+            <mxPoint x="2162.25" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="2160" y="490" as="sourcePoint" />
+            <mxPoint x="2030" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1980" y="300" as="sourcePoint" />
+            <mxPoint x="1850" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1620" y="490" as="sourcePoint" />
+            <mxPoint x="1490" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="F0CSuqBzp58lIHvqSUpz-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1170" y="490" as="sourcePoint" />
+            <mxPoint x="1040" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
