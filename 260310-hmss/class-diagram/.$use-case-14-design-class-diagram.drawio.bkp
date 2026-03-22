@@ -1,0 +1,121 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="use-case-14-design-class-diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="2200" pageHeight="1400">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cls-OwnerUI" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&#171;user interaction&#187;&lt;br/&gt;OwnerUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ OpenReviewFunction()&lt;br/&gt;+ SelectRequest(in requestId: Guid)&lt;br/&gt;+ ProcessDecision(in requestId: Guid, in decision: RequestDecisionDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="330" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-ReviewRequestController" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&#171;coordinator&#187;&lt;br/&gt;ReviewRequestController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetPendingRequests(out response: PendingRequestsResponseDto)&lt;br/&gt;+ GetRequestDetail(in requestId: Guid, out response: RequestDetailResponseDto)&lt;br/&gt;+ ProcessRequestDecision(in requestId: Guid, in decision: RequestDecisionDto, out response: DecisionResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="220" width="430" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-IRentalRequestRepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;database wrapper&#187;&lt;br/&gt;IRentalRequestRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindPendingByOwnerIdAsync(in ownerId: Guid, out requests: List&lt;RentalRequest&gt;)&lt;br/&gt;+ FindByIdAsync(in id: Guid, out request: RentalRequest)&lt;br/&gt;+ UpdateAsync(in entity: RentalRequest, out persisted: RentalRequest)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="70" width="420" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-IRoomListingRepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;database wrapper&#187;&lt;br/&gt;IRoomListingRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ UpdateAsync(in entity: RoomListing, out persisted: RoomListing)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="290" width="410" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-ReviewRequestLogic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&#171;business logic&#187;&lt;br/&gt;ReviewRequestLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ValidateDecision(in request: RentalRequest, in decision: string, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="520" width="430" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-IEmailGateway" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&#171;proxy&#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ SendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="740" width="300" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-RentalRequest" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;data abstraction&#187;&lt;br/&gt;RentalRequest&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- requestId: Guid&lt;br/&gt;- listingId: Guid&lt;br/&gt;- tenantId: Guid&lt;br/&gt;- status: RequestStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ ApplyDecision(in decision: string, out result: StatusChangeResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="70" width="340" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-RoomListing" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;data abstraction&#187;&lt;br/&gt;RoomListing&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- listingId: Guid&lt;br/&gt;- title: string&lt;br/&gt;- status: ListingStatus&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ Lock(out result: StatusChangeResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="300" width="330" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-OwnerUI" target="cls-ReviewRequestController">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-1" value="reviews requests &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="308" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="350" y="328" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="368" y="288" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-ReviewRequestController" target="cls-IRentalRequestRepository">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-2" value="loads and persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="757.5" y="213" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-2" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-2" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="838" y="138" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-ReviewRequestController" target="cls-IRoomListingRepository">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-3" value="loads and persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="755" y="314" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-3" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-3" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="838" y="340" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-ReviewRequestController" target="cls-ReviewRequestLogic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-4" value="validates &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="429" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-4" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-4" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="838" y="570" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-ReviewRequestController" target="cls-IEmailGateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-5" value="dispatches notification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="727.5" y="539" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-5" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="585" y="374" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-5" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="988" y="722" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-IRentalRequestRepository" target="cls-RentalRequest">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-8" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="142.5" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-8" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="138" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-8" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1338" y="147" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-IRoomListingRepository" target="cls-RoomListing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-9" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1215" y="354" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-9" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="340" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-9" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1338" y="368" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="note-1" value="Decision workflow loads pending requests, reviews details, then processes a decision.&lt;br/&gt;Accept locks the room; reject only updates the request; keep pending makes no state change.&lt;br/&gt;Notification email is sent after persistence." style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="740" width="390" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,77 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="use-case-06-design-class-diagram" id="0">
+    <mxGraphModel dx="3426" dy="1849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cls-ui" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;«user interaction»&lt;br/&gt;TenantUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ openRequestManagement()&lt;br/&gt;+ checkEligibility(in requestId: Guid)&lt;br/&gt;+ confirmCancellation(in requestId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="140" width="300" x="-70" y="215" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-controller" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;«coordinator»&lt;br/&gt;TenantRentalRequestController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetTenantRequests(in tenantId: Guid, out response: TenantRequestListResponseDto)&lt;br/&gt;+ CheckCancellationEligibility(in requestId: Guid, out response: EligibilityResponseDto)&lt;br/&gt;+ SubmitCancellation(in requestId: Guid, out response: CancellationResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="170" width="390" x="390" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-repo" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;«database wrapper»&lt;br/&gt;IRentalRequestRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindByTenantIdAsync(in tenantId: Guid, out list: List&lt;RentalRequest&gt;)&lt;br/&gt;+ FindByIdAsync(in id: Guid, out entity: RentalRequest)&lt;br/&gt;+ UpdateAsync(in entity: RentalRequest, out persisted: RentalRequest)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="150" width="400" x="995" y="-80" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-request" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;«data abstraction»&lt;br&gt;RentalRequest&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- requestId: Guid&lt;br&gt;- listingId: Guid&lt;br&gt;- tenantId: Guid&lt;br&gt;- status: RequestStatus&lt;br&gt;- submittedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;None&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="190" width="330" x="1520" y="-100" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-logic" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;«business logic»&lt;br/&gt;RentalRequestLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ValidateCancellationEligibility(in request: RentalRequest, out result: EligibilityResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="125" width="420" x="1040" y="222.5" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-email" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;«proxy»&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ SendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="100" width="300" x="1010" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-ui-controller" edge="1" parent="1" source="cls-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cls-controller">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-ui-controller" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="initiates cancellation &gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="240" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-controller-repo" edge="1" parent="1" source="cls-controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cls-repo">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="285" />
+              <mxPoint x="820" y="15" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-rel-controller-repo" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="loads and persists &gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="825" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-controller-logic" edge="1" parent="1" source="cls-controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cls-logic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-controller-logic" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="validates eligibility &gt;" vertex="1">
+          <mxGeometry height="24" width="160" x="830" y="246" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-controller-logic" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" value="1" vertex="1">
+          <mxGeometry height="20" width="45" x="1270" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-controller-email" edge="1" parent="1" source="cls-controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cls-email">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="285" />
+              <mxPoint x="820" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-rel-controller-email" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="dispatches notification &gt;" vertex="1">
+          <mxGeometry height="24" width="170" x="830" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-controller-email" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" value="1" vertex="1">
+          <mxGeometry height="20" width="45" x="1150" y="600" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-repo-request" edge="1" parent="1" source="cls-repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="cls-request">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-repo-request" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="manages &gt;" vertex="1">
+          <mxGeometry height="24" width="80" x="1420" y="-54" as="geometry" />
+        </mxCell>
+        <mxCell id="note-1" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" value="Three-phase pattern: list, pre-check, execution.&lt;br/&gt;Controller is stateless.&lt;br/&gt;ApplyCancellation mutates in RAM before UpdateAsync persists.&lt;br/&gt;Email dispatch is fire-and-forget." vertex="1">
+          <mxGeometry height="130" width="360" x="1410" y="500" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

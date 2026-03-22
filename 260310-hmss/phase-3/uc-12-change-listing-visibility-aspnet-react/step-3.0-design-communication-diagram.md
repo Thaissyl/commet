@@ -4,17 +4,17 @@
 
 - Diagram level: design phase
 - Backend style: simple layered backend
-- Main flow: `OwnerUI -> ChangeVisibilityController`, then `Controller -> Repository`, `Controller -> VisibilityLogic`
+- Main flow: OwnerUI -> RoomListingController, then Controller -> Repository, Controller -> VisibilityLogic
 - Message style: single directional function messages
-- Synchronous request messages carry `in` and `out` parameters in the same label when a response payload is expected
-- Separate reply arrows are intentionally omitted because `out` parameters already represent returned data
+- Synchronous request messages carry `in` and `out` parameters in the same label
+- Separate reply arrows intentionally omitted — `out` parameters represent returned data
 - Request flow style: synchronous request handling with two-phase operation
 
 ## Object Layout
 
 ```text
-Owner --- OwnerUI --- ChangeVisibilityController
-                       |--- IRoomListingRepository --- RoomListing
+Owner --- OwnerUI --- RoomListingController
+                       |--- IRoomListingRepository
                        |--- VisibilityLogic
 ```
 
@@ -24,61 +24,48 @@ Owner --- OwnerUI --- ChangeVisibilityController
 | -------- | ---------------------- | ---------------------- |
 | 1        | Owner                  | Actor (primary)        |
 | 2        | OwnerUI                | `<<user interaction>>` |
-| 3        | ChangeVisibilityController | `<<coordinator>>`      |
+| 3        | RoomListingController  | `<<coordinator>>`      |
 | 4        | IRoomListingRepository | `<<database wrapper>>` |
-| 5        | RoomListing            | `<<data abstraction>>` |
-| 6        | VisibilityLogic        | `<<business logic>>`   |
+| 5        | VisibilityLogic        | `<<business logic>>`   |
+
+> `RoomListing` removed — return type only, no messages sent to it in this use case.
 
 ## Messages
 
 | #   | From -> To                             | Message                                                            |
 | --- | -------------------------------------- | ------------------------------------------------------------------ |
-| 1   | Owner -> OwnerUI                       | Listing Selection                                                 |
-| 1.1 | OwnerUI -> ChangeVisibilityController  | `getListingVisibilityDetails(in listingId: Guid, out response: VisibilityDetailsDto)` |
-| 1.2 | ChangeVisibilityController -> IRoomListingRepository | `findById(in id: Guid, out entity: RoomListing)`                 |
-| 1.3 | OwnerUI -> Owner                       | Listing Details and Actions Display                                |
-| 2   | Owner -> OwnerUI                       | Visibility Action Selection                                       |
-| 2.1 | OwnerUI -> ChangeVisibilityController  | `checkActionValidity(in listingId: Guid, in action: String, out response: ValidityResponseDto)` |
-| 2.2 | ChangeVisibilityController -> IRoomListingRepository | `findById(in id: Guid, out entity: RoomListing)`                 |
-| 2.3 | ChangeVisibilityController -> VisibilityLogic | `validateVisibilityAction(in listing: RoomListing, in action: String, out result: ValidationResult)` |
-| 2.4 | OwnerUI -> Owner                       | Visibility Confirmation Prompt Display                             |
-| 3   | Owner -> OwnerUI                       | Visibility Change Confirmation                                     |
-| 3.1 | OwnerUI -> ChangeVisibilityController  | `submitVisibilityChange(in listingId: Guid, in action: String, out response: StatusChangeResponseDto)` |
-| 3.2 | ChangeVisibilityController -> IRoomListingRepository | `findById(in id: Guid, out entity: RoomListing)`                 |
-| 3.3 | ChangeVisibilityController -> RoomListing | `changeVisibility(in action: String, out result: StatusChangeResult)` |
-| 3.4 | ChangeVisibilityController -> IRoomListingRepository | `update(in entity: RoomListing, out persisted: RoomListing)`     |
-| 3.5 | OwnerUI -> Owner                       | Visibility Change Success Message                                 |
+| 1   | Owner -> OwnerUI                       | Visibility Management Access                                       |
+| 1.1 | OwnerUI -> RoomListingController       | `GetListingVisibilityDetails(in listingId: Guid, out response: VisibilityResponseDto)` |
+| 1.2 | RoomListingController -> IRoomListingRepository | `FindByIdAsync(in id: Guid, out entity: RoomListing)` |
+| 1.3 | OwnerUI -> Owner                       | Visibility Status Display with Available Actions                  |
+| 2   | Owner -> OwnerUI                       | Visibility Action Confirmation                                    |
+| 2.1 | OwnerUI -> RoomListingController       | `SubmitVisibilityChange(in listingId: Guid, in action: VisibilityActionRequest, out response: ListingResponseDto)` |
+| 2.2 | RoomListingController -> IRoomListingRepository | `FindByIdAsync(in id: Guid, out entity: RoomListing)` |
+| 2.3 | RoomListingController -> VisibilityLogic | `ValidateVisibilityAction(in listing: RoomListing, in action: string, out result: ValidationResult)` |
+| 2.4 | RoomListingController -> IRoomListingRepository | `UpdateAsync(in entity: RoomListing, out persisted: RoomListing)` |
+| 2.5 | OwnerUI -> Owner                       | Visibility Change Success Message                                 |
 
 ## Analysis → Design Message Mapping
 
 | Analysis message | Design message | Notes |
-| ----------------- | -------------- | ----- |
-| `1.1` OwnerUI -> ChangeVisibilityCoordinator: "Listing Detail Request" | `1.1` OwnerUI -> ChangeVisibilityController: `getListingVisibilityDetails(in listingId: Guid, out response: VisibilityDetailsDto)` | sync, renamed to code-style |
-| `1.2` ChangeVisibilityCoordinator -> RoomListing: "Listing Detail Query" | `1.2` ChangeVisibilityController -> IRoomListingRepository: `findById(in id: Guid, out entity: RoomListing)` | stateless controller fetch |
-| `2.1` OwnerUI -> ChangeVisibilityCoordinator: "Visibility Action Request" | `2.1` OwnerUI -> ChangeVisibilityController: `checkActionValidity(in listingId: Guid, in action: String, out response: ValidityResponseDto)` | sync, two-phase: pre-check |
-| `2.2` ChangeVisibilityCoordinator -> VisibilityRules: "Action Validity Check" | `2.2` ChangeVisibilityController -> IRoomListingRepository: `findById(in id: Guid, out entity: RoomListing)` then `2.3` validateVisibilityAction(...) | load entity for validation |
-| `3.1` OwnerUI -> ChangeVisibilityCoordinator: "Confirmed Visibility Change" | `3.1` OwnerUI -> ChangeVisibilityController: `submitVisibilityChange(in listingId: Guid, in action: String, out response: StatusChangeResponseDto)` | sync, two-phase: execution |
-| `3.2` ChangeVisibilityCoordinator -> RoomListing: "Visibility Status Update" | `3.2` ChangeVisibilityController -> IRoomListingRepository: `findById(in id: Guid, out entity: RoomListing)` then `3.3` changeVisibility(...) then `3.4` update(...) | load, mutate, persist pattern |
+|---|---|---|
+| `1.1` OwnerUI -> VisibilityCoordinator: "Listing Visibility Request" | `1.1` OwnerUI -> RoomListingController: `GetListingVisibilityDetails(...)` | renamed |
+| `1.2` VisibilityCoordinator -> RoomListing: "Listing Detail Query" | `1.2` RoomListingController -> IRoomListingRepository: `FindByIdAsync(...)` | direct DB query |
+| `2.1` OwnerUI -> VisibilityCoordinator: "Visibility Action Submission" | `2.1` OwnerUI -> RoomListingController: `SubmitVisibilityChange(...)` | renamed |
+| `2.2-2.3` VisibilityCoordinator -> VisibilityRules: "Action Validation" | `2.3` RoomListingController -> VisibilityLogic: `ValidateVisibilityAction(...)` | business logic |
+| `2.4` VisibilityCoordinator -> RoomListing: "Apply Visibility Change" | `2.4` RoomListingController -> IRoomListingRepository: `UpdateAsync(...)` | persist state |
 
 ## Alternative Flow Notes
 
-- **Step 2.3: Validation fails** - `ValidationResult.isValid = false`, response contains invalid action reason, messages 3.1-3.4 are skipped, use case ends unsuccessfully
-- **Step 2.2: Listing not found** - Repository returns null/error, response contains not found error, use case ends
-- **Step 3.2: Listing not found** - Repository returns null/error, response contains not found error, use case ends
-- **Step 3.4: Database error on update** - Repository throws exception, response contains error, use case ends
+- **Step 2.3: Validation fails** — `ValidationResult.IsValid = false` (e.g., cannot hide already hidden), response includes reason, entity not updated
+- **Step 2.4: Update fails** — Repository exception handled, response contains error
 
 ## Notes
 
-- `OwnerUI` is shown explicitly so the human actor does not interact directly with the backend controller.
-- `IRoomListingRepository` handles persistence and returns the updated `RoomListing` entity.
-- `ChangeVisibilityController` acts as the simplified orchestration point for this use case.
-- `VisibilityLogic` encapsulates the visibility state transition validation business rules: validates which status transitions are permitted (e.g., Published → Hidden ✓, Hidden → Archive ✓, Archived → Published ✗).
-- **Two-Phase Operation Pattern**: This use case demonstrates the validation-then-execution pattern:
-  - **Phase 1 (Pre-check)**: Sequence 2 `checkActionValidity` validates the requested action without modifying state.
-  - **Phase 2 (Execution)**: Sequence 3 `submitVisibilityChange` performs the actual status change.
-- **Reactive System Design**: The UI displays a "standard menu of visibility actions" rather than filtering to only valid options. Users can select any action, and the backend validates and rejects invalid actions. This approach is simpler and more maintainable than keeping UI filters synchronized with complex business rules.
-- **Stateless Coordinator (Messages 1.2, 2.2, 3.2)**: The controller executes a fresh `findById()` against the database wrapper at the beginning of each sequence. Web controllers must be completely stateless and cannot preserve the `RoomListing` object in memory between user clicks.
-- **Separation of State Mutation and Persistence (Messages 3.3 & 3.4)**: Based on the Information Hiding principle, the controller does not alter the status value directly. It invokes `changeVisibility()` on the `RoomListing` (`<<data abstraction>>`) object so that the object mutates its own data safely in RAM. Immediately following this, it calls `update()` on the `IRoomListingRepository` (`<<database wrapper>>`) to guarantee that the RAM mutation is securely persisted to the disk.
-- **Action Parameter**: The `action: String` parameter represents the requested visibility change (e.g., "hide", "archive"). At the design level, `String` is simpler and more flexible than defining an enum type. Type enforcement can be applied at implementation level.
-- **Implicit DTO mapping**: The controller implicitly maps response data from entities to DTOs. This mapping is not shown as a separate message.
-- Actor-to-UI messages (1, 1.3, 2, 2.4, 3, 3.5) use noun phrases because they represent physical user interactions, not code method calls.
+- `OwnerUI` shown explicitly — human actor does not interact directly with backend controller.
+- `RoomListingController` acts as stateless orchestration point. Sequence 2 re-queries listing by ID independently.
+- `VisibilityLogic` encapsulates `ValidateVisibilityAction` — checks if action is valid for current status (e.g., cannot hide already hidden).
+- `IRoomListingRepository` queries and persists `RoomListing` entity with visibility state.
+- **Two-phase operation**: Phase 1 shows current state and available actions; Phase 2 validates and applies change.
+- **Implicit DTO mapping**: Controller implicitly maps entity to response DTO. Not shown as separate message.
+- Actor-to-UI messages (1, 1.3, 2, 2.5) use noun phrases — physical user interactions, not code method calls.

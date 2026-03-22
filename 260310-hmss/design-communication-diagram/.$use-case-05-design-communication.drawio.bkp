@@ -1,6 +1,6 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="29.6.4" pages="2">
   <diagram name="step-3.0-design-communication-diagram" id="NHOfHHsSwYopl3KXHV4N">
-    <mxGraphModel dx="3044" dy="1306" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="3044" dy="1155" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -72,22 +72,22 @@
           <mxGeometry height="57" width="223" x="-198" y="441" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: GetRentalRequestForm(in listingId: Guid, out response: RentalRequestFormResponseDto)&lt;br&gt;3.1: SubmitRentalRequest(in request: RentalRequestDto, out response: SubmissionResponseDto)" vertex="1">
-          <mxGeometry height="90" width="291" x="169" y="265" as="geometry" />
+          <mxGeometry height="90" width="306" x="169" y="265" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: FindByIdAsync(in id: Guid, out entity: RoomListing)&lt;br&gt;3.2: FindByIdAsync(in id: Guid, out entity: RoomListing)" vertex="1">
-          <mxGeometry height="52" width="317" x="553" y="130" as="geometry" />
+          <mxGeometry height="63" width="302" x="560" y="99" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.3: ValidateRequestabilityWithDuplicateCheckAsync(in listing: RoomListing, in tenantId: Guid, out result: ValidationResult)" vertex="1">
-          <mxGeometry height="57" width="361" x="723" y="312" as="geometry" />
+          <mxGeometry height="57" width="337" x="723" y="312" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.4: SaveAsync(in entity: RentalRequest, out persisted: RentalRequest)" vertex="1">
-          <mxGeometry height="40" width="404" x="567" y="536" as="geometry" />
+          <mxGeometry height="40" width="383" x="567" y="536" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.5: SendAsync(in message: EmailMessage) [to Owner]" vertex="1">
-          <mxGeometry height="38" width="320" x="557" y="729" as="geometry" />
+          <mxGeometry height="49" width="274" x="560" y="716.5" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.6: SendAsync(in message: EmailMessage)" vertex="1">
-          <mxGeometry height="38" width="263" x="1071" y="729" as="geometry" />
+          <mxGeometry height="38" width="263" x="1065" y="722" as="geometry" />
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-28" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -103,8 +103,8 @@
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="659" y="194" as="sourcePoint" />
-            <mxPoint x="775" y="194" as="targetPoint" />
+            <mxPoint x="660" y="178" as="sourcePoint" />
+            <mxPoint x="776" y="178" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-31" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
@@ -127,14 +127,8 @@
         </mxCell>
         <mxCell id="flGVLwB_Iip6WzLvDDCB-34" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1144" y="785" as="sourcePoint" />
-            <mxPoint x="1260" y="785" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="xuKqoWSD4mCTvEQtwswt-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="-52" y="419" as="sourcePoint" />
-            <mxPoint x="-160" y="418" as="targetPoint" />
+            <mxPoint x="1153" y="784" as="sourcePoint" />
+            <mxPoint x="1269" y="784" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

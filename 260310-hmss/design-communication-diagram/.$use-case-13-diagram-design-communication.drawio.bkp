@@ -1,28 +1,28 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="29.6.4">
   <diagram name="step-3.0-design-communication-diagram" id="uc-13-design-communication-diagram">
-    <mxGraphModel dx="1901" dy="1132" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2852" dy="1502" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="v0QokbA4yAonW4WKy_2E-36" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
           <mxGeometry height="90" width="60" x="60.00352941176487" y="886.5882352941178" as="geometry" />
         </mxCell>
-        <mxCell id="v0QokbA4yAonW4WKy_2E-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
+        <mxCell id="v0QokbA4yAonW4WKy_2E-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;user interaction&#187;&lt;br/&gt;: OwnerUI" vertex="1">
           <mxGeometry height="70" width="170" x="440.82352941176487" y="896.5882352941178" as="geometry" />
         </mxCell>
-        <mxCell id="v0QokbA4yAonW4WKy_2E-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: SubmitVerificationController" vertex="1">
+        <mxCell id="v0QokbA4yAonW4WKy_2E-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;coordinator&#187;&lt;br/&gt;: SubmitVerificationController" vertex="1">
           <mxGeometry height="70" width="250" x="1010.0035294117649" y="896.5882352941178" as="geometry" />
         </mxCell>
-        <mxCell id="v0QokbA4yAonW4WKy_2E-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: VerificationLogic" vertex="1">
+        <mxCell id="v0QokbA4yAonW4WKy_2E-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;business logic&#187;&lt;br/&gt;: VerificationLogic" vertex="1">
           <mxGeometry height="70" width="190" x="1580.003529411765" y="639.9982352941178" as="geometry" />
         </mxCell>
-        <mxCell id="v0QokbA4yAonW4WKy_2E-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: ICloudStorageGateway" vertex="1">
+        <mxCell id="v0QokbA4yAonW4WKy_2E-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;proxy&#187;&lt;br/&gt;: ICloudStorageGateway" vertex="1">
           <mxGeometry height="70" width="190" x="1370.003529411765" y="1149.9982352941179" as="geometry" />
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-41" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Cloud Storage" vertex="1">
           <mxGeometry height="90" width="60" x="2030.003529411765" y="1139.9982352941179" as="geometry" />
         </mxCell>
-        <mxCell id="v0QokbA4yAonW4WKy_2E-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«database wrapper»&lt;br/&gt;: IOwnerVerificationRepository" vertex="1">
+        <mxCell id="v0QokbA4yAonW4WKy_2E-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="&#171;database wrapper&#187;&lt;br/&gt;: IOwnerVerificationRepository" vertex="1">
           <mxGeometry height="70" width="220" x="1790.003529411765" y="896.5882352941178" as="geometry" />
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-44" edge="1" parent="1" source="v0QokbA4yAonW4WKy_2E-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="v0QokbA4yAonW4WKy_2E-37">
@@ -52,7 +52,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Verification Submission Access&lt;br&gt;2: Verification Data and Documents Input&lt;br&gt;3: Submission Confirmation" vertex="1">
-          <mxGeometry height="70" width="239.59" x="170.82" y="826.59" as="geometry" />
+          <mxGeometry height="83.41" width="220" x="170.41" y="820" as="geometry" />
         </mxCell>
         <mxCell id="msg-arrow-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -61,28 +61,34 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-52" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Verification Form Display&lt;br&gt;2.5: Documents Review Display&lt;br&gt;3.3: Submission Success Message" vertex="1">
-          <mxGeometry height="63.41" width="219.18" x="170.82" y="960" as="geometry" />
+          <mxGeometry height="80" width="219.18" x="170.82" y="966.59" as="geometry" />
         </mxCell>
         <mxCell id="msg-arrow-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="220" y="910" as="sourcePoint" />
-            <mxPoint x="330" y="910" as="targetPoint" />
+            <mxPoint x="440.824" y="931.588" as="sourcePoint" />
+            <mxPoint x="120.004" y="931.588" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: GetVerificationForm(out response: VerificationFormResponseDto)&lt;br&gt;2.1: ValidateAndUploadDocuments(in request: VerificationSubmissionDto, in documents: IFormFileCollection, out response: VerificationReviewResponseDto)&lt;br&gt;3.1: SubmitVerification(in request: VerificationSubmissionDto, in documentUrls: List&lt;string&gt;, out response: VerificationResponseDto)" vertex="1">
-          <mxGeometry height="120" width="440" x="600" y="766.59" as="geometry" />
+          <mxGeometry height="93.41" width="440" x="610.82" y="786.5899999999999" as="geometry" />
         </mxCell>
         <mxCell id="msg-arrow-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="760" y="900" as="sourcePoint" />
-            <mxPoint x="870" y="900" as="targetPoint" />
+            <mxPoint x="610.824" y="931.588" as="sourcePoint" />
+            <mxPoint x="1010" y="931.588" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-55" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: UploadImagesAsync(in documents: IFormFileCollection, out documentUrls: List&lt;string&gt;)" vertex="1">
-          <mxGeometry height="64" width="230" x="1150" y="1086" as="geometry" />
+          <mxGeometry height="44" width="230" x="1160" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="msg-arrow-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1260" y="931.588" as="sourcePoint" />
+            <mxPoint x="1370" y="1185" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-56" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.4: UploadDocuments(in documents: IFormFileCollection, out urls: List&lt;string&gt;)" vertex="1">
-          <mxGeometry height="45" width="410" x="1580" y="1120" as="geometry" />
+          <mxGeometry height="45" width="410" x="1570" y="1105" as="geometry" />
         </mxCell>
         <mxCell id="msg-arrow-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -91,45 +97,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-54" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: ValidateVerificationData(in request: VerificationSubmissionDto, out result: ValidationResult)" vertex="1">
-          <mxGeometry height="40" width="550" x="1090" y="590" as="geometry" />
+          <mxGeometry height="65" width="430" x="1170" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="msg-arrow-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1260" y="931.588" as="sourcePoint" />
+            <mxPoint x="1580" y="674.998" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="v0QokbA4yAonW4WKy_2E-57" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.2: SaveAsync(in entity: OwnerVerification, out persisted: OwnerVerification)" vertex="1">
-          <mxGeometry height="38.41" width="470" x="1300" y="870" as="geometry" />
+          <mxGeometry height="75" width="430" x="1340.003529411765" y="811.5882352941179" as="geometry" />
         </mxCell>
         <mxCell id="msg-arrow-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="1260" y="931.588" as="sourcePoint" />
             <mxPoint x="1790" y="931.588" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6oLBYnktmv2RTSXxpJ_p-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;dashed=1;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="330" y="950" as="sourcePoint" />
-            <mxPoint x="220" y="950" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6oLBYnktmv2RTSXxpJ_p-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1310" y="650" as="sourcePoint" />
-            <mxPoint x="1420" y="650" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6oLBYnktmv2RTSXxpJ_p-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1480" y="920" as="sourcePoint" />
-            <mxPoint x="1590" y="920" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6oLBYnktmv2RTSXxpJ_p-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1200" y="1170" as="sourcePoint" />
-            <mxPoint x="1310" y="1170" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="6oLBYnktmv2RTSXxpJ_p-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1720" y="1170" as="sourcePoint" />
-            <mxPoint x="1830" y="1170" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

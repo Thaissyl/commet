@@ -1,0 +1,91 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="use-case-13-design-class-diagram">
+    <mxGraphModel grid="1" gridSize="10" page="1" pageScale="1" pageWidth="2200" pageHeight="1400">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cls-OwnerUI" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&#171;user interaction&#187;&lt;br/&gt;OwnerUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ OpenVerification()&lt;br/&gt;+ PrepareVerification(in request: VerificationSubmissionDto, in documents: IFormFileCollection)&lt;br/&gt;+ SubmitVerification(in request: VerificationSubmissionDto, in documentUrls: List&lt;string&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="340" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-SubmitVerificationController" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&#171;coordinator&#187;&lt;br/&gt;SubmitVerificationController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetVerificationForm(out response: VerificationFormResponseDto)&lt;br/&gt;+ ValidateAndUploadDocuments(in request: VerificationSubmissionDto, in documents: IFormFileCollection, out response: VerificationReviewResponseDto)&lt;br/&gt;+ SubmitVerification(in request: VerificationSubmissionDto, in documentUrls: List&lt;string&gt;, out response: VerificationResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="220" width="430" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-VerificationLogic" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&#171;business logic&#187;&lt;br/&gt;VerificationLogic&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ValidateVerificationData(in request: VerificationSubmissionDto, out result: ValidationResult)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="420" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-ICloudStorageGateway" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&#171;proxy&#187;&lt;br/&gt;ICloudStorageGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ UploadImagesAsync(in documents: IFormFileCollection, out documentUrls: List&lt;string&gt;)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="860" y="520" width="340" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-IOwnerVerificationRepository" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;database wrapper&#187;&lt;br/&gt;IOwnerVerificationRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ SaveAsync(in entity: OwnerVerification, out persisted: OwnerVerification)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="180" width="410" height="136" as="geometry" />
+        </mxCell>
+        <mxCell id="cls-OwnerVerification" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&#171;data abstraction&#187;&lt;br/&gt;OwnerVerification&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- verificationId: Guid&lt;br/&gt;- ownerId: Guid&lt;br/&gt;- personalInformation: string&lt;br/&gt;- idDocumentRef: string&lt;br/&gt;- supportingDocsRef: string&lt;br/&gt;- status: VerificationStatus&lt;br/&gt;- submittedAt: DateTime&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="480" width="340" height="244" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-OwnerUI" target="cls-SubmitVerificationController">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-1" value="submits verification &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="327.5" y="308" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="360" y="328" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="368" y="288" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-SubmitVerificationController" target="cls-IOwnerVerificationRepository">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-2" value="persists &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1005" y="259" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-2" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-2" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1338" y="230" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-SubmitVerificationController" target="cls-VerificationLogic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-3" value="validates &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="757.5" y="209" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-3" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-3" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="838" y="130" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-SubmitVerificationController" target="cls-ICloudStorageGateway">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-4" value="uploads documents &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="737.5" y="429" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-4" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="800" y="288" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-4" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="838" y="570" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="rel-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" edge="1" parent="1" source="cls-IOwnerVerificationRepository" target="cls-OwnerVerification">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-rel-5" value="manages &gt;" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1467.5" y="407" width="160" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="smult-rel-5" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1545" y="298" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmult-rel-5" value="0..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="1508" y="462" width="45" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="note-1" value="Validation runs before document upload.&lt;br/&gt;Gateway uploads files only after request data is valid.&lt;br/&gt;Repository persists OwnerVerification after final confirmation." style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="620" width="380" height="120" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

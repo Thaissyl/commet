@@ -1,32 +1,26 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="29.6.4">
-  <diagram name="Page-1" id="P8ms7z8Z4GTVopl880fH">
-    <mxGraphModel dx="2593" dy="1365" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="step-3.0-design-communication-diagram" id="uc-09-design-communication-diagram">
+    <mxGraphModel dx="1056" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-1" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Owner" vertex="1">
           <mxGeometry height="90" width="50" x="390" y="422.41176470588243" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
-          <mxGeometry height="70" width="170" x="904.65" y="432.41176470588243" as="geometry" />
-        </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: CreateRoomListingController" vertex="1">
-          <mxGeometry height="70" width="250" x="1404" y="432.41176470588243" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: RoomListingController" vertex="1">
+          <mxGeometry height="70" width="250" x="1080" y="432.41176470588243" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«business logic»&lt;br/&gt;: RoomListingLogic" vertex="1">
-          <mxGeometry height="70" width="190" x="2262.35" y="244.00176470588247" as="geometry" />
+          <mxGeometry height="70" width="190" x="2035" y="254.00176470588247" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: ICloudStorageGateway" vertex="1">
-          <mxGeometry height="70" width="200" x="2006.65" y="604.0017647058825" as="geometry" />
+          <mxGeometry height="70" width="160" x="1990" y="604" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-6" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Cloud Storage" vertex="1">
-          <mxGeometry height="90" width="60" x="2493" y="594.0017647058825" as="geometry" />
+          <mxGeometry height="90" width="60" x="2470" y="594.0017647058825" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«database wrapper»&lt;br/&gt;: IRoomListingRepository" vertex="1">
-          <mxGeometry height="70" width="220" x="2005" y="432.41176470588243" as="geometry" />
-        </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«data abstraction»&lt;br/&gt;: RoomListing" vertex="1">
-          <mxGeometry height="70" width="180" x="2376" y="432.41176470588243" as="geometry" />
+          <mxGeometry height="70" width="177" x="1933" y="432.41" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-9" edge="1" parent="1" source="Xdoe8DSv-wDkyfRJp-ek-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="Xdoe8DSv-wDkyfRJp-ek-2">
           <mxGeometry relative="1" as="geometry" />
@@ -58,66 +52,46 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-15" edge="1" parent="1" source="Xdoe8DSv-wDkyfRJp-ek-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="Xdoe8DSv-wDkyfRJp-ek-8">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="2366.3500000000004" y="467.41176470588243" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Room Creation Access&lt;br&gt;2: Room Information and Images Input&lt;br&gt;3: Saving Confirmation" vertex="1">
-          <mxGeometry height="69" width="230" x="557.0029411764707" y="358" as="geometry" />
+          <mxGeometry height="80" width="223" x="480" y="361.41" as="geometry" />
         </mxCell>
         <mxCell id="Xdoe8DSv-wDkyfRJp-ek-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Room Listing Form Display&lt;br&gt;2.5: Room Review Display&lt;br&gt;3.3: Draft Saved Message" vertex="1">
-          <mxGeometry height="74.59" width="191.35" x="580.0029411764707" y="502.40999999999997" as="geometry" />
+          <mxGeometry height="80" width="193" x="480" y="480" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: getRoomListingForm(in propertyId: Guid, out response: RoomListingFormResponseDto)&lt;br&gt;2.1: processListingDetails(in request: RoomListingDraftDto, in images: FileList, out response: ProcessListingResponseDto)&lt;br&gt;3.1: saveDraftListing(in request: RoomListingDraftDto, in imageUrls: List, out response: ListingResponseDto)" vertex="1">
-          <mxGeometry height="112" width="391" x="1058.0029411764708" y="296" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-18" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: GetRoomListingForm(in propertyId: Guid, out response: RoomListingFormResponseDto)&lt;br&gt;2.1: ProcessListingDetails(in request: RoomListingDraftDto, in images: IFormFileCollection, out response: ProcessListingResponseDto)&lt;br&gt;3.1: SaveDraftListing(in request: RoomListingDraftDto, out response: ListingResponseDto)" vertex="1">
+          <mxGeometry height="112" width="400" x="810" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: validateRequiredFields(in request: RoomListingDraftDto, out result: ValidationResult)" vertex="1">
-          <mxGeometry height="40" width="532" x="1661.0029411764708" y="200" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: ValidateRequiredFields(in request: RoomListingDraftDto, out result: ValidationResult)" vertex="1">
+          <mxGeometry height="44" width="500" x="1520" y="210" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: uploadImages(in images: FileList, out imageUrls: List)" vertex="1">
-          <mxGeometry height="40" width="365" x="1568.0029411764708" y="560" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.3: UploadImagesAsync(in images: IFormFileCollection, out imageUrls: List&lt;string&gt;)" vertex="1">
+          <mxGeometry height="44" width="429.68" x="1540.32" y="560" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.4: uploadImages(in images: FileList, out imageUrls: List)" vertex="1">
-          <mxGeometry height="44" width="342" x="2170.002941176471" y="544" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.4: uploadImages(in images: IFormFileCollection, out imageUrls: List&lt;string&gt;)" vertex="1">
+          <mxGeometry height="54" width="240" x="2220" y="550" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.2: save(in entity: RoomListing, out persisted: RoomListing)" vertex="1">
-          <mxGeometry height="43" width="345.65" x="1661.0029411764708" y="379.40999999999997" as="geometry" />
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.2: SaveAsync(in entity: RoomListing, out persisted: RoomListing)" vertex="1">
+          <mxGeometry height="44" width="345.65" x="1550.0029411764708" y="409.99999999999994" as="geometry" />
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: OwnerUI" vertex="1">
+          <mxGeometry height="70" width="170" x="720" y="432.41176470588243" as="geometry" />
+        </mxCell>
+        <mxCell id="HAcP-C8HUqe47jsgLxDX-2" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="596.0029411764707" y="449" as="sourcePoint" />
-            <mxPoint x="743.0029411764707" y="449" as="targetPoint" />
+            <mxPoint x="950" y="441.40999999999997" as="sourcePoint" />
+            <mxPoint x="1030" y="441" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+        <mxCell id="HAcP-C8HUqe47jsgLxDX-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1166.0029411764708" y="432.40999999999997" as="sourcePoint" />
-            <mxPoint x="1313.0029411764708" y="432.40999999999997" as="targetPoint" />
+            <mxPoint x="1700" y="620" as="sourcePoint" />
+            <mxPoint x="1790" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+        <mxCell id="HAcP-C8HUqe47jsgLxDX-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1866.0029411764708" y="266" as="sourcePoint" />
-            <mxPoint x="2013.0029411764708" y="266" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-26" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1756.0029411764708" y="447" as="sourcePoint" />
-            <mxPoint x="1903.0029411764708" y="447" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-27" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="1677.0029411764708" y="619" as="sourcePoint" />
-            <mxPoint x="1824.0029411764708" y="619" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="Xdoe8DSv-wDkyfRJp-ek-28" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <mxPoint x="2276.002941176471" y="621" as="sourcePoint" />
-            <mxPoint x="2423.002941176471" y="621" as="targetPoint" />
+            <mxPoint x="2270" y="620" as="sourcePoint" />
+            <mxPoint x="2370" y="620" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>

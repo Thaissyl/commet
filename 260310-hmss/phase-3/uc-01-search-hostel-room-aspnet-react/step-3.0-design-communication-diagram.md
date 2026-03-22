@@ -4,18 +4,19 @@
 
 - Diagram level: design phase
 - Backend style: simple layered backend
-- Main flow: `VisitorUI -> SearchRoomController`, then `Controller -> Repository` and `Controller -> IGoogleMapsGateway`
+- Main flow: VisitorUI -> RoomSearchController, then Controller -> IRoomListingRepository, Controller -> SearchMatchingService, Controller -> IGoogleMapsGateway
 - Message style: single directional function messages
-- Synchronous request messages carry `in` and `out` parameters in the same label when a response payload is expected
-- Separate reply arrows are intentionally omitted because `out` parameters already represent returned data
-- Request flow style: synchronous request handling with read-only query optimization
-- Business logic bypass: For performance, controller queries repository directly without logic layer
+- Synchronous request messages carry `in` and `out` parameters in the same label
+- Separate reply arrows intentionally omitted — `out` parameters represent returned data
+- Request flow style: synchronous request handling
+- Business logic: SearchMatchingService handles criteria filtering (sequence 2) and DTO projection (sequences 1 & 2)
 
 ## Object Layout
 
 ```text
-Visitor --- VisitorUI --- SearchRoomController
-                          |--- IRoomListingRepository --- RoomListingList
+Visitor --- VisitorUI --- RoomSearchController
+                          |--- SearchMatchingService
+                          |--- IRoomListingRepository
                           |--- IGoogleMapsGateway --- Google Maps
 ```
 
@@ -25,61 +26,60 @@ Visitor --- VisitorUI --- SearchRoomController
 | -------- | ---------------------- | ---------------------- |
 | 1        | Visitor                | Actor (primary)        |
 | 2        | VisitorUI              | `<<user interaction>>` |
-| 3        | SearchRoomController   | `<<coordinator>>`      |
-| 4        | IRoomListingRepository | `<<database wrapper>>` |
-| 5        | RoomListingList        | `<<data abstraction>>` |
+| 3        | RoomSearchController   | `<<coordinator>>`      |
+| 4        | SearchMatchingService  | `<<business logic>>`   |
+| 5        | IRoomListingRepository | `<<database wrapper>>` |
 | 6        | IGoogleMapsGateway     | `<<proxy>>`            |
 | 7        | Google Maps            | Actor (secondary)      |
 
+> `RoomListingList` removed — `List<RoomListing>` is a CLR return type, not a message-passing object. Communication diagrams only show objects that send or receive messages.
+
 ## Messages
+
+> Only messages traceable to the analysis model are shown. `BuildListingSummaries` (implicit DTO mapping) has no analysis model counterpart — not shown.
 
 | #   | From -> To                              | Message                                                            |
 | --- | --------------------------------------- | ------------------------------------------------------------------ |
 | 1   | Visitor -> VisitorUI                    | Search Function Access                                             |
-| 1.1 | VisitorUI -> SearchRoomController       | `getInitialSearchPage(out response: SearchPageDto)`                |
-| 1.2 | SearchRoomController -> IRoomListingRepository | `findPublishedListings(out list: RoomListingList)`             |
-| 1.3 | SearchRoomController -> IGoogleMapsGateway | `getMapData(in locations: LocationList, out mapData: MapDto)`  |
-| 1.4 | IGoogleMapsGateway -> Google Maps       | `getMapData(in locations: LocationList, out mapData: MapDto)`      |
+| 1.1 | VisitorUI -> RoomSearchController       | `GetSearchPage(out response: SearchPageResponseDto)`                |
+| 1.2 | RoomSearchController -> IRoomListingRepository | `FindPublishedListingsAsync(out list: List<RoomListing>)`             |
+| 1.3 | RoomSearchController -> IGoogleMapsGateway | `GetLocationDataAsync(in listings: List<RoomListing>, out locationData: List<LocationDataDto>)`  |
+| 1.4 | IGoogleMapsGateway -> Google Maps       | `geocode(in address: string, out coordinates: Coordinates)`      |
 | 1.5 | VisitorUI -> Visitor                    | Search Form and Initial Listings Display                           |
 | 2   | Visitor -> VisitorUI                    | Search Criteria Submission                                         |
-| 2.1 | VisitorUI -> SearchRoomController       | `searchRooms(in criteria: SearchCriteriaDto, out response: SearchResultDto)` |
-| 2.2 | SearchRoomController -> IRoomListingRepository | `findByCriteria(in criteria: SearchCriteriaDto, out list: RoomListingList)` |
-| 2.3 | SearchRoomController -> IGoogleMapsGateway | `getMapData(in locations: LocationList, out mapData: MapDto)`  |
-| 2.4 | IGoogleMapsGateway -> Google Maps       | `getMapData(in locations: LocationList, out mapData: MapDto)`      |
-| 2.5 | VisitorUI -> Visitor                    | Matching Listings and Map Display                                  |
-| 3   | Visitor -> VisitorUI                    | Listings Review                                                    |
+| 2.1 | VisitorUI -> RoomSearchController       | `SearchRooms(in criteria: SearchCriteriaDto, out response: SearchResponseDto)` |
+| 2.2 | RoomSearchController -> SearchMatchingService | `ValidateCriteria(in criteria: SearchCriteriaDto, out isValid: bool)` |
+| 2.3 | RoomSearchController -> IRoomListingRepository | `FindByCriteriaAsync(in criteria: SearchCriteriaDto, out filtered: List<RoomListing>)` |
+| 2.4 | RoomSearchController -> IGoogleMapsGateway | `GetLocationDataAsync(in listings: List<RoomListing>, out locationData: List<LocationDataDto>)` |
+| 2.5 | IGoogleMapsGateway -> Google Maps       | `geocode(in address: string, out coordinates: Coordinates)` |
+| 2.6 | VisitorUI -> Visitor                    | Matching Listings and Map Display                                  |
 
 ## Analysis → Design Message Mapping
 
 | Analysis message | Design message | Notes |
-| ----------------- | -------------- | ----- |
-| `1.1` VisitorUI -> SearchRoomCoordinator: "Initial Search Page Request" | `1.1` VisitorUI -> SearchRoomController: `getInitialSearchPage(out response: SearchPageDto)` | sync, renamed |
-| `1.2-1.3` SearchRoomCoordinator -> RoomListing: "Published Listings Query/Data" | `1.2` SearchRoomController -> IRoomListingRepository: `findPublishedListings(out list: RoomListingList)` | direct DB read, bypasses logic layer |
-| `1.4-1.7` SearchRoomCoordinator -> GoogleMapsProxy -> Google Maps: "Map Data Request/Data" | `1.3` SearchRoomController -> IGoogleMapsGateway: `getMapData(in locations, out mapData)` | sync with reply |
-| `2.1-2.3` VisitorUI -> SearchRoomCoordinator -> SearchRules: "Search Criteria Data/Validation Check" | `2.1` VisitorUI -> SearchRoomController: `searchRooms(in criteria, out response)` then `2.2` findByCriteria(...) | bypassed logic layer for performance |
-| `2.4-2.5` SearchRoomCoordinator -> RoomListing: "Matching Listings Query/Data" | `2.2` SearchRoomController -> IRoomListingRepository: `findByCriteria(in criteria, out list)` | optimized SQL query |
-| `2.6-2.9` SearchRoomCoordinator -> GoogleMapsProxy -> Google Maps: "Map Data Request/Data" | `2.3` SearchRoomController -> IGoogleMapsGateway: `getMapData(in locations, out mapData)` | sync with reply |
+|---|---|---|
+| `1.1` VisitorUI -> SearchRoomCoordinator: "Initial Search Page Request" | `1.1` VisitorUI -> RoomSearchController: `GetSearchPage(...)` | renamed |
+| `1.2-1.3` SearchRoomCoordinator -> RoomListing: "Published Listings Query/Data" | `1.2` RoomSearchController -> IRoomListingRepository: `FindPublishedListingsAsync(...)` | direct DB read |
+| `1.4-1.7` SearchRoomCoordinator -> GoogleMapsProxy -> Google Maps | `1.3` RoomSearchController -> IGoogleMapsGateway: `GetLocationDataAsync(...)` | per-listing coords, not single MapDto |
+| `2.1` VisitorUI -> SearchRoomCoordinator: "Search Criteria Submission" | `2.1` VisitorUI -> RoomSearchController: `SearchRooms(...)` | renamed |
+| `2.2` SearchRoomCoordinator -> SearchRules: "Criteria Validation Check" | `2.2` RoomSearchController -> SearchMatchingService: `ValidateCriteria(...)` | SearchRules → SearchMatchingService |
+| `2.4-2.5` SearchRoomCoordinator -> RoomListing: "Matching Listings Query/Data" | `2.3` RoomSearchController -> IRoomListingRepository: `FindByCriteriaAsync(...)` | DB-level filter + in-memory amenities |
+| `2.6-2.9` SearchRoomCoordinator -> GoogleMapsProxy -> Google Maps | `2.4` RoomSearchController -> IGoogleMapsGateway: `GetLocationDataAsync(...)` | same as 1.3 |
 
 ## Alternative Flow Notes
 
-- **Step 2.2: Empty criteria** - `criteria` is empty/null, repository returns all published listings with default ordering, continues to step 2.5
-- **Step 2.2: No matches found** - `list` is empty, response contains no results message, UI displays revision prompt, returns to step 2
-- **Step 1.3: Google Maps unavailable** - Gateway returns failure/null `mapData`, response contains listings without map, continues to step 1.5
-- **Step 2.3: Google Maps unavailable** - Gateway returns failure/null `mapData`, response contains listings without map, continues to step 2.5
+- **Step 2.2: Invalid criteria** — `ValidateCriteria` returns `isValid=false` (e.g. MinPrice > MaxPrice); controller returns `400 BadRequest`; no DB query executed
+- **Step 2.2: Empty criteria** — all fields null; `ValidateCriteria` returns valid; `FindByCriteriaAsync` applies no filters, returns all published
+- **Step 2.3: No matches** — `FindByCriteriaAsync` returns empty list; `SearchResponseDto.HasResults = false`; UI shows revision prompt; returns to step 2
+- **Step 1.3 / 2.4: Google Maps unavailable** — `GetLocationDataAsync` catches per-listing exceptions; returns partial or empty `List<LocationDataDto>`; listings still returned without map pins
 
 ## Notes
 
-- `VisitorUI` is shown explicitly so the human actor does not interact directly with the backend controller.
-- `IRoomListingRepository` handles read-only queries and returns listing collections.
-- `SearchRoomController` acts as the simplified orchestration point.
-- `IGoogleMapsGateway` handles synchronous map data retrieval. Returns `MapDto` in `out` parameter for UI display.
-- **Bypassing Business Logic for Queries (Message 2.2)**: Because the search step strictly involves querying the database based on filters (location, price, dates), routing through a `<<business logic>>` class creates an unnecessary pass-through layer. To satisfy the 3-second nonfunctional performance requirement, the `SearchRoomController` bypasses logic and passes the `SearchCriteriaDto` directly into the `IRoomListingRepository` (`<<database wrapper>>`) to execute optimized SQL queries.
-- **Stateless Coordinator (Messages 1.2, 2.2)**: Web controllers must remain perfectly stateless to scale. The `SearchRoomController` does not remember the default listings fetched in Sequence 1. When the visitor submits a search in Sequence 2, it executes a completely fresh `findByCriteria` database query.
-- **Proxy Timeout Handling (Alternative 6.1)**: Messages 1.3 and 2.3 invoke the `IGoogleMapsGateway`. Because external API calls carry network latency risks, the `<<proxy>>` object is configured with a strict timeout limit. If Google Maps fails to respond within the allowed threshold, the proxy suppresses the exception, returns a null `MapDto`, and allows the controller to safely return the text listings to the UI without maps, fulfilling Alternative Sequence 6.1 and preserving the 3-second performance requirement.
-- **Repository Query Patterns**:
-  - `findPublishedListings(out list)` - Fetches all published listings for initial page load (sequence 1)
-  - `findByCriteria(in criteria, out list)` - Fetches listings matching search filters (sequence 2)
-- **Empty Criteria Handling (Alternative 3.1)**: When visitor submits with no criteria, the `SearchCriteriaDto` is empty/null. The repository interprets this as "return all published listings" and applies default ordering (newest first, relevance, etc.).
-- **No Results Handling (Alternative 4.1)**: When `findByCriteria` returns an empty list, the response contains a "no results found" message, and the UI displays a revision prompt inviting the visitor to adjust search criteria.
-- **Implicit DTO mapping**: The controller implicitly maps response data from entities to DTOs (`SearchPageDto`, `SearchResultDto`). This mapping is not shown as a separate message.
-- Actor-to-UI messages (1, 1.5, 2, 2.5, 3) use noun phrases because they represent physical user interactions, not code method calls.
+- `VisitorUI` shown explicitly — human actor does not interact directly with backend controller.
+- `RoomSearchController` is the stateless coordinator. Does not retain state between sequences 1 and 2.
+- **SearchMatchingService role**: `<<business logic>>` participant. Corresponds to `SearchRules` in analysis model. Provides `ValidateCriteria` (shown in diagram) and `BuildListingSummaries` (implicit DTO mapping — not shown).
+- **FindByCriteriaAsync filtering strategy**: Most criteria (location, price, dates, furnishing, WC) filtered at DB level via EF Core LINQ. Amenities filtered in-memory within the repository after `ToListAsync()` — EF Core cannot translate JSON array containment to SQL.
+- **Stateless coordinator**: `RoomSearchController` always executes fresh queries; no state held between sequences.
+- **Proxy timeout handling**: `GoogleMapsGateway` uses `HttpClient.Timeout = 5s`. Per-listing exceptions caught and logged; partial results returned gracefully.
+- **No RoomListingList participant**: `List<RoomListing>` is a CLR return type — not a message-passing object. Only objects that send or receive messages appear in a communication diagram.
+- Actor-to-UI messages (1, 1.5, 2, 2.6, 3) use noun phrases — physical user interactions, not code method calls.
