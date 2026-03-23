@@ -1,0 +1,161 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram name="UC-18 Control Listing Visibility - Analysis" id="uc18-analysis">
+    <mxGraphModel dx="3384" dy="943" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor-admin" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="System Admin" vertex="1">
+          <mxGeometry height="90" width="60" x="-160" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-ui" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«user interaction»&lt;br/&gt;: AdminUI" vertex="1">
+          <mxGeometry height="70" width="180" x="180" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-coordinator" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«coordinator»&lt;br/&gt;: ControlListingCoordinator" vertex="1">
+          <mxGeometry height="70" width="240" x="480" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-listing" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: RoomListing" vertex="1">
+          <mxGeometry height="70" width="180" x="1200" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-user" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«entity»&lt;br/&gt;: UserAccount" vertex="1">
+          <mxGeometry height="70" width="180" x="1140" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-email-proxy" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" value="«proxy»&lt;br/&gt;: EmailProxy" vertex="1">
+          <mxGeometry height="70" width="170" x="1040" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-email-provider" parent="1" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="Email Provider" vertex="1">
+          <mxGeometry height="90" width="60" x="1400" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-admin-ui" edge="1" parent="1" source="actor-admin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="obj-ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-ui-coordinator" edge="1" parent="1" source="obj-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="obj-coordinator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-listing" edge="1" parent="1" source="obj-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="obj-listing">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="475" />
+              <mxPoint x="820" y="205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-coordinator-user" edge="1" parent="1" source="obj-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="obj-user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-email" edge="1" parent="1" source="obj-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="obj-email-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="475" />
+              <mxPoint x="820" y="735" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-email-provider" edge="1" parent="1" source="obj-email-proxy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" target="actor-email-provider">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-admin-ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1: Listing Administration Access&lt;br&gt;2: Listing Selection&lt;br&gt;3: Disable Action Decision" vertex="1">
+          <mxGeometry height="70" width="190" x="-50" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-admin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.7: Visible Listings Display&lt;br&gt;2.7: Details and Disable Action Display&lt;br&gt;3.8: Action Success Message Display" vertex="1">
+          <mxGeometry height="70" width="290" x="-90" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-coordinator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.1: Visible Listings Query&lt;br&gt;2.1: Listing Detail Query&lt;br&gt;3.1: Disable Action Request" vertex="1">
+          <mxGeometry height="70" width="180" x="340" y="350" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-ui" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.6: Visible Listings with Associated Information&lt;br&gt;2.6: Listing Details and Disable Action&lt;br&gt;3.7: Action Success" vertex="1">
+          <mxGeometry height="70" width="290" x="290" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-listing" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.2: Visible Listings Query&lt;br&gt;2.2: Listing Detail Query&lt;br&gt;3.2: Disable Eligibility Check&lt;br&gt;3.4: Apply Disable Action" vertex="1">
+          <mxGeometry height="80" width="180" x="890" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-listing-coordinator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.3: Visible Listings Data&lt;br&gt;2.3: Listing Detail Data&lt;br&gt;3.3: Eligibility Result (Valid)" vertex="1">
+          <mxGeometry height="70" width="360" x="840" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.4: Owner Account Summary Query&lt;br&gt;2.4: Owner Account Detail Query" vertex="1">
+          <mxGeometry height="60" width="230" x="860" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-user-coordinator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="1.5: Owner Account Summary Data&lt;br&gt;2.5: Owner Account Detail Data" vertex="1">
+          <mxGeometry height="60" width="220" x="850" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-email" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.5: Owner Notification Request" vertex="1">
+          <mxGeometry height="40" width="200" x="830" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-email-provider" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.6: Owner Notification" vertex="1">
+          <mxGeometry height="40" width="140" x="1230" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint y="460" as="sourcePoint" />
+            <mxPoint x="60" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-3" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="460" as="sourcePoint" />
+            <mxPoint x="450" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-4" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="950" y="190" as="sourcePoint" />
+            <mxPoint x="1010" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-5" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="930" y="460" as="sourcePoint" />
+            <mxPoint x="990" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-6" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="900" y="720" as="sourcePoint" />
+            <mxPoint x="960" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-7" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1270" y="720" as="sourcePoint" />
+            <mxPoint x="1330" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-8" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="60" y="490" as="sourcePoint" />
+            <mxPoint y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-9" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="450" y="490" as="sourcePoint" />
+            <mxPoint x="390" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-10" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1010" y="220" as="sourcePoint" />
+            <mxPoint x="950" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-11" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="990" y="484" as="sourcePoint" />
+            <mxPoint x="930" y="484" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-12" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="960" y="760" as="sourcePoint" />
+            <mxPoint x="900" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="cqiM5kg6I4yhU9nflE5e-13" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="1330" y="750" as="sourcePoint" />
+            <mxPoint x="1270" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" version="29.6.3">
+  <diagram name="UC-17 Manage User Account Status - Analysis Main Sequence" id="uc17-analysis-main">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor-admin" value="System Admin" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-ui" value="&#171;user interaction&#187;&lt;br/&gt;: AdminUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-coordinator" value="&#171;coordinator&#187;&lt;br/&gt;: AdminCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="500" y="370" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-user" value="&#171;entity&#187;&lt;br/&gt;: UserAccount" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-email-proxy" value="&#171;proxy&#187;&lt;br/&gt;: EmailProxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="650" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-email-provider" value="Email Provider" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="640" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-admin-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="actor-admin" target="obj-ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-ui-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-ui" target="obj-coordinator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-email-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="870" y="405" />
+              <mxPoint x="870" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-email-provider" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-email-proxy" target="actor-email-provider">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-admin-ui" value="&lt;b&gt;System Admin -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Account Management Access&lt;br/&gt;2: User Account Selection&lt;br/&gt;3: Account Status Change Decision (Suspend)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-coordinator" value="&lt;b&gt;AdminUI -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: User Account List Request&lt;br/&gt;2.1: User Account Detail Request&lt;br/&gt;3.1: Account Status Change Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="280" y="90" width="310" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-user" value="&lt;b&gt;AdminCoordinator -&gt; UserAccount&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: User Account List Query&lt;br/&gt;2.2: User Account Detail Query&lt;br/&gt;3.2: Status Transition Validation and Update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="620" y="90" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-user-coordinator" value="&lt;b&gt;UserAccount -&gt; AdminCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: User Account List Data&lt;br/&gt;2.3: User Account Detail and Available Status Actions&lt;br/&gt;3.3: Account Status Change Result" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="970" y="90" width="340" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-ui" value="&lt;b&gt;AdminCoordinator -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.4: User Account List&lt;br/&gt;2.4: User Account Detail and Available Status Actions&lt;br/&gt;3.6: Account Status Change Outcome" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="280" y="500" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-admin" value="&lt;b&gt;AdminUI -&gt; System Admin&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.5: User Account List Display&lt;br/&gt;2.5: Detail and Available Actions Display&lt;br/&gt;3.7: Account Status Change Confirmation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-email" value="&lt;b&gt;AdminCoordinator -&gt; EmailProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.4: User Notification Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="650" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-email-provider" value="&lt;b&gt;EmailProxy -&gt; Email Provider&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.5: User Notification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="540" width="280" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

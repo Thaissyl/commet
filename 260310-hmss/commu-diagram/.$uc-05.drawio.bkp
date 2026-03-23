@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram name="UC-05 Submit Rental Request - Main Sequence" id="hRQQiUN97RKtd5SrX5Rk">
-    <mxGraphModel dx="1426" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1783" dy="1061" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -82,8 +82,8 @@
         <mxCell id="4WsidDQx5I48Fw-aGyFM-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.4: Room Status Data" vertex="1">
           <mxGeometry height="50" width="145" x="1497.5" y="280" as="geometry" />
         </mxCell>
-        <mxCell id="4WsidDQx5I48Fw-aGyFM-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: Request Validation Check" vertex="1">
-          <mxGeometry height="40" width="230" x="960" y="190" as="geometry" />
+        <mxCell id="4WsidDQx5I48Fw-aGyFM-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="2.2: Request Validation Check&lt;div&gt;3.4b: Failed Notification Record&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="230" x="960" y="170" as="geometry" />
         </mxCell>
         <mxCell id="4WsidDQx5I48Fw-aGyFM-26" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" value="3.3: Owner Notification" vertex="1">
           <mxGeometry height="40" width="180" x="850" y="707.5" as="geometry" />

@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net" version="29.6.3">
+  <diagram name="UC-18 Control Listing Visibility - Analysis Main Sequence" id="uc18-analysis-main">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor-admin" value="System Admin" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="70" y="360" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-ui" value="&#171;user interaction&#187;&lt;br/&gt;: AdminUI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="230" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-coordinator" value="&#171;coordinator&#187;&lt;br/&gt;: ControlListingCoordinator" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="490" y="370" width="240" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-listing" value="&#171;entity&#187;&lt;br/&gt;: RoomListing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="370" width="180" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-email-proxy" value="&#171;proxy&#187;&lt;br/&gt;: EmailProxy" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;align=center;verticalAlign=middle;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="650" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-email-provider" value="Email Provider" style="shape=umlActor;whiteSpace=wrap;html=1;fillColor=#82CAFA;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="640" width="60" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-admin-ui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="actor-admin" target="obj-ui">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-ui-coordinator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-ui" target="obj-coordinator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-listing" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-listing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="assoc-coordinator-email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-coordinator" target="obj-email-proxy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="890" y="405" />
+              <mxPoint x="890" y="685" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-email-provider" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;startArrow=none;strokeColor=#000000;" edge="1" parent="1" source="obj-email-proxy" target="actor-email-provider">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-admin-ui" value="&lt;b&gt;System Admin -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1: Listing Administration Access&lt;br/&gt;2: Listing Selection&lt;br/&gt;3: Disable Action Decision" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="90" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-coordinator" value="&lt;b&gt;AdminUI -&gt; ControlListingCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.1: Visible Listings Query&lt;br/&gt;2.1: Listing Detail Query&lt;br/&gt;3.1: Disable Action Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="280" y="90" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-listing" value="&lt;b&gt;ControlListingCoordinator -&gt; RoomListing&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.2: Visible Listings Query&lt;br/&gt;2.2: Listing Detail Query&lt;br/&gt;3.2: Status Concurrency Check&lt;br/&gt;3.4: Disabled Status Update" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="620" y="90" width="340" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-listing-coordinator" value="&lt;b&gt;RoomListing -&gt; ControlListingCoordinator&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.3: Visible Listings Data&lt;br/&gt;2.3: Listing Detail Data&lt;br/&gt;3.3: Validation Result (Valid)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="970" y="90" width="330" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-ui" value="&lt;b&gt;ControlListingCoordinator -&gt; AdminUI&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.4: Visible Listings List&lt;br/&gt;2.4: Listing Details and Disable Action&lt;br/&gt;3.7: Action Success" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="280" y="500" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-ui-admin" value="&lt;b&gt;AdminUI -&gt; System Admin&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;1.5: Visible Listings Display&lt;br/&gt;2.5: Details and Disable Action Display&lt;br/&gt;3.8: Action Success Message Display" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="20" y="620" width="330" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-coordinator-email" value="&lt;b&gt;ControlListingCoordinator -&gt; EmailProxy&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.5: Owner Notification Request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="660" y="650" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="grp-email-provider" value="&lt;b&gt;EmailProxy -&gt; Email Provider&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;3.6: Owner Notification" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8faff;strokeColor=#6c8ebf;dashed=1;arcSize=8;align=left;verticalAlign=top;spacing=10;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="540" width="280" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -2,10 +2,10 @@
 
 ## Scope
 
-- Included classes: `AdminUI`, `ControlListingController`, `ListingControlLogic`, `IRoomListingRepository`, `NotificationService`, `IEmailGateway`, `RoomListing`
+- Included classes: `AdminUI`, `ControlListingController`, `IRoomListingRepository`, `IUserAccountRepository`, `ListingControlLogic`, `NotificationService`, `IEmailGateway`, `RoomListing`, `UserAccount`
 - Synchronization source:
   - participant set and call structure from `step-3.0-design-communication-diagram.md`
-  - class operations derived from step-3.0 messages
+  - class operations derived from implemented controller/service methods
 
 ## Class Boxes
 
@@ -25,8 +25,8 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ getVisibleListings(out response: ListingListDto)`
-  - `+ getListingDetails(in listingId: Guid, out response: ListingDetailDto)`
+  - `+ getVisibleListings(out response: List<AdminListingSummaryDto>)`
+  - `+ getListingDetails(in listingId: Guid, out response: AdminListingDetailDto)`
   - `+ disableListing(in listingId: Guid, out response: ControlActionDto)`
 
 ### `IRoomListingRepository`
@@ -35,9 +35,17 @@
 - Attributes:
   - none in current scope
 - Operations:
-  - `+ findByStatus(in status: String, out list: ListingList)`
-  - `+ findById(in id: Guid, out entity: RoomListing)`
-  - `+ update(in entity: RoomListing, out persisted: RoomListing)`
+  - `+ findByStatusAsync(in status: string, out listings: List<RoomListing>)`
+  - `+ findByIdAsync(in id: Guid, out listing: RoomListing)`
+  - `+ updateAsync(in entity: RoomListing, out persisted: RoomListing)`
+
+### `IUserAccountRepository`
+
+- Stereotype: `<<database wrapper>>`
+- Attributes:
+  - none in current scope
+- Operations:
+  - `+ findByIdAsync(in id: Guid, out owner: UserAccount)`
 
 ### `ListingControlLogic`
 
@@ -69,9 +77,20 @@
 - Attributes:
   - `- listingId: Guid`
   - `- title: string`
-  - `- status: ListingStatus`
+  - `- status: string`
+  - `- imagesRef: string`
 - Operations:
-  - `+ disableByAdmin(out result: StatusChangeResult)`
+  - `+ archive(out result: StatusChangeResult)`
+
+### `UserAccount`
+
+- Stereotype: `<<data abstraction>>`
+- Attributes:
+  - `- userId: Guid`
+  - `- fullName: string`
+  - `- email: string`
+- Operations:
+  - none in current scope
 
 ## Relationships
 
@@ -97,10 +116,20 @@
 
 - association:
   - from: `ControlListingController`
+  - to: `IUserAccountRepository`
+  - source multiplicity: `1`
+  - target multiplicity: `1`
+  - association name: `loads owner info`
+  - reading direction: `source-to-target`
+  - source navigability: `none`
+  - target navigability: `navigable`
+
+- association:
+  - from: `ControlListingController`
   - to: `ListingControlLogic`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `validates action`
+  - association name: `validates disable`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -110,7 +139,7 @@
   - to: `NotificationService`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `requests notification`
+  - association name: `creates notice`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -120,17 +149,7 @@
   - to: `IEmailGateway`
   - source multiplicity: `1`
   - target multiplicity: `1`
-  - association name: `dispatches notification`
-  - reading direction: `source-to-target`
-  - source navigability: `none`
-  - target navigability: `navigable`
-
-- association:
-  - from: `ControlListingController`
-  - to: `RoomListing`
-  - source multiplicity: `1`
-  - target multiplicity: `1`
-  - association name: `mutates state`
+  - association name: `dispatches email`
   - reading direction: `source-to-target`
   - source navigability: `none`
   - target navigability: `navigable`
@@ -145,14 +164,24 @@
   - source navigability: `none`
   - target navigability: `navigable`
 
+- association:
+  - from: `IUserAccountRepository`
+  - to: `UserAccount`
+  - source multiplicity: `1`
+  - target multiplicity: `0..*`
+  - association name: `manages`
+  - reading direction: `source-to-target`
+  - source navigability: `none`
+  - target navigability: `navigable`
+
 ## Generalizations
 
 - none in current scope
 
 ## Notes
 
-- Admin override: disable forcibly removes listings from public visibility regardless of current state
-- Two-phase: validation pre-check (sequence 2), then execution (sequence 3)
-- `NotificationService` composes email payload before passing to gateway
-- Email dispatch is async (fire-and-forget)
-- Status concurrency check prevents double-disable on already disabled listings
+- `GetVisibleListings(...)` and `GetListingDetails(...)` enrich listing data with owner information from `IUserAccountRepository`.
+- The admin disable action is implemented in code as `RoomListing.archive(...)`.
+- `NotificationService` composes the email payload after persistence succeeds.
+- Email dispatch is async fire-and-forget in the current controller implementation.
+- Validation prevents archive-on-already-inactive listings through `ListingControlLogic`.

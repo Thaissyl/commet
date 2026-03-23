@@ -1,77 +1,54 @@
-<mxfile host="app.diagrams.net">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
   <diagram name="use-case-17-design-class-diagram" id="0">
-    <mxGraphModel fold="1" pageWidth="2200" dx="2200" tooltips="1" guides="1" connect="1" grid="1" shadow="0" math="0" pageHeight="1400" dy="1400" gridSize="10" pageScale="1" page="1" arrows="1">
+    <mxGraphModel dx="4369" dy="1282" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="1400" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="adminui" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;AdminUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ OpenAccountManagement()&lt;br/&gt;+ SelectUser(in userId: Guid)&lt;br/&gt;+ SuspendAccount(in userId: Guid)&lt;br/&gt;+ EnableAccount(in userId: Guid)&lt;br/&gt;+ DisableAccount(in userId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="420" width="300" as="geometry" height="190" x="40" />
+        <mxCell id="adminui" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#93c5fd;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dbeafe&quot;&gt;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;#171;user interaction&amp;#187;&lt;br/&gt;AdminUI&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f8fbff&quot;&gt;+ OpenAccountManagement()&lt;br/&gt;+ SelectUser(in userId: Guid)&lt;br/&gt;+ SuspendAccount(in userId: Guid)&lt;br/&gt;+ EnableAccount(in userId: Guid)&lt;br/&gt;+ DisableAccount(in userId: Guid)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="190" width="300" x="-70" y="415" as="geometry" />
         </mxCell>
-        <mxCell id="controller" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;UserAccountAdminController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetUserAccountList(out response: IEnumerable&amp;lt;UserAccountSummaryDto&amp;gt;)&lt;br/&gt;+ GetUserAccountDetail(in userId: Guid, out response: UserAccountDetailResponseDto)&lt;br/&gt;+ SuspendAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;br/&gt;+ EnableAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;br/&gt;+ DisableAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="390" width="480" as="geometry" height="240" x="400" />
+        <mxCell id="controller" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#fdba74;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#ffedd5&quot;&gt;&lt;font color=&quot;#c2410c&quot;&gt;&lt;b&gt;&amp;#171;coordinator&amp;#187;&lt;br/&gt;UserAccountAdminController&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7ed&quot;&gt;+ GetUserAccountList(out response: IEnumerable&amp;lt;UserAccountSummaryDto&amp;gt;)&lt;br/&gt;+ GetUserAccountDetail(in userId: Guid, out response: UserAccountDetailResponseDto)&lt;br/&gt;+ SuspendAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;br/&gt;+ EnableAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;br/&gt;+ DisableAccount(in userId: Guid, out response: ChangeUserAccountStatusResponseDto)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="240" width="480" x="400" y="390" as="geometry" />
         </mxCell>
-        <mxCell id="repo" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IUserAccountRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindManageableUserAccountsAsync(out users: List&amp;lt;UserAccount&amp;gt;)&lt;br/&gt;+ FindByIdAsync(in id: Guid, out user: UserAccount)&lt;br/&gt;+ UpdateAsync(in entity: UserAccount, out persisted: UserAccount)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="170" width="410" as="geometry" height="150" x="1030" />
+        <mxCell id="repo" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;database wrapper&amp;#187;&lt;br/&gt;IUserAccountRepository&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ FindManageableUserAccountsAsync(out users: List&amp;lt;UserAccount&amp;gt;)&lt;br/&gt;+ FindByIdAsync(in id: Guid, out user: UserAccount)&lt;br/&gt;+ UpdateAsync(in entity: UserAccount, out persisted: UserAccount)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="150" width="410" x="1180" y="175" as="geometry" />
         </mxCell>
-        <mxCell id="notify" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;application logic&amp;#187;&lt;br/&gt;AccountStatusNotificationService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ComposeStatusChangedEmail(in account: UserAccount, in newStatus: string, out message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="440" width="470" as="geometry" height="110" x="1030" />
+        <mxCell id="notify" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#86efac;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dcfce7&quot;&gt;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;#171;application logic&amp;#187;&lt;br/&gt;AccountStatusNotificationService&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fdf9&quot;&gt;+ ComposeStatusChangedEmail(in account: UserAccount, in newStatus: string, out message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="110" width="470" x="1170" y="455" as="geometry" />
         </mxCell>
-        <mxCell id="email" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ SendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="640" width="280" as="geometry" height="90" x="1030" />
+        <mxCell id="email" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#f9a8d4;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#fce7f3&quot;&gt;&lt;font color=&quot;#be185d&quot;&gt;&lt;b&gt;&amp;#171;proxy&amp;#187;&lt;br/&gt;IEmailGateway&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;none&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#fff7fb&quot;&gt;+ SendAsync(in message: EmailMessage)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="90" width="280" x="1220" y="630" as="geometry" />
         </mxCell>
-        <mxCell id="user" parent="1" vertex="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;UserAccount&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- userId: Guid&lt;br/&gt;- fullName: string&lt;br/&gt;- email: string&lt;br/&gt;- role: string&lt;br/&gt;- accountStatus: string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ ChangeStatus(in action: string)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;">
-          <mxGeometry y="160" width="320" as="geometry" height="180" x="1530" />
+        <mxCell id="user" parent="1" style="shape=rect;html=1;strokeColor=none;fillColor=none;whiteSpace=wrap;overflow=fill;spacing=0;" value="&lt;table border=&quot;1&quot; cellspacing=&quot;0&quot; cellpadding=&quot;6&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;font-size:12px;border-color:#7dd3c7;&quot;&gt;&lt;tr&gt;&lt;td align=&quot;center&quot; bgcolor=&quot;#dff6fb&quot;&gt;&lt;font color=&quot;#0f766e&quot;&gt;&lt;b&gt;&amp;#171;data abstraction&amp;#187;&lt;br/&gt;UserAccount&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;- userId: Guid&lt;br/&gt;- fullName: string&lt;br/&gt;- email: string&lt;br/&gt;- role: string&lt;br/&gt;- accountStatus: string&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot; bgcolor=&quot;#f7fcfd&quot;&gt;+ ChangeStatus(in action: string)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" vertex="1">
+          <mxGeometry height="180" width="320" x="1730" y="160" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" id="note" value="Available actions depend on AccountStatus.&lt;br/&gt;Disable is removed for the current admin's own account.&lt;br/&gt;The controller re-fetches UserAccount before update.">
-          <mxGeometry y="460" width="350" as="geometry" height="120" x="1530" />
+        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;align=left;verticalAlign=top;spacingTop=6;spacingLeft=8;" value="Available actions depend on AccountStatus.&lt;br/&gt;Disable is removed for the current admin&#39;s own account.&lt;br/&gt;The controller re-fetches UserAccount before update." vertex="1">
+          <mxGeometry height="120" width="350" x="1730" y="445" as="geometry" />
         </mxCell>
-        <mxCell id="b1" source="adminui" edge="1" parent="1" target="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;">
+        <mxCell id="b1" edge="1" parent="1" source="adminui" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="controller">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" id="b1-label" value="manages accounts &amp;gt;">
-          <mxGeometry y="470" width="150" as="geometry" height="24" x="300" />
+        <mxCell id="b1-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="manages accounts &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="130" x="250" y="470" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b1-src" value="1">
-          <mxGeometry y="505" width="40" as="geometry" height="20" x="345" />
-        </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b1-tgt" value="1">
-          <mxGeometry y="505" width="50" as="geometry" height="20" x="380" />
-        </mxCell>
-        <mxCell id="b2" source="controller" edge="1" parent="1" target="repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;">
+        <mxCell id="b2" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="repo">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="980" y="510" />
+              <mxPoint x="980" y="460" />
               <mxPoint x="980" y="245" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" id="b2-label" value="loads and persists &amp;gt;">
-          <mxGeometry y="190" width="150" as="geometry" height="24" x="930" />
+        <mxCell id="b2-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="loads and persists &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="150" x="980" y="200" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b2-src" value="1">
-          <mxGeometry y="470" width="40" as="geometry" height="20" x="885" />
+        <mxCell id="b3" edge="1" parent="1" source="controller" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="notify">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b2-tgt" value="1">
-          <mxGeometry y="245" width="50" as="geometry" height="20" x="1005" />
+        <mxCell id="b3-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="composes email &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="140" x="950" y="480" as="geometry" />
         </mxCell>
-        <mxCell id="b3" source="controller" edge="1" parent="1" target="notify" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="980" y="545" />
-              <mxPoint x="980" y="495" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" id="b3-label" value="composes email &amp;gt;">
-          <mxGeometry y="455" width="140" as="geometry" height="24" x="930" />
-        </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b3-src" value="1">
-          <mxGeometry y="545" width="40" as="geometry" height="20" x="885" />
-        </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b3-tgt" value="1">
-          <mxGeometry y="485" width="50" as="geometry" height="20" x="1005" />
-        </mxCell>
-        <mxCell id="b4" source="controller" edge="1" parent="1" target="email" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;">
+        <mxCell id="b4" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="email">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="980" y="575" />
@@ -79,26 +56,20 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" id="b4-label" value="dispatches email &amp;gt;">
-          <mxGeometry y="650" width="140" as="geometry" height="24" x="930" />
+        <mxCell id="b4-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="dispatches email &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="140" x="1030" y="650" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b4-src" value="1">
-          <mxGeometry y="575" width="40" as="geometry" height="20" x="885" />
-        </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b4-tgt" value="1">
-          <mxGeometry y="670" width="50" as="geometry" height="20" x="1005" />
-        </mxCell>
-        <mxCell id="b5" source="repo" edge="1" parent="1" target="user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;">
+        <mxCell id="b5" edge="1" parent="1" source="repo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.4;startArrow=none;endArrow=open;endFill=0;endSize=10;" target="user">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" id="b5-label" value="manages &amp;gt;">
-          <mxGeometry y="210" width="90" as="geometry" height="24" x="1450" />
+        <mxCell id="b5-label" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffffff;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#334155;fontStyle=1;" value="manages &amp;gt;" vertex="1">
+          <mxGeometry height="24" width="90" x="1620" y="210" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b5-src" value="1">
-          <mxGeometry y="245" width="40" as="geometry" height="20" x="1445" />
+        <mxCell id="b5-src" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" value="1" vertex="1">
+          <mxGeometry height="20" width="40" x="1445" y="245" as="geometry" />
         </mxCell>
-        <mxCell vertex="1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" id="b5-tgt" value="0..*">
-          <mxGeometry y="245" width="50" as="geometry" height="20" x="1500" />
+        <mxCell id="b5-tgt" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontColor=#475569;" value="0..*" vertex="1">
+          <mxGeometry height="20" width="50" x="1500" y="245" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
